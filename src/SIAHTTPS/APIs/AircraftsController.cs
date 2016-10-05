@@ -31,7 +31,10 @@ namespace SIAHTTPS.APIs
             {
                 aircraftList.Add(new
                 {
-
+                    AircraftId = aircraft.AircraftId,
+                    Model = aircraft.Model,
+                    Brand = aircraft.Brand,
+                    FlightNumber = aircraft.FlightNumber
                 });
             }
 
