@@ -22,6 +22,10 @@ namespace SIAHTTPS.Data
             : base(options)
         {
         }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(@"Server=DESKTOP-2CPI6TQ\SQLEXPRESS;database=SIAHTTPS;Trusted_Connection=True;MultipleActiveResultSets=True");
+        }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
