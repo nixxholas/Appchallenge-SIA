@@ -4,7 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 using SIAHTTPS.Models;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace SIAHTTPS.Data
 {
@@ -22,6 +24,11 @@ namespace SIAHTTPS.Data
             : base(options)
         {
         }
+
+        public ApplicationDbContext()
+        {
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Server=DESKTOP-2CPI6TQ\SQLEXPRESS;database=SIAHTTPS;Trusted_Connection=True;MultipleActiveResultSets=True");
@@ -29,6 +36,11 @@ namespace SIAHTTPS.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            foreach (var entity in builder.Model.GetEntityTypes())
+            {
+                entity.Relational().TableName = entity.DisplayName();
+            }
+
             base.OnModelCreating(builder);
             // Customize the ASP.NET Identity model and override the defaults if needed.
             // For example, you can rename the ASP.NET Identity table names and more.
