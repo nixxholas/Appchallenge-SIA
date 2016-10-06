@@ -1,10 +1,10 @@
+using Microsoft.AspNetCore.Mvc;
+using SIAHTTPS.Data;
+using SIAHTTPS.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using SIAHTTPS.Data;
-using SIAHTTPS.Models;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -105,21 +105,154 @@ namespace SIAHTTPS.APIs
             return new JsonResult(result);
         }
 
+        // GET api/GetFlightsBetween/DateFrom&DateTo
+        // Allows us to obtain all flight data from one date to another
+        [HttpGet("GetFlightsBetween/{BEF}&{AFT}")]
+        public async Task<IActionResult> GetFlightsBetween(string BEF, string AFT)
+        {
+            List<object> flights = new List<object>();
+
+            try
+            {
+                DateTime Start = DateTime.ParseExact(BEF, "ddMMyyyy", null);
+                DateTime End = DateTime.ParseExact(AFT, "ddMMyyyy", null);
+
+                var foundFlights = _database.Flights
+                    .Where(input => input.TakeoffDT >= Start)
+                    .Where(input => input.TakeoffDT <= End);
+
+               foreach (var flight in foundFlights)
+                {
+                    flights.Add(new
+                    {
+                        FlightId = flight.FlightId,
+                        TakeOffDT = flight.TakeoffDT,
+                        TouchDownDT = flight.TouchDownDT,
+                        ETA = flight.ETA,
+                        FlightTickets = flight.FlightTickets
+                    });
+                }
+
+                return new JsonResult(flights);
+            } catch (Exception e)
+            {
+                //Create a fail message anonymous object
+                //This anonymous object only has one Message property 
+                //which contains a simple string message
+                object httpFailRequestResultMessage =
+                                    new
+                                    {
+                                        Message = "Unable to obtain the information due to" +
+                                    "the following error:" + e.ToString() + "."
+                                    };
+                //Return a bad http response message to the client
+                return BadRequest(httpFailRequestResultMessage);
+            }   
+        }
+
+        // GET api/GetFlightsBefore/DateFrom
+        // Allows us to obtain all flight data before a specific date
+        [HttpGet("GetFlightsBefore/{BEF}")]
+        public async Task<IActionResult> GetFlightsBetween(string BEF)
+        {
+            List<object> flights = new List<object>();
+
+            try
+            {
+                DateTime Start = DateTime.ParseExact(BEF, "ddMMyyyy", null);
+
+                var foundFlights = _database.Flights
+                    .Where(input => input.TakeoffDT < Start);
+
+                foreach (var flight in foundFlights)
+                {
+                    flights.Add(new
+                    {
+                        FlightId = flight.FlightId,
+                        TakeOffDT = flight.TakeoffDT,
+                        TouchDownDT = flight.TouchDownDT,
+                        ETA = flight.ETA,
+                        FlightTickets = flight.FlightTickets
+                    });
+                }
+
+                return new JsonResult(flights);
+            }
+            catch (Exception e)
+            {
+                //Create a fail message anonymous object
+                //This anonymous object only has one Message property 
+                //which contains a simple string message
+                object httpFailRequestResultMessage =
+                                    new
+                                    {
+                                        Message = "Unable to obtain the information due to" +
+                                    "the following error:" + e.ToString() + "."
+                                    };
+                //Return a bad http response message to the client
+                return BadRequest(httpFailRequestResultMessage);
+            }
+        }
+
+        // GET api/GetFlightsAfter/Datefrom
+        // Allows us to obtain all flight data after a particular date
+        [HttpGet("GetFlightsBefore/{BEF}")]
+        public async Task<IActionResult> GetFlightsAfter(string AFT)
+        {
+            List<object> flights = new List<object>();
+
+            try
+            {
+                DateTime Start = DateTime.ParseExact(AFT, "ddMMyyyy", null);
+
+                var foundFlights = _database.Flights
+                    .Where(input => input.TakeoffDT > Start);
+
+                foreach (var flight in foundFlights)
+                {
+                    flights.Add(new
+                    {
+                        FlightId = flight.FlightId,
+                        TakeOffDT = flight.TakeoffDT,
+                        TouchDownDT = flight.TouchDownDT,
+                        ETA = flight.ETA,
+                        FlightTickets = flight.FlightTickets
+                    });
+                }
+
+                return new JsonResult(flights);
+            }
+            catch (Exception e)
+            {
+                //Create a fail message anonymous object
+                //This anonymous object only has one Message property 
+                //which contains a simple string message
+                object httpFailRequestResultMessage =
+                                    new
+                                    {
+                                        Message = "Unable to obtain the information due to" +
+                                    "the following error:" + e.ToString() + "."
+                                    };
+                //Return a bad http response message to the client
+                return BadRequest(httpFailRequestResultMessage);
+            }
+        }
+
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public async void Post([FromBody]string value)
         {
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public async void Put(int id, [FromBody]string value)
         {
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async void Delete(int id)
         {
         }
     }

@@ -62,8 +62,6 @@ namespace SIAHTTPS.Models
 
             await userManager.AddToRoleAsync(susanUser, "ADMIN");
 
-
-
             var randyUser = new ApplicationUser { UserName = "88883", Email = "RANDY@EMU.COM", FullName = "RANDY" };
             randyUser.PasswordHash = ph.HashPassword(randyUser, "P@ssw0rd"); //More complex password
             await userManager.CreateAsync(randyUser);
