@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>-</title>
+        <script src="./js/d3.js"></script>
+        <script src="./js/jquery-3.1.1.js"></script>
+        <script src="./js/jquery-ui.js"></script>
+        <script src="./js/bootstrap.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <link rel="stylesheet" href="./css/bootstrap.css">
+        <link rel="stylesheet" href="./css/jquery-ui.css">
+        <style>
+.title {
+    font-size: 2em;
+    text-align: center;
+    display: block;
+    margin-bottom: 1em;
+}
+.flightNo, .flightDetails, .flightPrice {
+    text-align: center;
+}
+        </style>
+        <script>
+$.ajax("./GetFlightsRoute/SIN&SIN");
+        </script>
+    </head>
+
+    <body>
+        <div class="container flights">
+            <span class="title">Which timing is better?</span>
+            <div class="row flight">
+                <div class="col-xs-3 flightNo">
+                    SQ123
+                </div>
+                <div class="col-xs-6 flightDetails">
+                    <div class="col-xs-6 start">16:00</div>
+                    <div class="col-xs-6 end">11:00</div>
+                    <div class="col-xs-6 from">SIN</div>
+                    <div class="col-xs-6 to">HND</div>
+                </div>
+                <div class="col-xs-3 flightPrice">
+                    $700
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
