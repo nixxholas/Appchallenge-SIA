@@ -20,15 +20,10 @@ namespace SIAHTTPS.Data
         public DbSet<FlightTickets> FlightTickets { get; set; }
         public DbSet<Terminal> Terminals { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
-        {
-        }
-
-        public ApplicationDbContext()
-        {
-        }
-
+        //public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        //    : base(options)
+        //{
+        //}
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Server=DIT-NB1530078\SQLEXPRESS;database=SIA;Trusted_Connection=True;MultipleActiveResultSets=True");
@@ -41,7 +36,6 @@ namespace SIAHTTPS.Data
                 entity.Relational().TableName = entity.DisplayName();
             }
 
-            base.OnModelCreating(builder);
             // Customize the ASP.NET Identity model and override the defaults if needed.
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
@@ -49,7 +43,7 @@ namespace SIAHTTPS.Data
             // -------------- Defining Aircraft Entity --------------- //
             builder.Entity<Aircraft>()
                 .HasKey(input => input.AircraftId)
-                .HasName("PrimaryKey_Aircraft_AircraftId");
+                .HasName("PrimaryKey_Aircrafts_AircraftId");
 
             builder.Entity<Aircraft>()
                 .Property(input => input.AircraftId)
@@ -80,7 +74,7 @@ namespace SIAHTTPS.Data
             // Enforce Unique Constraint on FlightNumber
             builder.Entity<Aircraft>()
                 .HasIndex(input => input.FlightNumber).IsUnique()
-                .HasName("Aircraft_FlightNumber_UniqueConstraint");
+                .HasName("Aircrafts_FlightNumber_UniqueConstraint");
 
             // Foreign Relationships
             builder.Entity<Aircraft>()
@@ -93,7 +87,7 @@ namespace SIAHTTPS.Data
             // -------------- Defining Airport Entity --------------- //
             builder.Entity<Airport>()
                 .HasKey(input => input.AirportId)
-                .HasName("PrimaryKey_Airport_AirportId");
+                .HasName("PrimaryKey_Airports_AirportId");
 
             builder.Entity<Airport>()
                 .Property(input => input.AirportId)
@@ -136,7 +130,7 @@ namespace SIAHTTPS.Data
             // Enforce Unique Constraint on IATACode
             builder.Entity<Airport>()
                 .HasIndex(input => input.IATACode).IsUnique()
-                .HasName("Airport_IATACode_UniqueConstraint");
+                .HasName("Airports_IATACode_UniqueConstraint");
 
             // Foreign Relationships
             builder.Entity<Airport>()
@@ -165,7 +159,7 @@ namespace SIAHTTPS.Data
             // -------------- Defining Flight Entity --------------- //
             builder.Entity<Flight>()
                 .HasKey(input => input.FlightId)
-                .HasName("PrimaryKey_Flight_FlightId");
+                .HasName("PrimaryKey_Flights_FlightId");
 
             builder.Entity<Flight>()
                 .Property(input => input.FlightId)
@@ -239,7 +233,7 @@ namespace SIAHTTPS.Data
             // -------------- Defining Terminal Entity --------------- //
             builder.Entity<Terminal>()
                 .HasKey(input => new { input.AirportId, input.TerminalId })
-                .HasName("PrimaryKey_Terminal_TerminalId");
+                .HasName("PrimaryKey_Terminals_TerminalId");
 
             builder.Entity<Terminal>()
                 .Property(input => input.TerminalId)
@@ -300,10 +294,11 @@ namespace SIAHTTPS.Data
             // Enforce Unique Constraint on TicketType
             builder.Entity<Ticket>()
                 .HasIndex(input => input.TicketType).IsUnique()
-                .HasName("Ticket_TicketType_UniqueConstraint");
+                .HasName("Tickets_TicketType_UniqueConstraint");
 
             // -------------- Ticket Entity END --------------- //
-            
+
+            base.OnModelCreating(builder);
         }
     }
 }

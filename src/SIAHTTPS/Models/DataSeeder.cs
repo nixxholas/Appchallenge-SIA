@@ -1166,6 +1166,7 @@ namespace SIAHTTPS.Models
             };
             db.Flights.Add(oldshit20);
 
+<<<<<<< HEAD
             StartTermFlights ostf20;
             ostf20 = new StartTermFlights()
             {
@@ -4480,6 +4481,13 @@ namespace SIAHTTPS.Models
                 Quantity = 2,
                 PurchaseDate = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-14)
             };
+=======
+            //FlightTicket ft1;
+            //ft1 = new FlightTicket()
+            //{
+
+            //};
+>>>>>>> 86209f0... APIs: Workable Rate
 
             
     }

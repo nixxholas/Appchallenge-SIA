@@ -16,14 +16,9 @@ namespace SIAHTTPS.APIs
     [Route("api/Airports")]
     public class AirportsController : ControllerExtension
     {
-        public AirportsController(UserManager<ApplicationUser> userManager) : base(userManager)
-        {
-
-        }
-
         // GET: api/Airports
         [HttpGet]
-        public async Task<JsonResult> Get()
+        public JsonResult Get()
         {
             List<object> airportList = new List<object>();
             var airports = _database.Airports

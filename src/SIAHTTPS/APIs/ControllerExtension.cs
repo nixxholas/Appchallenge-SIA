@@ -20,18 +20,18 @@ namespace SIAHTTPS.APIs
         private readonly ISmsSender _smsSender;
         private readonly ILogger _logger;
 
-        //public ApplicationDbContext Database { get; }
+        //public ApplicationDbContext _database { get; }
 
         // The Extension Class Constructor
         public ControllerExtension(ApplicationDbContext database)
         {
-            _database = database;
+            _database = new ApplicationDbContext();
         }
 
         //Default constructor required
         public ControllerExtension()
         {
-
+            _database = new ApplicationDbContext();
         }
 
         public ControllerExtension(UserManager<ApplicationUser> userManager)
