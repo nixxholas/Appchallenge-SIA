@@ -15,7 +15,8 @@ namespace SIAHTTPS.Data
         public DbSet<Aircraft> Aircrafts { get; set; }
         public DbSet<AircraftFlights> AircraftFlights { get; set; }
         public DbSet<Airport> Airports { get; set; }
-        public DbSet<AirportFlights> AirportFlights { get; set; }
+        public DbSet<StartTermFlights> StartTermFlights { get; set; }
+        public DbSet<EndTermFlights> EndTermFlights { get; set; }
         public DbSet<Flight> Flights { get; set; }
         public DbSet<FlightTickets> FlightTickets { get; set; }
         public DbSet<Terminal> Terminals { get; set; }
@@ -146,20 +147,23 @@ namespace SIAHTTPS.Data
                 .WithOne(input => input.Airport)
                 .HasForeignKey(input => input.AirportId);
 
-            builder.Entity<Airport>()
-                .HasMany(input => input.AirportFlights)
-                .WithOne(input => input.Airport)
-                .HasForeignKey(input => input.AirportId);
-
             // -------------- Airport Entity END --------------- //
 
-            // -------------- Defining AirportFlights Entity --------------- //
+            // -------------- Defining StartTermFlights Entity --------------- //
 
-            builder.Entity<AirportFlights>()
-                .HasKey(input => new { input.AirportId, input.TerminalId, input.FlightId })
-                .HasName("AirportFlights_CompositeKey");
-            
-            // -------------- AirportFlights Entity END --------------- //
+            builder.Entity<StartTermFlights>()
+                .HasKey(input => new { input.TerminalId, input.FlightId})
+                .HasName("StartTermFlights_CompositeKey");
+
+            // -------------- StartTermFlights Entity END --------------- //
+
+            // -------------- Defining EndTermFlights Entity --------------- //
+
+            builder.Entity<EndTermFlights>()
+                .HasKey(input => new { input.TerminalId, input.FlightId })
+                .HasName("EndTermFlights_CompositeKey");
+
+            // -------------- EndTermFlights Entity END --------------- //
 
             // -------------- Defining Flight Entity --------------- //
             builder.Entity<Flight>()
@@ -190,16 +194,13 @@ namespace SIAHTTPS.Data
                 .IsRequired();
 
             // Foreign Relationships
+            builder.Entity<Flight>()
+                .HasOne(input => input.StartTermFlight)
+                .WithOne(input => input.Flight);
 
             builder.Entity<Flight>()
-                .HasMany(input => input.AirportFlights)
-                .WithOne(input => input.Flight)
-                .HasForeignKey(input => input.FlightId);
-
-            builder.Entity<Flight>()
-                .HasMany(input => input.AircraftFlights)
-                .WithOne(input => input.Flight)
-                .HasForeignKey(input => input.FlightId);
+                .HasOne(input => input.EndTermFlight)
+                .WithOne(input => input.Flight);
 
             builder.Entity<Flight>()
                 .HasMany(input => input.FlightTickets)
@@ -251,6 +252,17 @@ namespace SIAHTTPS.Data
                 .HasColumnName("AirportId")
                 .HasColumnType("bigint")
                 .IsRequired();
+
+            // Foreign Key Relationships
+            builder.Entity<Terminal>()
+                .HasMany(input => input.StartTermFlights)
+                .WithOne(input => input.Terminal)
+                .HasForeignKey(input => input.TerminalId);
+
+            builder.Entity<Terminal>()
+                .HasMany(input => input.EndTermFlights)
+                .WithOne(input => input.Terminal)
+                .HasForeignKey(input => input.TerminalId);
             
             // -------------- Terminal Entity END --------------- //
 

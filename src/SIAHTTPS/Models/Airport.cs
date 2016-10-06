@@ -8,12 +8,11 @@ namespace SIAHTTPS.Models
     public class Airport
     {
         public long AirportId { get; set; }
-        public String IATACode { get; set; }
-        public String City { get; set; }
-        public String Country { get; set; }
-        public String CountryCode { get; set; }
-        public String CountryAbbreviation { get; set; }
+        public string IATACode { get; set; }
+        public string City { get; set; }
+        public string Country { get; set; }
+        public string CountryCode { get; set; }
+        public string CountryAbbreviation { get; set; }
         public List<Terminal> Terminals { get; set; }
-        public List<AirportFlights> AirportFlights { get; set; }
     }
 }

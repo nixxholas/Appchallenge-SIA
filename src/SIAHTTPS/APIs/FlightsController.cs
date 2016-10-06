@@ -32,9 +32,9 @@ namespace SIAHTTPS.APIs
                 }
 
                 List<long> airportIdList = new List<long>();
-                List<AirportFlights> airportflights = flight.AirportFlights;
+                List<StartTermFlights> airportflights = flight.AirportFlights;
 
-                foreach (AirportFlights apf in airportflights)
+                foreach (StartTermFlights apf in airportflights)
                 {
                     airportIdList.Add(apf.AirportId);
                 }
@@ -84,10 +84,10 @@ namespace SIAHTTPS.APIs
                 aircraftIds.Add(af.AircraftId);
             }
 
-            List<AirportFlights> airportFlights = aflight.AirportFlights;
+            List<StartTermFlights> airportFlights = aflight.AirportFlights;
 
             List<long> airportIds = new List<long>();
-            foreach (AirportFlights apf in airportFlights)
+            foreach (StartTermFlights apf in airportFlights)
             {
                 airportIds.Add(apf.AirportId);
             }

@@ -11,7 +11,8 @@ namespace SIAHTTPS.Models
         public DateTime ETA { get; set; }
         public DateTime TakeoffDT { get; set; }
         public DateTime TouchDownDT { get; set; }
-        public List<AirportFlights> AirportFlights { get; set; }
+        public StartTermFlights StartTermFlight { get; set; }
+        public EndTermFlights EndTermFlight { get; set; }
         public List<AircraftFlights> AircraftFlights { get; set; }
         public List<FlightTickets> FlightTickets { get; set; }
     }
