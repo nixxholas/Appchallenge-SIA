@@ -240,6 +240,9 @@ C:\Users\nixho\Source\Repos\SIAHTTPS\src\SIAHTTPS\Controllers\AccountController.
 C:\Users\nixho\Source\Repos\SIAHTTPS\src\SIAHTTPS\Controllers\HomeController.cs
 C:\Users\nixho\Source\Repos\SIAHTTPS\src\SIAHTTPS\Controllers\ManageController.cs
 C:\Users\nixho\Source\Repos\SIAHTTPS\src\SIAHTTPS\Data\ApplicationDbContext.cs
+C:\Users\nixho\Source\Repos\SIAHTTPS\src\SIAHTTPS\Migrations\20161006011501_setupdb.cs
+C:\Users\nixho\Source\Repos\SIAHTTPS\src\SIAHTTPS\Migrations\20161006011501_setupdb.Designer.cs
+C:\Users\nixho\Source\Repos\SIAHTTPS\src\SIAHTTPS\Migrations\ApplicationDbContextModelSnapshot.cs
 C:\Users\nixho\Source\Repos\SIAHTTPS\src\SIAHTTPS\Models\Aircraft.cs
 C:\Users\nixho\Source\Repos\SIAHTTPS\src\SIAHTTPS\Models\AircraftFlights.cs
 C:\Users\nixho\Source\Repos\SIAHTTPS\src\SIAHTTPS\Models\Airport.cs
