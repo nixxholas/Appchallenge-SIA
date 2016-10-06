@@ -32,7 +32,7 @@ namespace SIAHTTPS.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=DESKTOP-2CPI6TQ\SQLEXPRESS;database=SIAHTTPS;Trusted_Connection=True;MultipleActiveResultSets=True");
+            optionsBuilder.UseSqlServer(@"Server=DESKTOP-2CPI6TQ\SQLEXPRESS;database=SIA;Trusted_Connection=True;MultipleActiveResultSets=True");
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -254,15 +254,15 @@ namespace SIAHTTPS.Data
                 .IsRequired();
 
             // Foreign Key Relationships
-            builder.Entity<Terminal>()
-                .HasMany(input => input.StartTermFlights)
-                .WithOne(input => input.Terminal)
-                .HasForeignKey(input => input.TerminalId);
+            //builder.Entity<Terminal>()
+            //    .HasMany(input => input.StartTermFlights)
+            //    .WithOne(input => input.Terminal)
+            //    .HasForeignKey(input => input.TerminalId);
 
-            builder.Entity<Terminal>()
-                .HasMany(input => input.EndTermFlights)
-                .WithOne(input => input.Terminal)
-                .HasForeignKey(input => input.TerminalId);
+            //builder.Entity<Terminal>()
+            //    .HasMany(input => input.EndTermFlights)
+            //    .WithOne(input => input.Terminal)
+            //    .HasForeignKey(input => input.TerminalId);
             
             // -------------- Terminal Entity END --------------- //
 

@@ -32,12 +32,12 @@ namespace SIAHTTPS.APIs
                 }
 
                 List<long> airportIdList = new List<long>();
-                List<StartTermFlights> airportflights = flight.AirportFlights;
+                //List<StartTermFlights> airportflights = flight.AirportFlights;
 
-                foreach (StartTermFlights apf in airportflights)
-                {
-                    airportIdList.Add(apf.AirportId);
-                }
+                //foreach (StartTermFlights apf in airportflights)
+                //{
+                //    airportIdList.Add(apf.AirportId);
+                //}
 
                 List<FlightTickets> flighttickets = flight.FlightTickets;
                 List<long> ticketIds = new List<long>();
@@ -84,13 +84,13 @@ namespace SIAHTTPS.APIs
                 aircraftIds.Add(af.AircraftId);
             }
 
-            List<StartTermFlights> airportFlights = aflight.AirportFlights;
+            //List<StartTermFlights> airportFlights = aflight.AirportFlights;
 
             List<long> airportIds = new List<long>();
-            foreach (StartTermFlights apf in airportFlights)
-            {
-                airportIds.Add(apf.AirportId);
-            }
+            //foreach (StartTermFlights apf in airportFlights)
+            //{
+            //    airportIds.Add(apf.AirportId);
+            //}
 
             object result = new
             {
@@ -103,6 +103,49 @@ namespace SIAHTTPS.APIs
             };
 
             return new JsonResult(result);
+        }
+
+        // GET api/GetFlightsRoute/FromAirport&ToAirport
+        // Allows us to obtain all flight data from one date to another
+        [HttpGet("GetFlightsRoute/{FROM}&{TO}")]
+        public async Task<IActionResult> GetFlightsRoute(string FROM, string TO) // Airport Code, i.e. SIN
+        {
+            List<object> flights = new List<object>();
+
+            try
+            {
+                var foundFlights = _database.Flights
+                    .Where(input => input.StartTermFlight.Terminal.Airport.IATACode == FROM)
+                    .Where(input => input.EndTermFlight.Terminal.Airport.IATACode == TO);
+
+                foreach (var flight in foundFlights)
+                {
+                    flights.Add(new
+                    {
+                        FlightId = flight.FlightId,
+                        TakeOffDT = flight.TakeoffDT,
+                        TouchDownDT = flight.TouchDownDT,
+                        ETA = flight.ETA,
+                        FlightTickets = flight.FlightTickets
+                    });
+                }
+
+                return new JsonResult(flights);
+            }
+            catch (Exception e)
+            {
+                //Create a fail message anonymous object
+                //This anonymous object only has one Message property 
+                //which contains a simple string message
+                object httpFailRequestResultMessage =
+                                    new
+                                    {
+                                        Message = "Unable to obtain the information due to" +
+                                    "the following error:" + e.ToString() + "."
+                                    };
+                //Return a bad http response message to the client
+                return BadRequest(httpFailRequestResultMessage);
+            }
         }
 
         // GET api/GetFlightsBetween/DateFrom&DateTo

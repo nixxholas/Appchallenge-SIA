@@ -31,6 +31,17 @@ namespace SIAHTTPS.APIs
 
             foreach (var airport in airports)
             {
+                //List<object> outgoingFlights = new List<object>();
+                //List<object> incomingFlights = new List<object>();
+
+                //foreach (var terminal in airport.Terminals)
+                //{
+                //    foreach (var startTermFlight in terminal.StartTermFlights)
+                //    {
+                        
+                //    }
+                //}
+
                 airportList.Add(new
                 {
                     AirportId = airport.AirportId,
@@ -39,8 +50,8 @@ namespace SIAHTTPS.APIs
                     City = airport.City,
                     CountryCode = airport.CountryCode,
                     CountryAbbreviation = airport.CountryAbbreviation,
-                    AirportFlights = airport.AirportFlights,
-                    Terminals = airport.Terminals
+                    //FlightsOutgoing = 
+                    //Terminals = airport.Terminals
                 });
             }
 
@@ -54,7 +65,7 @@ namespace SIAHTTPS.APIs
             try
             {
                 var foundAirport = _database.Airports
-                    .Include(input => input.AirportFlights)
+                   // .Include(input => input.AirportFlights)
                     .Include(input => input.Terminals)
                     .Where(input => input.IATACode == IATA).Single();
 
@@ -66,7 +77,7 @@ namespace SIAHTTPS.APIs
                     City = foundAirport.City,
                     CountryCode = foundAirport.CountryCode,
                     CountryAbbreviation = foundAirport.CountryAbbreviation,
-                    AirportFlights = foundAirport.AirportFlights,
+                    //AirportFlights = foundAirport.AirportFlights,
                     Terminals = foundAirport.Terminals
                 };
 
@@ -96,7 +107,7 @@ namespace SIAHTTPS.APIs
             {
                 List<object> airportFlightsList = new List<object>();
                 var foundAirport = _database.Airports
-                    .Include(input => input.AirportFlights)
+                    //.Include(input => input.AirportFlights)
                     .Include(input => input.Terminals)
                     .Where(input => input.IATACode == IATA)
                     .Single();
@@ -106,16 +117,16 @@ namespace SIAHTTPS.APIs
                  * Airports -> Terminals -> Flights
                  */
 
-                foreach (var airportFlight in foundAirport.AirportFlights)
-                {
-                    airportFlightsList.Add(new
-                    {
-                        // AirportId = airportFlight.AirportId,
-                        TerminalId = airportFlight.TerminalId,
-                        Terminal = airportFlight.Terminal.TerminalName,
-                        Flight = airportFlight.Flight
-                    });
-                }
+                //foreach (var airportFlight in foundAirport.AirportFlights)
+                //{
+                //    airportFlightsList.Add(new
+                //    {
+                //        // AirportId = airportFlight.AirportId,
+                //        TerminalId = airportFlight.TerminalId,
+                //        Terminal = airportFlight.Terminal.TerminalName,
+                //        Flight = airportFlight.Flight
+                //    });
+                //}
 
                 //var response = new
                 //{
