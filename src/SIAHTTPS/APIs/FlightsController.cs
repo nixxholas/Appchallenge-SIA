@@ -24,12 +24,12 @@ namespace SIAHTTPS.APIs
             foreach (var flight in flights)
             {
                 List<int> aircraftIds = new List<int>();
-                List<AircraftFlights> aircraftflights = flight.AircraftFlights;
+                //List<AircraftFlights> aircraftflights = flight.AircraftFlights;
 
-                foreach (AircraftFlights af in aircraftflights)
-                {
-                    aircraftIds.Add(af.AircraftId);
-                }
+                //foreach (AircraftFlights af in aircraftflights)
+                //{
+                //    aircraftIds.Add(af.AircraftId);
+                //}
 
                 List<long> airportIdList = new List<long>();
                 //List<StartTermFlights> airportflights = flight.AirportFlights;
@@ -75,31 +75,16 @@ namespace SIAHTTPS.APIs
             var aflight = _database.Flights
                 .Where(input => input.FlightId == id)
                 .Single();
-
-            List<AircraftFlights> aircraftFlights = aflight.AircraftFlights;
-
-            List<int> aircraftIds = new List<int>();
-            foreach (AircraftFlights af in aircraftFlights)
-            {
-                aircraftIds.Add(af.AircraftId);
-            }
-
-            //List<StartTermFlights> airportFlights = aflight.AirportFlights;
-
-            List<long> airportIds = new List<long>();
-            //foreach (StartTermFlights apf in airportFlights)
-            //{
-            //    airportIds.Add(apf.AirportId);
-            //}
-
+            
             object result = new
             {
                 flightId = aflight.FlightId,
                 eta = aflight.ETA,
                 takeOffDt = aflight.TakeoffDT,
                 touchdownDt = aflight.TouchDownDT,
-                aircraftIds = aircraftIds,
-                airportIds = airportIds
+                flightNumber = aflight.AircraftFlight.Aircraft.FlightNumber,
+                startAirportId = aflight.StartTermFlight.Terminal.Airport.IATACode,
+                endAirportId = aflight.EndTermFlight.Terminal.Airport.IATACode
             };
 
             return new JsonResult(result);
@@ -131,6 +116,144 @@ namespace SIAHTTPS.APIs
                 }
 
                 return new JsonResult(flights);
+            }
+            catch (Exception e)
+            {
+                //Create a fail message anonymous object
+                //This anonymous object only has one Message property 
+                //which contains a simple string message
+                object httpFailRequestResultMessage =
+                                    new
+                                    {
+                                        Message = "Unable to obtain the information due to" +
+                                    "the following error:" + e.ToString() + "."
+                                    };
+                //Return a bad http response message to the client
+                return BadRequest(httpFailRequestResultMessage);
+            }
+        }
+
+        // GET api/GetRouteTicketHistory/FlightNumber
+        // Allows us to obtain all flight data from one date to another
+        [HttpGet("GetRouteTicketHistory/{FN}")]
+        public async Task<IActionResult> GetRouteTicketHistory(string FN) // Flight Number i.e. SQ873
+        {
+            List<object> tickets = new List<object>();
+
+            try
+            {
+                var foundTickets = _database.FlightTickets
+                    .Where(input => input.Flight.AircraftFlight.Aircraft.FlightNumber.Equals(FN))
+                    .Where(input => input.Flight.TakeoffDT < DateTime.Now);
+
+                foreach (var ticket in foundTickets)
+                {
+                    tickets.Add(new
+                    {
+                        Flight = ticket.Flight,
+                        FlightNumber = ticket.Flight.AircraftFlight.Aircraft.FlightNumber,
+                        TicketType = ticket.Ticket.TicketType,
+                        ETA = ticket.Flight.ETA,
+                        TouchDownDT = ticket.Flight.TouchDownDT,
+                        Price = ticket.Price,
+                        Quantity = ticket.Quantity
+                        //FlightTickets = flight.FlightTickets
+                    });
+                }
+
+                return new JsonResult(tickets);
+            }
+            catch (Exception e)
+            {
+                //Create a fail message anonymous object
+                //This anonymous object only has one Message property 
+                //which contains a simple string message
+                object httpFailRequestResultMessage =
+                                    new
+                                    {
+                                        Message = "Unable to obtain the information due to" +
+                                    "the following error:" + e.ToString() + "."
+                                    };
+                //Return a bad http response message to the client
+                return BadRequest(httpFailRequestResultMessage);
+            }
+        }
+
+        // GET api/GetRouteTicketHistory/FlightNumber
+        // Allows us to obtain all flight data from one date to another
+        [HttpGet("GetFlightSpecificHistory/{FN}&{DT}")]
+        public async Task<IActionResult> GetFlightSpecificHistory(string FN, string DT) // Flight Number i.e. SQ873
+        {
+            List<object> tickets = new List<object>();
+
+            try
+            {
+                DateTime DateChosen = DateTime.ParseExact(DT, "ddMMyyyy", null);
+
+                var foundTickets = _database.FlightTickets
+                    .Where(input => input.Flight.AircraftFlight.Aircraft.FlightNumber.Equals(FN))
+                    .Where(input => input.Flight.TakeoffDT < DateChosen);
+
+                foreach (var ticket in foundTickets)
+                {
+                    tickets.Add(new
+                    {
+                        Flight = ticket.Flight,
+                        FlightNumber = ticket.Flight.AircraftFlight.Aircraft.FlightNumber,
+                        TicketType = ticket.Ticket.TicketType,
+                        ETA = ticket.Flight.ETA,
+                        TouchDownDT = ticket.Flight.TouchDownDT,
+                        Price = ticket.Price,
+                        Quantity = ticket.Quantity
+                        //FlightTickets = flight.FlightTickets
+                    });
+                }
+
+                return new JsonResult(tickets);
+            }
+            catch (Exception e)
+            {
+                //Create a fail message anonymous object
+                //This anonymous object only has one Message property 
+                //which contains a simple string message
+                object httpFailRequestResultMessage =
+                                    new
+                                    {
+                                        Message = "Unable to obtain the information due to" +
+                                    "the following error:" + e.ToString() + "."
+                                    };
+                //Return a bad http response message to the client
+                return BadRequest(httpFailRequestResultMessage);
+            }
+        }
+
+        // GET api/GetRouteAverageQty/FromAirport&ToAirport
+        // Allows us to obtain all flight data from one date to another
+        [HttpGet("GetRouteQts/{FROM}&{TO}")]
+        public async Task<IActionResult> GetRouteQts(string FROM, string TO) // Airport Code, i.e. SIN
+        {
+            List<object> tickets = new List<object>();
+
+            try
+            {
+                var foundTickets = _database.FlightTickets
+                    .Where(input => input.Flight.StartTermFlight.Terminal.Airport.IATACode == FROM)
+                    .Where(input => input.Flight.EndTermFlight.Terminal.Airport.IATACode == TO);
+
+                foreach (var ticket in foundTickets)
+                {
+                    tickets.Add(new
+                    {
+                        Flight = ticket.Flight,
+                        FlightNumber = ticket.Flight.AircraftFlight.Aircraft.FlightNumber,
+                        TicketType = ticket.Ticket.TicketType,
+                        ETA = ticket.Flight.ETA,
+                        TouchDownDT = ticket.Flight.TouchDownDT,
+                        //FlightTickets = flight.FlightTickets
+                    });
+                }
+
+                return new JsonResult(tickets);
             }
             catch (Exception e)
             {

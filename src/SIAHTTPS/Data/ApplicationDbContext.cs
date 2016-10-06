@@ -83,6 +83,12 @@ namespace SIAHTTPS.Data
                 .HasIndex(input => input.FlightNumber).IsUnique()
                 .HasName("Aircraft_FlightNumber_UniqueConstraint");
 
+            // Foreign Relationships
+            builder.Entity<Aircraft>()
+                .HasMany(input => input.AircraftFlights)
+                .WithOne(input => input.Aircraft)
+                .HasForeignKey(input => input.AircraftId);
+           
             // -------------- Aircraft Entity END --------------- //
 
             // -------------- Defining AircraftFlights Entity --------------- //
@@ -206,6 +212,10 @@ namespace SIAHTTPS.Data
                 .HasMany(input => input.FlightTickets)
                 .WithOne(input => input.Flight)
                 .HasForeignKey(input => input.FlightId);
+
+            builder.Entity<Flight>()
+                .HasOne(input => input.AircraftFlight)
+                .WithOne(input => input.Flight);
 
             // -------------- Flight Entity END --------------- //
 
