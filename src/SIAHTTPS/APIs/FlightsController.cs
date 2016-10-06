@@ -82,7 +82,7 @@ namespace SIAHTTPS.APIs
                 eta = aflight.ETA,
                 takeOffDt = aflight.TakeoffDT,
                 touchdownDt = aflight.TouchDownDT,
-                flightNumber = aflight.AircraftFlight.Aircraft.FlightNumber,
+                flightNumber = aflight.Aircraft.FlightNumber,
                 startAirportId = aflight.StartTermFlight.Terminal.Airport.IATACode,
                 endAirportId = aflight.EndTermFlight.Terminal.Airport.IATACode
             };
@@ -143,7 +143,7 @@ namespace SIAHTTPS.APIs
             try
             {
                 var foundTickets = _database.FlightTickets
-                    .Where(input => input.Flight.AircraftFlight.Aircraft.FlightNumber.Equals(FN))
+                    .Where(input => input.Flight.Aircraft.FlightNumber.Equals(FN))
                     .Where(input => input.Flight.TakeoffDT < DateTime.Now);
 
                 foreach (var ticket in foundTickets)
@@ -151,7 +151,7 @@ namespace SIAHTTPS.APIs
                     tickets.Add(new
                     {
                         Flight = ticket.Flight,
-                        FlightNumber = ticket.Flight.AircraftFlight.Aircraft.FlightNumber,
+                        FlightNumber = ticket.Flight.Aircraft.FlightNumber,
                         TicketType = ticket.Ticket.TicketType,
                         ETA = ticket.Flight.ETA,
                         TouchDownDT = ticket.Flight.TouchDownDT,
@@ -191,7 +191,7 @@ namespace SIAHTTPS.APIs
                 DateTime DateChosen = DateTime.ParseExact(DT, "ddMMyyyy", null);
 
                 var foundTickets = _database.FlightTickets
-                    .Where(input => input.Flight.AircraftFlight.Aircraft.FlightNumber.Equals(FN))
+                    .Where(input => input.Flight.Aircraft.FlightNumber.Equals(FN))
                     .Where(input => input.Flight.TakeoffDT < DateChosen);
 
                 foreach (var ticket in foundTickets)
@@ -199,7 +199,7 @@ namespace SIAHTTPS.APIs
                     tickets.Add(new
                     {
                         Flight = ticket.Flight,
-                        FlightNumber = ticket.Flight.AircraftFlight.Aircraft.FlightNumber,
+                        FlightNumber = ticket.Flight.Aircraft.FlightNumber,
                         TicketType = ticket.Ticket.TicketType,
                         ETA = ticket.Flight.ETA,
                         TouchDownDT = ticket.Flight.TouchDownDT,
@@ -245,7 +245,7 @@ namespace SIAHTTPS.APIs
                     tickets.Add(new
                     {
                         Flight = ticket.Flight,
-                        FlightNumber = ticket.Flight.AircraftFlight.Aircraft.FlightNumber,
+                        FlightNumber = ticket.Flight.Aircraft.FlightNumber,
                         TicketType = ticket.Ticket.TicketType,
                         ETA = ticket.Flight.ETA,
                         TouchDownDT = ticket.Flight.TouchDownDT,

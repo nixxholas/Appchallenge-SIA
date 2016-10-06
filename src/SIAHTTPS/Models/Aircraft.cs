@@ -11,6 +11,6 @@ namespace SIAHTTPS.Models
         public string Model { get; set; }
         public string Brand { get; set; }
         public string FlightNumber { get; set; }  // SQ 872
-        public List<AircraftFlights> AircraftFlights { get; set; }
+        public List<Flight> Flights { get; set; }
     }
 }

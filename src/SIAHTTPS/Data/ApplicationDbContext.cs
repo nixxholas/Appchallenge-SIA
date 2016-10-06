@@ -13,7 +13,6 @@ namespace SIAHTTPS.Data
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Aircraft> Aircrafts { get; set; }
-        public DbSet<AircraftFlights> AircraftFlights { get; set; }
         public DbSet<Airport> Airports { get; set; }
         public DbSet<StartTermFlights> StartTermFlights { get; set; }
         public DbSet<EndTermFlights> EndTermFlights { get; set; }
@@ -85,20 +84,12 @@ namespace SIAHTTPS.Data
 
             // Foreign Relationships
             builder.Entity<Aircraft>()
-                .HasMany(input => input.AircraftFlights)
+                .HasMany(input => input.Flights)
                 .WithOne(input => input.Aircraft)
                 .HasForeignKey(input => input.AircraftId);
            
             // -------------- Aircraft Entity END --------------- //
-
-            // -------------- Defining AircraftFlights Entity --------------- //
-
-            builder.Entity<AircraftFlights>()
-                .HasKey(input => new { input.AircraftId, input.FlightId })
-                .HasName("AircraftFlights_CompositeKey");
-
-            // -------------- AircraftFlights Entity END --------------- //
-
+            
             // -------------- Defining Airport Entity --------------- //
             builder.Entity<Airport>()
                 .HasKey(input => input.AirportId)
@@ -214,8 +205,9 @@ namespace SIAHTTPS.Data
                 .HasForeignKey(input => input.FlightId);
 
             builder.Entity<Flight>()
-                .HasOne(input => input.AircraftFlight)
-                .WithOne(input => input.Flight);
+                .HasOne(input => input.Aircraft)
+                .WithMany(input => input.Flights)
+                .HasForeignKey(input => input.AircraftId);
 
             // -------------- Flight Entity END --------------- //
 

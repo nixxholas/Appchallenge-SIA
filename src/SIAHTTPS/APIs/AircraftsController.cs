@@ -51,7 +51,7 @@ namespace SIAHTTPS.APIs
                 string flightNo = "SQ" + id;
 
                 var foundAircraft = _database.Aircrafts
-                    .Include(input => input.AircraftFlights)
+                    .Include(input => input.Flights)
                     .Where(input => input.FlightNumber == flightNo).Single();
 
                 var response = new
@@ -60,7 +60,7 @@ namespace SIAHTTPS.APIs
                     Brand = foundAircraft.Brand,
                     Model = foundAircraft.Model,
                     FlightNumber = foundAircraft.FlightNumber,
-                    AircraftFlights = foundAircraft.AircraftFlights
+                    Flights = foundAircraft.Flights
                 };
 
                 return new JsonResult(response);
