@@ -220,6 +220,15 @@ namespace SIAHTTPS.Models
 
             db.Aircrafts.Add(SQ018);
 
+            Aircraft SQ324;
+            SQ324 = new Aircraft()
+            {
+                Model = "777-200ER",
+                Brand = "Boeing",
+                FlightNumber = "SQ324""
+            };
+            db.Aircrafts.Add(SQ324);
+
             Airport airport1;
             airport1 = new Airport()
             {
@@ -256,39 +265,550 @@ namespace SIAHTTPS.Models
 
             db.Airports.Add(airport3);
 
-            Ticket ticket1;
-            ticket1 = new Ticket()
+            Airport airport4;
+            airport4 = new Airport()
+            {
+                IATACode = "AMS",
+                Country = "Netherlands",
+                City = "Amsterdam",
+                CountryCode = "+31",
+                CountryAbbreviation = "AN"
+            };
+            db.Airports.Add(airport4);
+
+            Ticket firstClass;
+            firstClass = new Ticket()
             {
                 TicketType = "First Class",
                 TicketName = ""
             };
-            db.Tickets.Add(ticket1);
+            db.Tickets.Add(firstClass);
 
-            Ticket ticket2;
-            ticket2 = new Ticket()
+            Ticket business;
+            business = new Ticket()
             {
-                TicketType = "Business",
+                TicketType = "Business Class",
                 TicketName = ""
             };
-            db.Tickets.Add(ticket2);
+            db.Tickets.Add(business);
 
-            Ticket ticket3;
-            ticket3 = new Ticket()
+            Ticket suites;
+            suites = new Ticket()
             {
-                TicketType = "Economy Class",
+                TicketType = "Suites",
                 TicketName = ""
             };
-            db.Tickets.Add(ticket3);
+            db.Tickets.Add(suites);
 
-            Ticket ticket4;
-            ticket4 = new Ticket()
+            Ticket premiumEconomy;
+            premiumEconomy = new Ticket()
             {
                 TicketType = "Premium Economy Class",
                 TicketName = ""
             };
-            db.Tickets.Add(ticket4);
-            
-            db.SaveChanges();
+            db.Tickets.Add(premiumEconomy);
+
+            Ticket economy;
+            economy = new Ticket()
+            {
+                TicketType = "Economy Class",
+                TicketName = ""
+            };
+            db.Tickets.Add(economy);
+
+            Terminal terminal1;
+            changiT1 = new Terminal()
+            {
+                terminalName = "Terminal 1",
+                Airport = airport1
+            };
+            db.Terminal.Add(terminal1);
+
+            Terminal terminal2;
+            terminal2 = new Terminal()
+            {
+                terminalName = "Terminal 2",
+                Airport = airport2
+            };
+            db.Terminal.Add(terminal2);
+
+            Terminal terminal3;
+            terminal3 = new Terminal()
+            {
+                terminalName = "Terminal 3",
+                Airport = airport3
+            };
+            db.Terminal.Add(terminal3);
+
+            Terminal terminal4;
+            terminal4 = new Terminal()
+            {
+                terminalName = "Terminal 4",
+                Airport = airport4
+            };
+            db.Terminal.Add(terminal4);
+
+            Flight flight1;
+            flight1 = new Flight()
+            {
+                TakeoffDT = new DateTime(2016, 10, 10, 4, 30, 00),
+                TouchDownDT = new DateTime(2016, 10, 10, 11, 30, 00),
+                ETA = TouchDownDT - TakeoffDT,
+                StartTermFlight = new StartTermFlight()
+                {
+                    Flight = this,
+                    Terminal = terminal1
+                },
+                EndTermFllight = new EndTermFlight()
+                {
+                    Flight = this,
+                    Terminal = terminal3
+                }
+            };
+            db.Flight.Add(flight1);
+
+            Flight flight2;
+            flight2 = new Flight()
+            {
+                TakeoffDT = new DateTime(2016, 10, 6, 00, 05, 00),
+                TouchDownDT = new DateTime(2016, 10, 6, 06, 35, 00),
+                ETA = TouchDownDT - TakeoffDT,
+                StartTermFlight = new StartTermFlight()
+                {
+                    Flight = this,
+                    Terminal = terminal3
+                },
+                EndTermFlight = new EndTermFlight()
+                {
+                    flight1 = this,
+                    Terminal = terminal1
+                }
+            };
+            db.Flight.Add(flight2);
+
+            Flight flight3;
+            flight3 = new Flight()
+            {
+                TakeoffDT = new DateTime(2016, 10, 4, 11, 04, 00),
+                TouchDownDT = new DateTime(2016, 10, 5, 05, 55, 00),
+                ETA = TouchDownDT - TakeoffDT,
+                StartTermFlight = new StartTermFlight()
+                {
+                    Flight = this,
+                    Terminal = terminal4
+                },
+                EndTermFlight = new EndTermFlight()
+                {
+                    Flight = this,
+                    Terminal = terminal1
+                }
+            };
+            db.Flight.Add(flight3);
+
+            Flight flight4;
+            flight4 = new Flight()
+            {
+                TakeoffDT = new DateTime(2016, 10, 13, 08, 55, 00),
+                TouchDownDT = new DateTime(2016, 10, 13, 15, 20, 00),
+                ETA = TouchDownDT - TakeoffDT,
+                StartTermFlights = new StartTermFlights()
+                {
+                    Flight = this,
+                    Terminal = terminal4
+                },
+                EndTermFlight = new EndTermFlight()
+                {
+                    Flight = this,
+                    Terminal = terminal1
+                }
+            };
+            db.Flight.Add(flight4);
+
+            Flight oldshit1;
+            oldshit1 = new Flight()
+            {
+                TakeoffDT = new DateTime(2016, 09, 06, 00, 19, 00),
+                TouchDownDT = new DateTime(2016, 09, 06, 07, 15, 00),
+                ETA = TouchDownDT - TakeoffDT,
+                StartTermFlights = new StartTermFlights()
+                {
+                    Flight = this,
+                    Terminal = terminal
+                },
+                EndTermFlight = new EndTermFlight()
+                {
+                    Flight = this,
+                    Terminal = terminal4
+                }
+            };
+            db.Flight.Add(oldshit1);
+
+            Flight oldshit2;
+            oldshit2 = new Flight()
+            {
+                TakeoffDT = new DateTime(2016, 09, 07, 00, 14, 00),
+                TouchDownDT = new DateTime(2016, 09, 07, 06, 43, 00),
+                ETA = TouchDownDT - TakeoffDT,
+                StartTermFlights = new StartTermFlights()
+                {
+                    Flight = this,
+                    Terminal = terminal
+                },
+                EndTermFlight = new EndTermFlight()
+                {
+                    Flight = this,
+                    Terminal = terminal4
+                }
+            };
+            db.Flight.Add(oldshit2);
+
+            Flight oldshit3;
+            oldshit3 = new Flight()
+            {
+                TakeoffDT = new DateTime(2016, 09, 08, 00, 20, 00),
+                TouchDownDT = new DateTime(2016, 09, 08, 06, 32, 00),
+                ETA = TouchDownDT - TakeoffDT,
+                StartTermFlights = new StartTermFlights()
+                {
+                    Flight = this,
+                    Terminal = terminal
+                },
+                EndTermFlight = new EndTermFlight()
+                {
+                    Flight = this,
+                    Terminal = terminal4
+                }
+            };
+            db.Flight.Add(oldshit3);
+
+            Flight oldshit4;
+            oldshit4 = new Flight()
+            {
+                TakeoffDT = new DateTime(2016, 09, 09, 00, 24, 00),
+                TouchDownDT = new DateTime(2016, 09, 09, 06, 42, 00),
+                ETA = TouchDownDT - TakeoffDT,
+                StartTermFlights = new StartTermFlights()
+                {
+                    Flight = this,
+                    Terminal = terminal
+                },
+                EndTermFlight = new EndTermFlight()
+                {
+                    Flight = this,
+                    Terminal = terminal4
+                }
+            };
+            db.Flight.Add(oldshit4);
+
+            Flight oldshit5;
+            oldshit5 = new Flight()
+            {
+                TakeoffDT = new DateTime(2016, 09, 10, 00, 15, 00),
+                TouchDownDT = new DateTime(2016, 09, 10, 06, 41, 00),
+                ETA = TouchDownDT - TakeoffDT,
+                StartTermFlights = new StartTermFlights()
+                {
+                    Flight = this,
+                    Terminal = terminal
+                },
+                EndTermFlight = new EndTermFlight()
+                {
+                    Flight = this,
+                    Terminal = terminal4
+                }
+            };
+            db.Flight.Add(oldshit5);
+
+            Flight oldshit6;
+            oldshit6 = new Flight()
+            {
+                TakeoffDT = new DateTime(2016, 09, 11, 00, 19, 00),
+                TouchDownDT = new DateTime(2016, 09, 11, 07, 15, 00),
+                ETA = TouchDownDT - TakeoffDT,
+                StartTermFlights = new StartTermFlights()
+                {
+                    Flight = this,
+                    Terminal = terminal
+                },
+                EndTermFlight = new EndTermFlight()
+                {
+                    Flight = this,
+                    Terminal = terminal4
+                }
+            };
+            db.Flight.Add(oldshit6);
+
+            Flight oldshit7;
+            oldshit7 = new Flight()
+            {
+                TakeoffDT = new DateTime(2016, 09, 12, 00, 13, 00),
+                TouchDownDT = new DateTime(2016, 09, 12, 06, 42, 00),
+                ETA = TouchDownDT - TakeoffDT,
+                StartTermFlights = new StartTermFlights()
+                {
+                    Flight = this,
+                    Terminal = terminal
+                },
+                EndTermFlight = new EndTermFlight()
+                {
+                    Flight = this,
+                    Terminal = terminal4
+                }
+            };
+            db.Flight.Add(oldshit7);
+
+            Flight oldshit8;
+            oldshit8 = new Flight()
+            {
+                TakeoffDT = new DateTime(2016, 09, 13, 02, 14, 00),
+                TouchDownDT = new DateTime(2016, 09, 13, 07, 15, 00),
+                ETA = TouchDownDT - TakeoffDT,
+                StartTermFlights = new StartTermFlights()
+                {
+                    Flight = this,
+                    Terminal = terminal
+                },
+                EndTermFlight = new EndTermFlight()
+                {
+                    Flight = this,
+                    Terminal = terminal4
+                }
+            };
+            db.Flight.Add(oldshit8);
+
+            Flight oldshit9;
+            oldshit9 = new Flight()
+            {
+                TakeoffDT = new DateTime(2016, 09, 14, 00, 14, 00),
+                TouchDownDT = new DateTime(2016, 09, 14, 06, 38, 00),
+                ETA = TouchDownDT - TakeoffDT,
+                StartTermFlights = new StartTermFlights()
+                {
+                    Flight = this,
+                    Terminal = terminal
+                },
+                EndTermFlight = new EndTermFlight()
+                {
+                    Flight = this,
+                    Terminal = terminal4
+                }
+            };
+            db.Flight.Add(oldshit9);
+
+            Flight oldshit10;
+            oldshit10 = new Flight()
+            {
+                TakeoffDT = new DateTime(2016, 09, 15, 00, 16, 00),
+                TouchDownDT = new DateTime(2016, 09, 15, 06, 32, 00),
+                ETA = TouchDownDT - TakeoffDT,
+                StartTermFlights = new StartTermFlights()
+                {
+                    Flight = this,
+                    Terminal = terminal
+                },
+                EndTermFlight = new EndTermFlight()
+                {
+                    Flight = this,
+                    Terminal = terminal4
+                }
+            };
+            db.Flight.Add(oldshit10);
+
+            Flight oldshit11;
+            oldshit11 = new Flight()
+            {
+                TakeoffDT = new DateTime(2016, 09, 17, 00, 32, 00),
+                TouchDownDT = new DateTime(2016, 09, 17, 07, 15, 00),
+                ETA = TouchDownDT - TakeoffDT,
+                StartTermFlights = new StartTermFlights()
+                {
+                    Flight = this,
+                    Terminal = terminal
+                },
+                EndTermFlight = new EndTermFlight()
+                {
+                    Flight = this,
+                    Terminal = terminal4
+                }
+            };
+            db.Flight.Add(oldshit11);
+
+            Flight oldshit12;
+            oldshit12 = new Flight()
+            {
+                TakeoffDT = new DateTime(2016, 09, 19, 00, 14, 00),
+                TouchDownDT = new DateTime(2016, 09, 19, 06, 27, 00),
+                ETA = TouchDownDT - TakeoffDT,
+                StartTermFlights = new StartTermFlights()
+                {
+                    Flight = this,
+                    Terminal = terminal
+                },
+                EndTermFlight = new EndTermFlight()
+                {
+                    Flight = this,
+                    Terminal = terminal4
+                }
+            };
+            db.Flight.Add(oldshit12);
+
+            Flight oldshit13;
+            oldshit13 = new Flight()
+            {
+                TakeoffDT = new DateTime(2016, 09, 19, 00, 14, 00),
+                TouchDownDT = new DateTime(2016, 09, 19, 06, 27, 00),
+                ETA = TouchDownDT - TakeoffDT,
+                StartTermFlights = new StartTermFlights()
+                {
+                    Flight = this,
+                    Terminal = terminal
+                },
+                EndTermFlight = new EndTermFlight()
+                {
+                    Flight = this,
+                    Terminal = terminal4
+                }
+            };
+            db.Flight.Add(oldshit13);
+
+            Flight oldshit14;
+            oldshit14 = new Flight()
+            {
+                TakeoffDT = new DateTime(2016, 09, 21, 00, 14, 00),
+                TouchDownDT = new DateTime(2016, 09, 21, 06, 38, 00),
+                ETA = TouchDownDT - TakeoffDT,
+                StartTermFlights = new StartTermFlights()
+                {
+                    Flight = this,
+                    Terminal = terminal
+                },
+                EndTermFlight = new EndTermFlight()
+                {
+                    Flight = this,
+                    Terminal = terminal4
+                }
+            };
+            db.Flight.Add(oldshit14);
+
+            Flight oldshit15;
+            oldshit15 = new Flight()
+            {
+                TakeoffDT = new DateTime(2016, 09, 23, 00, 21, 00),
+                TouchDownDT = new DateTime(2016, 09, 23, 06, 41, 00),
+                ETA = TouchDownDT - TakeoffDT,
+                StartTermFlights = new StartTermFlights()
+                {
+                    Flight = this,
+                    Terminal = terminal
+                },
+                EndTermFlight = new EndTermFlight()
+                {
+                    Flight = this,
+                    Terminal = terminal4
+                }
+            };
+            db.Flight.Add(oldshit15);
+
+            Flight oldshit16;
+            oldshit16 = new Flight()
+            {
+                TakeoffDT = new DateTime(2016, 09, 25, 00, 17, 00),
+                TouchDownDT = new DateTime(2016, 09, 25, 06, 34, 00),
+                ETA = TouchDownDT - TakeoffDT,
+                StartTermFlights = new StartTermFlights()
+                {
+                    Flight = this,
+                    Terminal = terminal
+                },
+                EndTermFlight = new EndTermFlight()
+                {
+                    Flight = this,
+                    Terminal = terminal4
+                }
+            };
+            db.Flight.Add(oldshit16);
+
+            Flight oldshit17;
+            oldshit17 = new Flight()
+            {
+                TakeoffDT = new DateTime(2016, 09, 27, 00, 15, 00),
+                TouchDownDT = new DateTime(2016, 09, 27, 06, 37, 00),
+                ETA = TouchDownDT - TakeoffDT,
+                StartTermFlights = new StartTermFlights()
+                {
+                    Flight = this,
+                    Terminal = terminal
+                },
+                EndTermFlight = new EndTermFlight()
+                {
+                    Flight = this,
+                    Terminal = terminal4
+                }
+            };
+            db.Flight.Add(oldshit17);
+
+            Flight oldshit18;
+            oldshit18 = new Flight()
+            {
+                TakeoffDT = new DateTime(2016, 09, 29, 00, 14, 00),
+                TouchDownDT = new DateTime(2016, 09, 29, 07, 15, 00),
+                ETA = TouchDownDT - TakeoffDT,
+                StartTermFlights = new StartTermFlights()
+                {
+                    Flight = this,
+                    Terminal = terminal
+                },
+                EndTermFlight = new EndTermFlight()
+                {
+                    Flight = this,
+                    Terminal = terminal4
+                }
+            };
+            db.Flight.Add(oldshit18);
+
+            Flight oldshit19;
+            oldshit19 = new Flight()
+            {
+                TakeoffDT = new DateTime(2016, 10, 01, 00, 50, 00),
+                TouchDownDT = new DateTime(2016, 10, 01, 07, 15, 00),
+                ETA = TouchDownDT - TakeoffDT,
+                StartTermFlights = new StartTermFlights()
+                {
+                    Flight = this,
+                    Terminal = terminal
+                },
+                EndTermFlight = new EndTermFlight()
+                {
+                    Flight = this,
+                    Terminal = terminal4
+                }
+            };
+            db.Flight.Add(oldshit19);
+
+            Flight oldshit20;
+            oldshit20 = new Flight()
+            {
+                TakeoffDT = new DateTime(2016, 10, 03, 00, 25, 00),
+                TouchDownDT = new DateTime(2016, 10, 03, 06, 49, 00),
+                ETA = TouchDownDT - TakeoffDT,
+                StartTermFlights = new StartTermFlights()
+                {
+                    Flight = this,
+                    Terminal = terminal
+                },
+                EndTermFlight = new EndTermFlight()
+                {
+                    Flight = this,
+                    Terminal = terminal4
+                }
+            };
+            db.Flight.Add(oldshit20);
+
+            FlightTicket ft1;
+            ft1 = new FlightTicket()
+            {
+
+            };
         }
     }
 }
