@@ -138,6 +138,8 @@ namespace SIAHTTPS.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     AircraftId = table.Column<int>(nullable: false),
                     ETA = table.Column<long>(type: "bigint", nullable: false),
+                    LayoverDuration = table.Column<long>(type: "bigint", nullable: false, defaultValue: 0L),
+                    ParentFlightId = table.Column<long>(type: "bigint", nullable: false, defaultValue: 0L),
                     TakeoffDT = table.Column<DateTime>(nullable: false),
                     TouchDownDT = table.Column<DateTime>(nullable: false)
                 },

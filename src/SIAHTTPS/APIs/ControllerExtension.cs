@@ -31,7 +31,7 @@ namespace SIAHTTPS.APIs
         //Default constructor required
         public ControllerExtension()
         {
-            _database = new ApplicationDbContext();
+            _database = new ApplicationDbContext(); // We need to initialize the connection.
         }
 
         public ControllerExtension(UserManager<ApplicationUser> userManager)

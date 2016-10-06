@@ -91,7 +91,7 @@ namespace SIAHTTPS.APIs
 
             return new JsonResult(result);
         }
-
+        
         // GET api/GetFlightsRoute/FromAirport&ToAirport
         // Allows us to obtain all flight data from one date to another
         [HttpGet("GetFlightsRoute/{FROM}&{TO}")]
@@ -109,11 +109,11 @@ namespace SIAHTTPS.APIs
                 {
                     flights.Add(new
                     {
-                        FlightId = flight.FlightId,
-                        TakeOffDT = flight.TakeoffDT,
-                        TouchDownDT = flight.TouchDownDT,
-                        ETA = flight.ETA,
-                        FlightTickets = flight.FlightTickets
+                        FlightId = flight.FlightId, // Flight Id, just a row identity
+                        TakeOffDT = flight.TakeoffDT, // Estimated Date and Time of Departure
+                        TouchDownDT = flight.TouchDownDT, // Estimated Date and Time of Arrival
+                        ETA = flight.ETA, // Duration for the flight
+                        FlightTickets = flight.FlightTickets // Tickets available for the flight
                     });
                 }
 

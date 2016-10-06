@@ -8,7 +8,7 @@ using SIAHTTPS.Data;
 namespace SIAHTTPS.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20161006143443_setupdb")]
+    [Migration("20161006154152_setupdb")]
     partial class setupdb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -285,6 +285,18 @@ namespace SIAHTTPS.Migrations
                     b.Property<long>("ETA")
                         .HasColumnName("ETA")
                         .HasColumnType("bigint");
+
+                    b.Property<long>("LayoverDuration")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("LayoverDuration")
+                        .HasColumnType("bigint")
+                        .HasDefaultValue(0L);
+
+                    b.Property<long>("ParentFlightId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("ParentFlightId")
+                        .HasColumnType("bigint")
+                        .HasDefaultValue(0L);
 
                     b.Property<DateTime>("TakeoffDT")
                         .HasColumnName("TakeoffDT");

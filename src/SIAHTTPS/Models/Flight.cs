@@ -16,5 +16,7 @@ namespace SIAHTTPS.Models
         public int AircraftId { get; set; }
         public Aircraft Aircraft { get; set; }
         public List<FlightTicket> FlightTickets { get; set; }
+        public long ParentFlightId { get; set; } // If this is not 0, this flight is after a layover.
+        public long LayoverDuration { get; set; } // If this parentflight is not 0, this will be required..
     }
 }

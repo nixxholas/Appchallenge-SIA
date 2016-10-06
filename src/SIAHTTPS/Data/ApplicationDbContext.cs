@@ -185,6 +185,20 @@ namespace SIAHTTPS.Data
                 .HasColumnName("TouchDownDT")
                 .IsRequired();
 
+            builder.Entity<Flight>()
+                .Property(input => input.ParentFlightId)
+                .HasColumnName("ParentFlightId")
+                .HasColumnType("bigint")
+                .HasDefaultValue((long)0) // If this column is not stated, it will be a standalone flight.
+                .IsRequired();
+
+            builder.Entity<Flight>()
+                .Property(input => input.LayoverDuration)
+                .HasColumnName("LayoverDuration")
+                .HasColumnType("bigint")
+                .HasDefaultValue((long)0)
+                .IsRequired();
+
             // Foreign Relationships
             builder.Entity<Flight>()
                 .HasOne(input => input.StartTermFlight)

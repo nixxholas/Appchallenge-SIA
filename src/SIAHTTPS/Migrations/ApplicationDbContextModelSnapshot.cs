@@ -285,6 +285,18 @@ namespace SIAHTTPS.Migrations
                         .HasColumnName("ETA")
                         .HasColumnType("bigint");
 
+                    b.Property<long>("LayoverDuration")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("LayoverDuration")
+                        .HasColumnType("bigint")
+                        .HasDefaultValue(0L);
+
+                    b.Property<long>("ParentFlightId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("ParentFlightId")
+                        .HasColumnType("bigint")
+                        .HasDefaultValue(0L);
+
                     b.Property<DateTime>("TakeoffDT")
                         .HasColumnName("TakeoffDT");
 
