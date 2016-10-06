@@ -48,7 +48,7 @@ namespace SIAHTTPS.APIs
         }
 
         // GET: api/Airports/5
-        [HttpGet("{IATA}", Name = "Get")]
+        [HttpGet("{IATA}")]
         public async Task<IActionResult> Get(string IATA)
         {
             try
@@ -89,7 +89,7 @@ namespace SIAHTTPS.APIs
         }
         // GET: api/Airports/Flights/5
         // Allow us to retrieve the flights for the airport
-        [HttpGet("Flights/{IATA}", Name = "Get")]
+        [HttpGet("Flights/{IATA}")]
         public async Task<IActionResult> GetAirportFlights(string IATA)
         {
             try

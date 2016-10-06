@@ -54,7 +54,7 @@ namespace SIAHTTPS.Data
             builder.Entity<Aircraft>()
                 .Property(input => input.AircraftId)
                 .HasColumnName("AircraftId")
-                .HasColumnType("bigint")
+                .HasColumnType("int")
                 .UseSqlServerIdentityColumn()
                 .ValueGeneratedOnAdd()
                 .IsRequired();
@@ -134,6 +134,11 @@ namespace SIAHTTPS.Data
                 .HasColumnName("CountryAbbreviation")
                 .HasColumnType("VARCHAR(100)")
                 .IsRequired();
+
+            // Enforce Unique Constraint on IATACode
+            builder.Entity<Airport>()
+                .HasIndex(input => input.IATACode).IsUnique()
+                .HasName("Airport_IATACode_UniqueConstraint");
 
             // Foreign Relationships
             builder.Entity<Airport>()
@@ -265,7 +270,7 @@ namespace SIAHTTPS.Data
             builder.Entity<Ticket>()
                 .Property(input => input.TicketType)
                 .HasColumnName("TicketType")
-                .HasColumnType("VARCHAR(MAX)");
+                .HasColumnType("VARCHAR(300)");
 
             builder.Entity<Ticket>()
                 .Property(input => input.TicketName)

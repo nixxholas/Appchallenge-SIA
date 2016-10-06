@@ -43,7 +43,7 @@ namespace SIAHTTPS.APIs
         }
 
         // GET: api/Aircrafts/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
             try

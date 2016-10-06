@@ -41,7 +41,7 @@ namespace SIAHTTPS.Migrations
                 name: "Aircraft",
                 columns: table => new
                 {
-                    AircraftId = table.Column<int>(type: "bigint", nullable: false)
+                    AircraftId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Brand = table.Column<string>(type: "VARCHAR(MAX)", nullable: false),
                     FlightNumber = table.Column<string>(type: "VARCHAR(100)", nullable: false),
@@ -117,7 +117,7 @@ namespace SIAHTTPS.Migrations
                     TicketId = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     TicketName = table.Column<string>(type: "VARCHAR(MAX)", nullable: true),
-                    TicketType = table.Column<string>(type: "VARCHAR(MAX)", nullable: true)
+                    TicketType = table.Column<string>(type: "VARCHAR(300)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -358,6 +358,12 @@ namespace SIAHTTPS.Migrations
                 name: "IX_AircraftFlights_FlightId",
                 table: "AircraftFlights",
                 column: "FlightId");
+
+            migrationBuilder.CreateIndex(
+                name: "Airport_IATACode_UniqueConstraint",
+                table: "Airport",
+                column: "IATACode",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_AirportFlights_AirportId",

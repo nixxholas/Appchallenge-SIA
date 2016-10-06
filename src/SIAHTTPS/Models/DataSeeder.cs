@@ -223,9 +223,9 @@ namespace SIAHTTPS.Models
             Airport airport1;
             airport1 = new Airport()
             {
-                AirportId = 1,
                 IATACode = "SIN",
-                City = "Singapore",
+                City = "Singapore City",
+                Country = "Singapore",
                 CountryCode = "+65",
                 CountryAbbreviation = "SG"
             };
@@ -235,9 +235,9 @@ namespace SIAHTTPS.Models
             Airport airport2;
             airport2 = new Airport()
             {
-                AirportId = 2,
                 IATACode = "SIR",
                 City = "Sion",
+                Country = "Switzerland",
                 CountryCode = "+27",
                 CountryAbbreviation = "CH"
             };
@@ -247,9 +247,9 @@ namespace SIAHTTPS.Models
             Airport airport3;
             airport3 = new Airport()
             {
-                AirportId = 3,
                 IATACode = "PEK",
                 City = "Beijing",
+                Country = "China",
                 CountryCode = "+86",
                 CountryAbbreviation = "CN"
             };
@@ -275,7 +275,7 @@ namespace SIAHTTPS.Models
             Ticket ticket3;
             ticket3 = new Ticket()
             {
-                TicketType = "First Class",
+                TicketType = "Economy Class",
                 TicketName = ""
             };
             db.Tickets.Add(ticket3);
@@ -283,67 +283,11 @@ namespace SIAHTTPS.Models
             Ticket ticket4;
             ticket4 = new Ticket()
             {
-                TicketType = "First Class",
+                TicketType = "Premium Economy Class",
                 TicketName = ""
             };
             db.Tickets.Add(ticket4);
-
-            Ticket ticket5;
-            ticket5 = new Ticket()
-            {
-                TicketType = "First Class",
-                TicketName = ""
-            };
-            db.Tickets.Add(ticket5);
-
-            Ticket ticket6;
-            ticket6 = new Ticket()
-            {
-                TicketType = "First Class",
-                TicketName = ""
-            };
-            db.Tickets.Add(ticket6);
-
-            Ticket ticket7;
-            ticket7 = new Ticket()
-            {
-                TicketType = "First Class",
-                TicketName = ""
-            };
-            db.Tickets.Add(ticket7);
-
-            Ticket ticket8;
-            ticket8 = new Ticket()
-            {
-                TicketType = "First Class",
-                TicketName = ""
-            };
-            db.Tickets.Add(ticket8);
-
-            Ticket ticket9;
-            ticket9 = new Ticket()
-            {
-                TicketType = "First Class",
-                TicketName = ""
-            };
-            db.Tickets.Add(ticket9);
-
-            Ticket ticket10;
-            ticket10 = new Ticket()
-            {
-                TicketType = "First Class",
-                TicketName = ""
-            };
-            db.Tickets.Add(ticket10);
-
-            Ticket ticket11;
-            ticket11 = new Ticket()
-            {
-                TicketType = "First Class",
-                TicketName = ""
-            };
-            db.Tickets.Add(ticket11);
-
+            
             db.SaveChanges();
         }
     }

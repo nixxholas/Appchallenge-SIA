@@ -128,7 +128,7 @@ namespace SIAHTTPS.Migrations
                     b.Property<int>("AircraftId")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("AircraftId")
-                        .HasColumnType("bigint")
+                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Brand")
@@ -207,6 +207,10 @@ namespace SIAHTTPS.Migrations
 
                     b.HasKey("AirportId")
                         .HasName("PrimaryKey_Airport_AirportId");
+
+                    b.HasIndex("IATACode")
+                        .IsUnique()
+                        .HasName("Airport_IATACode_UniqueConstraint");
 
                     b.ToTable("Airport");
                 });
@@ -372,7 +376,7 @@ namespace SIAHTTPS.Migrations
 
                     b.Property<string>("TicketType")
                         .HasColumnName("TicketType")
-                        .HasColumnType("VARCHAR(MAX)");
+                        .HasColumnType("VARCHAR(300)");
 
                     b.HasKey("TicketId")
                         .HasName("PrimaryKey_Tickets_TicketId");

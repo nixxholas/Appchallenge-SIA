@@ -45,7 +45,7 @@ namespace SIAHTTPS.APIs
         }
 
         // GET: api/Tickets/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> Get(string ticketType) // TicketType i.e => "First Class" or "Suite" whatever..
         {
             try
