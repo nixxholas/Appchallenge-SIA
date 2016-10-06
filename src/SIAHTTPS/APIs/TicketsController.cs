@@ -13,54 +13,53 @@ using Newtonsoft.Json;
 namespace SIAHTTPS.APIs
 {
     [Produces("application/json")]
-    [Route("api/Aircrafts")]
-    public class AircraftsController : ControllerExtension
+    [Route("api/Tickets")]
+    public class TicketsController : ControllerExtension
     {
-        public AircraftsController(UserManager<ApplicationUser> userManager) : base(userManager)
+        public TicketsController(UserManager<ApplicationUser> userManager) : base(userManager)
         {
 
         }
 
-        // GET: api/Aircrafts
+        // GET: api/Tickets
         [HttpGet]
         public async Task<JsonResult> Get()
         {
-            List<object> aircraftList = new List<object>();
-            var aircrafts = _database.Aircrafts;
+            List<object> ticketList = new List<object>();
+            var tickets = _database.Tickets;
 
-            foreach (var aircraft in aircrafts)
+            foreach (var ticket in tickets)
             {
-                aircraftList.Add(new
+                ticketList.Add(new
                 {
-                    AircraftId = aircraft.AircraftId,
-                    Model = aircraft.Model,
-                    Brand = aircraft.Brand,
-                    FlightNumber = aircraft.FlightNumber
+                    TicketId = ticket.TicketId,
+                    Model = ticket.TicketType,
+                    Brand = ticket.TicketName,
+                    // Not a good design to have this here. Has a shitload of data..
+                    // Better to allow the admin to manage or see via the specific Get(i) API.
+                    //FlightTickets = ticket.FlightTickets 
                 });
             }
 
-            return new JsonResult(aircraftList);
+            return new JsonResult(ticketList);
         }
 
-        // GET: api/Aircrafts/5
+        // GET: api/Tickets/5
         [HttpGet("{id}", Name = "Get")]
-        public async Task<IActionResult> Get(int id)
+        public async Task<IActionResult> Get(string ticketType) // TicketType i.e => "First Class" or "Suite" whatever..
         {
             try
             {
-                string flightNo = "SQ" + id;
-
-                var foundAircraft = _database.Aircrafts
-                    .Include(input => input.AircraftFlights)
-                    .Where(input => input.FlightNumber == flightNo).Single();
+                var foundTicket = _database.Tickets
+                    .Include(input => input.FlightTickets)
+                    .Where(input => input.TicketType == ticketType).Single();
 
                 var response = new
                 {
-                    AircraftId = foundAircraft.AircraftId,
-                    Brand = foundAircraft.Brand,
-                    Model = foundAircraft.Model,
-                    FlightNumber = foundAircraft.FlightNumber,
-                    AircraftFlights = foundAircraft.AircraftFlights
+                    TicketId = foundTicket.TicketId,
+                    TicketType = foundTicket.TicketType,
+                    Model = foundTicket.TicketName,
+                    FlightTickets = foundTicket.FlightTickets
                 };
 
                 return new JsonResult(response);
@@ -70,39 +69,38 @@ namespace SIAHTTPS.APIs
                 //This anonymous object only has one Message property 
                 //which contains a simple string message
                 object httpFailRequestResultMessage =
-                                    new { Message = "Unable to obtain Aircraft information due to" + 
+                                    new { Message = "Unable to obtain Ticket information due to" + 
                                     "the following error:" + e.ToString() + "." };
                 //Return a bad http response message to the client
                 return BadRequest(httpFailRequestResultMessage);
             }
         }
         
-        // POST: api/Aircrafts
+        // POST: api/Tickets
         [HttpPost]
         public IActionResult Post([FromBody]string value)
         {
             string customMessage = "";
             string format = "dd/MM/yyyy";
             //Reconstruct a useful object from the input string value. 
-            dynamic aircraftNewInput = JsonConvert.DeserializeObject<dynamic>(value);
+            dynamic ticketNewInput = JsonConvert.DeserializeObject<dynamic>(value);
 
-            Aircraft Aircraft = new Aircraft();
+            Ticket Ticket = new Ticket();
             try
             {
-                Aircraft.Brand = aircraftNewInput.Brand.Value;
-                Aircraft.Model = aircraftNewInput.Model.Value;
-                Aircraft.FlightNumber = aircraftNewInput.FlightNumber.Value;
+                Ticket.TicketName = ticketNewInput.TicketName.Value;
+                Ticket.TicketType = ticketNewInput.TicketType.Value;
 
-                _database.Aircrafts.Add(Aircraft);
+                _database.Tickets.Add(Ticket);
                 _database.SaveChanges();
             } catch (Exception e)
             {
                 if (e.InnerException.Message
-                          .Contains("Aircraft_FlightNumber_UniqueConstraint") == true)
+                          .Contains("Ticket_TicketType_UniqueConstraint") == true)
                 {
-                    customMessage = "Unable to save Aircraft record due " +
+                    customMessage = "Unable to save Ticket record due " +
                                   "to another record having the same name as : " +
-                                  aircraftNewInput.FlightNumber.Value;
+                                  ticketNewInput.FlightNumber.Value;
                     //Create a fail message anonymous object that has one property, Message.
                     //This anonymous object's Message property contains a simple string message
                     object httpFailRequestResultMessage = new { Message = customMessage };
@@ -120,7 +118,7 @@ namespace SIAHTTPS.APIs
             //Message member variable (property)
             var successRequestResultMessage = new
             {
-                Message = "Saved Aircraft record"
+                Message = "Saved Ticket record"
             };
 
             //Create a OkObjectResult class instance, httpOkResult.
@@ -131,34 +129,33 @@ namespace SIAHTTPS.APIs
             return httpOkResult;
         }
         
-        // PUT: api/Aircrafts/5
+        // PUT: api/Tickets/5
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody]string value)
+        public IActionResult Put(long id, [FromBody]string value)
         {
             string customMessage = "";
             string format = "dd/MM/yyyy";
-            var aircraftChangeInput = JsonConvert.DeserializeObject<dynamic>(value);
+            var ticketChangeInput = JsonConvert.DeserializeObject<dynamic>(value);
 
             try
             {
-                var foundAircraft = _database.Aircrafts
-                    .Where(input => input.FlightNumber == "SQ" + id).Single();
+                var foundTicket = _database.Tickets
+                    .Where(input => input.TicketId == id).Single();
 
-                foundAircraft.Brand = aircraftChangeInput.Brand.Value;
-                foundAircraft.Model = aircraftChangeInput.Model.Value;
-                foundAircraft.FlightNumber = aircraftChangeInput.FlightNumber.Value;
+                foundTicket.TicketName = ticketChangeInput.TicketName.Value;
+                foundTicket.TicketType = ticketChangeInput.TicketType.Value;
 
-                _database.Aircrafts.Update(foundAircraft);
+                _database.Tickets.Update(foundTicket);
                 _database.SaveChanges();
             }
             catch (Exception e)
             {
                 if (e.InnerException.Message
-                          .Contains("Aircraft_FlightNumber_UniqueConstraint") == true)
+                          .Contains("Ticket_FlightNumber_UniqueConstraint") == true)
                 {
-                    customMessage = "Unable to save Aircraft record due " +
+                    customMessage = "Unable to save Ticket record due " +
                                   "to another record having the same name as : " +
-                                  aircraftChangeInput.FlightNumber.Value;
+                                  ticketChangeInput.FlightNumber.Value;
                     //Create a fail message anonymous object that has one property, Message.
                     //This anonymous object's Message property contains a simple string message
                     object httpFailRequestResultMessage = new { Message = customMessage };
@@ -175,7 +172,7 @@ namespace SIAHTTPS.APIs
             //Message member variable (property)
             var successRequestResultMessage = new
             {
-                Message = "Updated Aircraft record"
+                Message = "Updated Ticket record"
             };
 
             //Create a OkObjectResult class instance, httpOkResult.
@@ -194,14 +191,14 @@ namespace SIAHTTPS.APIs
 
             try
             {
-                var foundAircraft = _database.Aircrafts
-                    .Where(input => input.FlightNumber == "SQ" + id).Single();
+                var foundTicket = _database.Tickets
+                    .Where(input => input.TicketId == id).Single();
 
-                _database.Aircrafts.Remove(foundAircraft);
+                _database.Tickets.Remove(foundTicket); // Hard Delete Row
                 _database.SaveChanges();                
             } catch (Exception e)
             {
-                customMessage = "Unable to delete Aircraft record due " +
+                customMessage = "Unable to delete Ticket record due " +
                                     "to: " + e.ToString();
                 //Create a fail message anonymous object that has one property, Message.
                 //This anonymous object's Message property contains a simple string message
@@ -219,7 +216,7 @@ namespace SIAHTTPS.APIs
             //Message member variable (property)
             var successRequestResultMessage = new
             {
-                Message = "Deleted Aircraft record"
+                Message = "Deleted Ticket record"
             };
 
             //Create a OkObjectResult class instance, httpOkResult.

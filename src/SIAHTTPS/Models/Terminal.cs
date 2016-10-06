@@ -11,5 +11,6 @@ namespace SIAHTTPS.Models
         public string TerminalName { get; set; }
         public long AirportId { get; set; }
         public Airport Airport { get; set; }
+        public List<AirportFlights> AirportFlights { get; set; }
     }
 }
