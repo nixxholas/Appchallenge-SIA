@@ -853,11 +853,11 @@ namespace SIAHTTPS.Models
             };
             db.Flights.Add(oldshit20);
 
-            FlightTicket ft1;
-            ft1 = new FlightTicket()
-            {
+            //FlightTicket ft1;
+            //ft1 = new FlightTicket()
+            //{
 
-            };
+            //};
 
             db.SaveChanges();
         }

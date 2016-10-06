@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SIAHTTPS.Data;
 using SIAHTTPS.Models;
@@ -13,6 +14,7 @@ namespace SIAHTTPS.APIs
     [Route("api/[controller]")]
     public class FlightsController : ControllerExtension
     {
+
         // GET: api/values
         [HttpGet]
         public JsonResult Get()

@@ -49,7 +49,7 @@ namespace SIAHTTPS.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PrimaryKey_Aircraft_AircraftId", x => x.AircraftId);
+                    table.PrimaryKey("PrimaryKey_Aircrafts_AircraftId", x => x.AircraftId);
                 });
 
             migrationBuilder.CreateTable(
@@ -66,7 +66,7 @@ namespace SIAHTTPS.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PrimaryKey_Airport_AirportId", x => x.AirportId);
+                    table.PrimaryKey("PrimaryKey_Airports_AirportId", x => x.AirportId);
                 });
 
             migrationBuilder.CreateTable(
@@ -143,7 +143,7 @@ namespace SIAHTTPS.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PrimaryKey_Flight_FlightId", x => x.FlightId);
+                    table.PrimaryKey("PrimaryKey_Flights_FlightId", x => x.FlightId);
                     table.ForeignKey(
                         name: "FK_Flight_Aircraft_AircraftId",
                         column: x => x.AircraftId,
@@ -163,7 +163,7 @@ namespace SIAHTTPS.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PrimaryKey_Terminal_TerminalId", x => new { x.AirportId, x.TerminalId });
+                    table.PrimaryKey("PrimaryKey_Terminals_TerminalId", x => new { x.AirportId, x.TerminalId });
                     table.ForeignKey(
                         name: "FK_Terminal_Airport_AirportId",
                         column: x => x.AirportId,
@@ -346,13 +346,13 @@ namespace SIAHTTPS.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "Aircraft_FlightNumber_UniqueConstraint",
+                name: "Aircrafts_FlightNumber_UniqueConstraint",
                 table: "Aircraft",
                 column: "FlightNumber",
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "Airport_IATACode_UniqueConstraint",
+                name: "Airports_IATACode_UniqueConstraint",
                 table: "Airport",
                 column: "IATACode",
                 unique: true);
@@ -411,7 +411,7 @@ namespace SIAHTTPS.Migrations
                 column: "AirportId");
 
             migrationBuilder.CreateIndex(
-                name: "Ticket_TicketType_UniqueConstraint",
+                name: "Tickets_TicketType_UniqueConstraint",
                 table: "Ticket",
                 column: "TicketType",
                 unique: true);

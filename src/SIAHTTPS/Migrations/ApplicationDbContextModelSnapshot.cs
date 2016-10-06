@@ -147,11 +147,11 @@ namespace SIAHTTPS.Migrations
                         .HasColumnType("VARCHAR(MAX)");
 
                     b.HasKey("AircraftId")
-                        .HasName("PrimaryKey_Aircraft_AircraftId");
+                        .HasName("PrimaryKey_Aircrafts_AircraftId");
 
                     b.HasIndex("FlightNumber")
                         .IsUnique()
-                        .HasName("Aircraft_FlightNumber_UniqueConstraint");
+                        .HasName("Aircrafts_FlightNumber_UniqueConstraint");
 
                     b.ToTable("Aircraft");
                 });
@@ -190,11 +190,11 @@ namespace SIAHTTPS.Migrations
                         .HasColumnType("VARCHAR(100)");
 
                     b.HasKey("AirportId")
-                        .HasName("PrimaryKey_Airport_AirportId");
+                        .HasName("PrimaryKey_Airports_AirportId");
 
                     b.HasIndex("IATACode")
                         .IsUnique()
-                        .HasName("Airport_IATACode_UniqueConstraint");
+                        .HasName("Airports_IATACode_UniqueConstraint");
 
                     b.ToTable("Airport");
                 });
@@ -292,7 +292,7 @@ namespace SIAHTTPS.Migrations
                         .HasColumnName("TouchDownDT");
 
                     b.HasKey("FlightId")
-                        .HasName("PrimaryKey_Flight_FlightId");
+                        .HasName("PrimaryKey_Flights_FlightId");
 
                     b.HasIndex("AircraftId");
 
@@ -362,7 +362,7 @@ namespace SIAHTTPS.Migrations
                         .HasColumnType("VARCHAR(MAX)");
 
                     b.HasKey("AirportId", "TerminalId")
-                        .HasName("PrimaryKey_Terminal_TerminalId");
+                        .HasName("PrimaryKey_Terminals_TerminalId");
 
                     b.HasIndex("AirportId");
 
@@ -390,7 +390,7 @@ namespace SIAHTTPS.Migrations
 
                     b.HasIndex("TicketType")
                         .IsUnique()
-                        .HasName("Ticket_TicketType_UniqueConstraint");
+                        .HasName("Tickets_TicketType_UniqueConstraint");
 
                     b.ToTable("Ticket");
                 });
