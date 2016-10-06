@@ -96,21 +96,6 @@ namespace SIAHTTPS.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Flight",
-                columns: table => new
-                {
-                    FlightId = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    ETA = table.Column<DateTime>(nullable: false),
-                    TakeoffDT = table.Column<DateTime>(nullable: false),
-                    TouchDownDT = table.Column<DateTime>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PrimaryKey_Flight_FlightId", x => x.FlightId);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Ticket",
                 columns: table => new
                 {
@@ -142,6 +127,28 @@ namespace SIAHTTPS.Migrations
                         column: x => x.RoleId,
                         principalTable: "AspNetRoles",
                         principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Flight",
+                columns: table => new
+                {
+                    FlightId = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    AircraftId = table.Column<int>(nullable: false),
+                    ETA = table.Column<long>(type: "bigint", nullable: false),
+                    TakeoffDT = table.Column<DateTime>(nullable: false),
+                    TouchDownDT = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PrimaryKey_Flight_FlightId", x => x.FlightId);
+                    table.ForeignKey(
+                        name: "FK_Flight_Aircraft_AircraftId",
+                        column: x => x.AircraftId,
+                        principalTable: "Aircraft",
+                        principalColumn: "AircraftId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -231,31 +238,7 @@ namespace SIAHTTPS.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "AircraftFlights",
-                columns: table => new
-                {
-                    AircraftId = table.Column<int>(nullable: false),
-                    FlightId = table.Column<long>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("AircraftFlights_CompositeKey", x => new { x.AircraftId, x.FlightId });
-                    table.ForeignKey(
-                        name: "FK_AircraftFlights_Aircraft_AircraftId",
-                        column: x => x.AircraftId,
-                        principalTable: "Aircraft",
-                        principalColumn: "AircraftId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_AircraftFlights_Flight_FlightId",
-                        column: x => x.FlightId,
-                        principalTable: "Flight",
-                        principalColumn: "FlightId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "FlightTickets",
+                name: "FlightTicket",
                 columns: table => new
                 {
                     FlightId = table.Column<long>(nullable: false),
@@ -267,13 +250,13 @@ namespace SIAHTTPS.Migrations
                 {
                     table.PrimaryKey("FlightTickets_CompositeKey", x => new { x.FlightId, x.TicketId });
                     table.ForeignKey(
-                        name: "FK_FlightTickets_Flight_FlightId",
+                        name: "FK_FlightTicket_Flight_FlightId",
                         column: x => x.FlightId,
                         principalTable: "Flight",
                         principalColumn: "FlightId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_FlightTickets_Ticket_TicketId",
+                        name: "FK_FlightTicket_Ticket_TicketId",
                         column: x => x.TicketId,
                         principalTable: "Ticket",
                         principalColumn: "TicketId",
@@ -281,10 +264,9 @@ namespace SIAHTTPS.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "AirportFlights",
+                name: "EndTermFlight",
                 columns: table => new
                 {
-                    AirportId = table.Column<long>(nullable: false),
                     TerminalId = table.Column<long>(nullable: false),
                     FlightId = table.Column<long>(nullable: false),
                     TerminalAirportId = table.Column<long>(nullable: true),
@@ -292,21 +274,41 @@ namespace SIAHTTPS.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("AirportFlights_CompositeKey", x => new { x.AirportId, x.TerminalId, x.FlightId });
+                    table.PrimaryKey("EndTermFlights_CompositeKey", x => new { x.TerminalId, x.FlightId });
                     table.ForeignKey(
-                        name: "FK_AirportFlights_Airport_AirportId",
-                        column: x => x.AirportId,
-                        principalTable: "Airport",
-                        principalColumn: "AirportId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_AirportFlights_Flight_FlightId",
+                        name: "FK_EndTermFlight_Flight_FlightId",
                         column: x => x.FlightId,
                         principalTable: "Flight",
                         principalColumn: "FlightId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_AirportFlights_Terminal_TerminalAirportId_TerminalId1",
+                        name: "FK_EndTermFlight_Terminal_TerminalAirportId_TerminalId1",
+                        columns: x => new { x.TerminalAirportId, x.TerminalId1 },
+                        principalTable: "Terminal",
+                        principalColumns: new[] { "AirportId", "TerminalId" },
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "StartTermFlight",
+                columns: table => new
+                {
+                    TerminalId = table.Column<long>(nullable: false),
+                    FlightId = table.Column<long>(nullable: false),
+                    TerminalAirportId = table.Column<long>(nullable: true),
+                    TerminalId1 = table.Column<long>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("StartTermFlights_CompositeKey", x => new { x.TerminalId, x.FlightId });
+                    table.ForeignKey(
+                        name: "FK_StartTermFlight_Flight_FlightId",
+                        column: x => x.FlightId,
+                        principalTable: "Flight",
+                        principalColumn: "FlightId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_StartTermFlight_Terminal_TerminalAirportId_TerminalId1",
                         columns: x => new { x.TerminalAirportId, x.TerminalId1 },
                         principalTable: "Terminal",
                         principalColumns: new[] { "AirportId", "TerminalId" },
@@ -350,35 +352,10 @@ namespace SIAHTTPS.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_AircraftFlights_AircraftId",
-                table: "AircraftFlights",
-                column: "AircraftId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_AircraftFlights_FlightId",
-                table: "AircraftFlights",
-                column: "FlightId");
-
-            migrationBuilder.CreateIndex(
                 name: "Airport_IATACode_UniqueConstraint",
                 table: "Airport",
                 column: "IATACode",
                 unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_AirportFlights_AirportId",
-                table: "AirportFlights",
-                column: "AirportId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_AirportFlights_FlightId",
-                table: "AirportFlights",
-                column: "FlightId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_AirportFlights_TerminalAirportId_TerminalId1",
-                table: "AirportFlights",
-                columns: new[] { "TerminalAirportId", "TerminalId1" });
 
             migrationBuilder.CreateIndex(
                 name: "EmailIndex",
@@ -392,14 +369,41 @@ namespace SIAHTTPS.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_FlightTickets_FlightId",
-                table: "FlightTickets",
+                name: "IX_EndTermFlight_FlightId",
+                table: "EndTermFlight",
+                column: "FlightId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_EndTermFlight_TerminalAirportId_TerminalId1",
+                table: "EndTermFlight",
+                columns: new[] { "TerminalAirportId", "TerminalId1" });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Flight_AircraftId",
+                table: "Flight",
+                column: "AircraftId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_FlightTicket_FlightId",
+                table: "FlightTicket",
                 column: "FlightId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_FlightTickets_TicketId",
-                table: "FlightTickets",
+                name: "IX_FlightTicket_TicketId",
+                table: "FlightTicket",
                 column: "TicketId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_StartTermFlight_FlightId",
+                table: "StartTermFlight",
+                column: "FlightId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_StartTermFlight_TerminalAirportId_TerminalId1",
+                table: "StartTermFlight",
+                columns: new[] { "TerminalAirportId", "TerminalId1" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Terminal_AirportId",
@@ -431,13 +435,13 @@ namespace SIAHTTPS.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "AircraftFlights");
+                name: "EndTermFlight");
 
             migrationBuilder.DropTable(
-                name: "AirportFlights");
+                name: "FlightTicket");
 
             migrationBuilder.DropTable(
-                name: "FlightTickets");
+                name: "StartTermFlight");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
@@ -446,16 +450,16 @@ namespace SIAHTTPS.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "Aircraft");
-
-            migrationBuilder.DropTable(
-                name: "Terminal");
+                name: "Ticket");
 
             migrationBuilder.DropTable(
                 name: "Flight");
 
             migrationBuilder.DropTable(
-                name: "Ticket");
+                name: "Terminal");
+
+            migrationBuilder.DropTable(
+                name: "Aircraft");
 
             migrationBuilder.DropTable(
                 name: "Airport");

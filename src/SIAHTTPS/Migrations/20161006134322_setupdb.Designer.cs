@@ -8,7 +8,7 @@ using SIAHTTPS.Data;
 namespace SIAHTTPS.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20161006123546_setupdb")]
+    [Migration("20161006134322_setupdb")]
     partial class setupdb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -251,7 +251,7 @@ namespace SIAHTTPS.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("SIAHTTPS.Models.EndTermFlights", b =>
+            modelBuilder.Entity("SIAHTTPS.Models.EndTermFlight", b =>
                 {
                     b.Property<long>("TerminalId");
 
@@ -269,7 +269,7 @@ namespace SIAHTTPS.Migrations
 
                     b.HasIndex("TerminalAirportId", "TerminalId1");
 
-                    b.ToTable("EndTermFlights");
+                    b.ToTable("EndTermFlight");
                 });
 
             modelBuilder.Entity("SIAHTTPS.Models.Flight", b =>
@@ -282,8 +282,9 @@ namespace SIAHTTPS.Migrations
 
                     b.Property<int>("AircraftId");
 
-                    b.Property<DateTime>("ETA")
-                        .HasColumnName("ETA");
+                    b.Property<long>("ETA")
+                        .HasColumnName("ETA")
+                        .HasColumnType("bigint");
 
                     b.Property<DateTime>("TakeoffDT")
                         .HasColumnName("TakeoffDT");
@@ -299,7 +300,7 @@ namespace SIAHTTPS.Migrations
                     b.ToTable("Flight");
                 });
 
-            modelBuilder.Entity("SIAHTTPS.Models.FlightTickets", b =>
+            modelBuilder.Entity("SIAHTTPS.Models.FlightTicket", b =>
                 {
                     b.Property<long>("FlightId");
 
@@ -320,10 +321,10 @@ namespace SIAHTTPS.Migrations
 
                     b.HasIndex("TicketId");
 
-                    b.ToTable("FlightTickets");
+                    b.ToTable("FlightTicket");
                 });
 
-            modelBuilder.Entity("SIAHTTPS.Models.StartTermFlights", b =>
+            modelBuilder.Entity("SIAHTTPS.Models.StartTermFlight", b =>
                 {
                     b.Property<long>("TerminalId");
 
@@ -341,7 +342,7 @@ namespace SIAHTTPS.Migrations
 
                     b.HasIndex("TerminalAirportId", "TerminalId1");
 
-                    b.ToTable("StartTermFlights");
+                    b.ToTable("StartTermFlight");
                 });
 
             modelBuilder.Entity("SIAHTTPS.Models.Terminal", b =>
@@ -432,11 +433,11 @@ namespace SIAHTTPS.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("SIAHTTPS.Models.EndTermFlights", b =>
+            modelBuilder.Entity("SIAHTTPS.Models.EndTermFlight", b =>
                 {
                     b.HasOne("SIAHTTPS.Models.Flight", "Flight")
                         .WithOne("EndTermFlight")
-                        .HasForeignKey("SIAHTTPS.Models.EndTermFlights", "FlightId")
+                        .HasForeignKey("SIAHTTPS.Models.EndTermFlight", "FlightId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("SIAHTTPS.Models.Terminal", "Terminal")
@@ -452,7 +453,7 @@ namespace SIAHTTPS.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("SIAHTTPS.Models.FlightTickets", b =>
+            modelBuilder.Entity("SIAHTTPS.Models.FlightTicket", b =>
                 {
                     b.HasOne("SIAHTTPS.Models.Flight", "Flight")
                         .WithMany("FlightTickets")
@@ -465,11 +466,11 @@ namespace SIAHTTPS.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("SIAHTTPS.Models.StartTermFlights", b =>
+            modelBuilder.Entity("SIAHTTPS.Models.StartTermFlight", b =>
                 {
                     b.HasOne("SIAHTTPS.Models.Flight", "Flight")
                         .WithOne("StartTermFlight")
-                        .HasForeignKey("SIAHTTPS.Models.StartTermFlights", "FlightId")
+                        .HasForeignKey("SIAHTTPS.Models.StartTermFlight", "FlightId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("SIAHTTPS.Models.Terminal", "Terminal")

@@ -39,12 +39,12 @@ namespace SIAHTTPS.APIs
                 //    airportIdList.Add(apf.AirportId);
                 //}
 
-                List<FlightTickets> flighttickets = flight.FlightTickets;
+                List<FlightTicket> flighttickets = flight.FlightTickets;
                 List<long> ticketIds = new List<long>();
                 List<decimal> ticketPrices = new List<decimal>();
                 List<int> ticketQuantity = new List<int>();
 
-                foreach (FlightTickets ft in flighttickets)
+                foreach (FlightTicket ft in flighttickets)
                 {
                     ticketIds.Add(ft.TicketId);
                     ticketPrices.Add(ft.Price);

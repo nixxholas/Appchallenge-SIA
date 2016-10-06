@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SIAHTTPS.Models
 {
-    public class StartTermFlights
+    public class StartTermFlight
     {
         public long FlightId { get; set; }
         public long TerminalId { get; set; }

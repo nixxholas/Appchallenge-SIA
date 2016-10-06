@@ -14,10 +14,10 @@ namespace SIAHTTPS.Data
     {
         public DbSet<Aircraft> Aircrafts { get; set; }
         public DbSet<Airport> Airports { get; set; }
-        public DbSet<StartTermFlights> StartTermFlights { get; set; }
-        public DbSet<EndTermFlights> EndTermFlights { get; set; }
+        public DbSet<StartTermFlight> StartTermFlights { get; set; }
+        public DbSet<EndTermFlight> EndTermFlights { get; set; }
         public DbSet<Flight> Flights { get; set; }
-        public DbSet<FlightTickets> FlightTickets { get; set; }
+        public DbSet<FlightTicket> FlightTickets { get; set; }
         public DbSet<Terminal> Terminals { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
@@ -148,7 +148,7 @@ namespace SIAHTTPS.Data
 
             // -------------- Defining StartTermFlights Entity --------------- //
 
-            builder.Entity<StartTermFlights>()
+            builder.Entity<StartTermFlight>()
                 .HasKey(input => new { input.TerminalId, input.FlightId})
                 .HasName("StartTermFlights_CompositeKey");
 
@@ -156,7 +156,7 @@ namespace SIAHTTPS.Data
 
             // -------------- Defining EndTermFlights Entity --------------- //
 
-            builder.Entity<EndTermFlights>()
+            builder.Entity<EndTermFlight>()
                 .HasKey(input => new { input.TerminalId, input.FlightId })
                 .HasName("EndTermFlights_CompositeKey");
 
@@ -178,6 +178,7 @@ namespace SIAHTTPS.Data
             builder.Entity<Flight>()
                 .Property(input => input.ETA)
                 .HasColumnName("ETA")
+                .HasColumnType("bigint")
                 .IsRequired();
 
             builder.Entity<Flight>()
@@ -212,17 +213,17 @@ namespace SIAHTTPS.Data
             // -------------- Flight Entity END --------------- //
 
             // -------------- Defining FlightTickets Entity --------------- //
-            builder.Entity<FlightTickets>()
+            builder.Entity<FlightTicket>()
                 .HasKey(input => new { input.FlightId, input.TicketId })
                 .HasName("FlightTickets_CompositeKey");
 
-            builder.Entity<FlightTickets>()
+            builder.Entity<FlightTicket>()
                 .Property(input => input.Price)
                 .HasColumnName("Price")
                 .HasColumnType("decimal(19, 2)")
                 .IsRequired();
 
-            builder.Entity<FlightTickets>()
+            builder.Entity<FlightTicket>()
                 .Property(input => input.Quantity)
                 .HasColumnName("Quantity")
                 .HasColumnType("int")

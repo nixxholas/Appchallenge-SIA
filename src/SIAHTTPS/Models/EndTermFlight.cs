@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SIAHTTPS.Models
 {
-    public class EndTermFlights
+    public class EndTermFlight
     {
         public long FlightId { get; set; }
         public long TerminalId { get; set; }
