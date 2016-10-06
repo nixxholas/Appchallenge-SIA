@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>-</title>
+        <script src="./js/d3.js"></script>
+        <script src="./js/jquery-3.1.1.js"></script>
+        <script src="./js/jquery-ui.js"></script>
+        <script src="./js/bootstrap.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <link rel="stylesheet" href="./css/bootstrap.css">
+        <link rel="stylesheet" href="./css/jquery-ui.css">
+        <style>
+.title {
+    font-size: 4em;
+    text-align: center;
+    display: block;
+    margin-bottom: 1em;
+}
+#myForm { text-align: center; }
+    #priceChart { height: 500px; }
+    #priceThreshold {
+        text-align: center;
+        font-size: 1em;
+        width: 50%;
+        padding: 0;
+    }
+    .ui-slider {
+        margin: 0.5em 0 1em 0;
+        height: 15px;
+    }
+    #submitButton {
+        font-size: 1em;
+    }
+        </style>
+    </head>
+
+    <body>
+        <span class="title">Pick a price.<span>
+        <div id="myForm" class="container">
+            <div id="priceChart" class="col-xs-12 col-md-6"></div>
+            <form class="form form-group col-xs-12 col-md-6">
+                <span id="priceThreshold">$0</span>
+                <div id="priceSlider"></div>
+                <button id="submitButton" type="button" class="btn btn-default" aria-label="Left Align">
+                    Next &#x226B;
+                </button>
+            </form>
+            <script>
+let today = new Date();
+today.setHours(0, 0, 0, 0);
+
+let days = 30;
+
+// Placeholder data
+let flightDate = new Date("15 Oct 2016");
+
+let startDate = new Date(flightDate);
+startDate.setDate(flightDate.getDate() - 28);
+
+let todaysPrice = 980;
+let todaysIndex = flightDate.getDate() - today.getDate();
+var priceHistory = [ 8085, 13076, 2029, 18503, 29377, 1145, 31973, 31199, 5794, 23290, 2746, 21135, 2602, 19848, 4894, 27551, 20590, 9287, 23177, 26841, 19635, 671, 9725, 16510, 14466, 24436, 24559, 8932, 26474, 18242 ];
+priceHistory = priceHistory.map((v) => 700 + Math.floor(v/300));
+
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+$(window).resize(function() {
+    if (this.resizeTO) clearTimeout(this.resizeIO);
+    this.resizeIO = setTimeout(function() {
+        $(this).trigger('resizeEnd');
+    }, 500);
+});
+
+$(window).on('resizeEnd', function() { drawChart(); });
+
+function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Date');
+    data.addColumn('number', 'Price');
+    data.addColumn({type: 'string', role: 'style'});
+
+    priceHistory.forEach((price, i) => {
+        let dateStamp = new Date();
+        dateStamp.setDate(flightDate.getDate() - days + i);
+        dateStamp.setHours(0, 0, 0, 0);
+        if (i == todaysIndex)
+            data.addRow(["Today", price,
+                    'point { fill-color: white; stroke-color: blue; stroke-width: 2; visible: true; size: 4; }']);
+        else
+            data.addRow([dateStamp.getDate() + " " +
+                    ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][dateStamp.getMonth()], price, null]);
+    });
+
+    var options = {
+        title: 'SQ123',
+        curveType: 'function',
+        width: '100%',
+        height: '100%',
+        legend: {position: 'none'},
+        hAxis: {
+            viewWindow: {
+                max: days,
+                min: 0
+            },
+            gridlines: {
+                count : days
+            }
+        },
+        vAxis: {
+            format: '$#,###'
+        }
+    };
+
+    var dateFormatter = new google.visualization.DateFormat({pattern: 'd MMM'});
+    dateFormatter.format(data, 0);
+
+    var priceFormatter = new google.visualization.NumberFormat({pattern: '$#,###'});
+    priceFormatter.format(data, 1);
+
+    var chart = new google.visualization.LineChart(document.getElementById('priceChart'));
+
+    chart.draw(data, options);
+
+    google.visualization.events.addListener(chart, 'select', () =>
+            setPrice(data.getValue(chart.getSelection()[0].row, 1)));
+}
+
+function setPrice(price) {
+    $("#priceThreshold").text("$" + price);
+    $("#priceSlider").slider("option", "value", price);
+}
+
+// price slider stuff
+let minPrice = 0;
+let maxPrice = todaysPrice;
+$("#priceSlider").slider({ value: todaysPrice, min: minPrice, max: maxPrice }).on("slide", function(e, ui) {
+    $("#priceThreshold").text("$" + ui.value);
+});
+
+setPrice(todaysPrice);
+            </script>
+        </div>
+    </body>
+</html>
