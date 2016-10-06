@@ -1,0 +1,110 @@
+
+b = new Aircraft()
+{
+    Model = "A380-800",
+    Brand = "Airbus",
+    FlightNumber = "SQ603"
+};
+
+db.Aircrafts.Add(b)
+
+
+
+b = new Aircraft()
+{
+    Model = "A380-800",
+    Brand = "Airbus",
+    FlightNumber = "SQ418"
+};
+
+db.Aircrafts.Add(b)
+
+
+
+b = new Aircraft()
+{
+    Model = "777-300ER",
+    Brand = "Boeing",
+    FlightNumber = "SQ852"
+};
+
+db.Aircrafts.Add(b)
+
+
+
+b = new Aircraft()
+{
+    Model = "777-200",
+    Brand = "Boeing",
+    FlightNumber = "SQ349"
+};
+
+db.Aircrafts.Add(b)
+
+
+
+b = new Aircraft()
+{
+    Model = "777-300",
+    Brand = "Boeing",
+    FlightNumber = "SQ225"
+};
+
+db.Aircrafts.Add(b)
+
+
+
+b = new Aircraft()
+{
+    Model = "A350-900",
+    Brand = "Airbus",
+    FlightNumber = "SQ709"
+};
+
+db.Aircrafts.Add(b)
+
+
+
+b = new Aircraft()
+{
+    Model = "A380-800",
+    Brand = "Airbus",
+    FlightNumber = "SQ794"
+};
+
+db.Aircrafts.Add(b)
+
+
+
+b = new Aircraft()
+{
+    Model = "777-200ER",
+    Brand = "Boeing",
+    FlightNumber = "SQ599"
+};
+
+db.Aircrafts.Add(b)
+
+
+
+b = new Aircraft()
+{
+    Model = "777-300",
+    Brand = "Boeing",
+    FlightNumber = "SQ279"
+};
+
+db.Aircrafts.Add(b)
+
+
+
+b = new Aircraft()
+{
+    Model = "777-200ER",
+    Brand = "Boeing",
+    FlightNumber = "SQ 18"
+};
+
+db.Aircrafts.Add(b)
+
+
