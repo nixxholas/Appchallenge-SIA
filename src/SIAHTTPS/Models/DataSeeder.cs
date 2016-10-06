@@ -123,7 +123,7 @@ namespace SIAHTTPS.Models
             db.Aircrafts.Add(SQ603);
 
             Aircraft SQ418;
-            b = new Aircraft()
+            SQ418 = new Aircraft()
             {
                 Model = "A380-800",
                 Brand = "Airbus",
@@ -134,7 +134,7 @@ namespace SIAHTTPS.Models
 
 
             Aircraft SQ852;
-            b = new Aircraft()
+            SQ852 = new Aircraft()
             {
                 Model = "777-300ER",
                 Brand = "Boeing",
@@ -145,7 +145,7 @@ namespace SIAHTTPS.Models
 
 
             Aircraft SQ349;
-            b = new Aircraft()
+            SQ349 = new Aircraft()
             {
                 Model = "777-200",
                 Brand = "Boeing",
@@ -156,40 +156,40 @@ namespace SIAHTTPS.Models
 
 
             Aircraft SQ225;
-            b = new Aircraft()
+            SQ225 = new Aircraft()
             {
                 Model = "777-300",
                 Brand = "Boeing",
                 FlightNumber = "SQ225"
             };
 
-            db.Aircrafts.Add(SQ25);
+            db.Aircrafts.Add(SQ225);
 
 
             Aircraft SQ709;
-            b = new Aircraft()
+            SQ709 = new Aircraft()
             {
                 Model = "A350-900",
                 Brand = "Airbus",
                 FlightNumber = "SQ709"
             };
 
-            db.Aircrafts.Add(709);
+            db.Aircrafts.Add(SQ709);
 
 
             Aircraft SQ794;
-            b = new Aircraft()
+            SQ794 = new Aircraft()
             {
                 Model = "A380-800",
                 Brand = "Airbus",
                 FlightNumber = "SQ794"
             };
 
-            db.Aircrafts.Add(794);
+            db.Aircrafts.Add(SQ794);
 
 
             Aircraft SQ599;
-            b = new Aircraft()
+            SQ599 = new Aircraft()
             {
                 Model = "777-200ER",
                 Brand = "Boeing",
@@ -200,7 +200,7 @@ namespace SIAHTTPS.Models
 
 
             Aircraft SQ279;
-            b = new Aircraft()
+            SQ279 = new Aircraft()
             {
                 Model = "777-300",
                 Brand = "Boeing",
@@ -211,7 +211,7 @@ namespace SIAHTTPS.Models
 
 
             Aircraft SQ018;
-            b = new Aircraft()
+            SQ018 = new Aircraft()
             {
                 Model = "777-200ER",
                 Brand = "Boeing",
@@ -230,10 +230,10 @@ namespace SIAHTTPS.Models
                 CountryAbbreviation = "SG"
             };
 
-            db.AirPort.Add(airport1);
+            db.Airports.Add(airport1);
 
             Airport airport2;
-            airport1 = new Airport()
+            airport2 = new Airport()
             {
                 AirportId = 2,
                 IATACode = "SIR",
@@ -242,10 +242,10 @@ namespace SIAHTTPS.Models
                 CountryAbbreviation = "CH"
             };
 
-            db.Airport.Add(airport2);
+            db.Airports.Add(airport2);
 
             Airport airport3;
-            airport1 = new Airport()
+            airport3 = new Airport()
             {
                 AirportId = 3,
                 IATACode = "PEK",
@@ -254,7 +254,7 @@ namespace SIAHTTPS.Models
                 CountryAbbreviation = "CN"
             };
 
-            db.Airport.Add(airport3);
+            db.Airports.Add(airport3);
 
             Ticket ticket1;
             ticket1 = new Ticket()
@@ -262,87 +262,87 @@ namespace SIAHTTPS.Models
                 TicketType = "First Class",
                 TicketName = ""
             };
-            db.Ticket.Add(ticket1);
+            db.Tickets.Add(ticket1);
 
             Ticket ticket2;
-            ticket1 = new Ticket()
+            ticket2 = new Ticket()
             {
                 TicketType = "Business",
                 TicketName = ""
             };
-            db.Ticket.Add(ticket1);
+            db.Tickets.Add(ticket2);
 
-            Ticket ticket1;
-            ticket1 = new Ticket()
+            Ticket ticket3;
+            ticket3 = new Ticket()
             {
                 TicketType = "First Class",
                 TicketName = ""
             };
-            db.Ticket.Add(ticket1);
+            db.Tickets.Add(ticket3);
 
-            Ticket ticket1;
-            ticket1 = new Ticket()
+            Ticket ticket4;
+            ticket4 = new Ticket()
             {
                 TicketType = "First Class",
                 TicketName = ""
             };
-            db.Ticket.Add(ticket1);
+            db.Tickets.Add(ticket4);
 
-            Ticket ticket1;
-            ticket1 = new Ticket()
+            Ticket ticket5;
+            ticket5 = new Ticket()
             {
                 TicketType = "First Class",
                 TicketName = ""
             };
-            db.Ticket.Add(ticket1);
+            db.Tickets.Add(ticket5);
 
-            Ticket ticket1;
-            ticket1 = new Ticket()
+            Ticket ticket6;
+            ticket6 = new Ticket()
             {
                 TicketType = "First Class",
                 TicketName = ""
             };
-            db.Ticket.Add(ticket1);
+            db.Tickets.Add(ticket6);
 
-            Ticket ticket1;
-            ticket1 = new Ticket()
+            Ticket ticket7;
+            ticket7 = new Ticket()
             {
                 TicketType = "First Class",
                 TicketName = ""
             };
-            db.Ticket.Add(ticket1);
+            db.Tickets.Add(ticket7);
 
-            Ticket ticket1;
-            ticket1 = new Ticket()
+            Ticket ticket8;
+            ticket8 = new Ticket()
             {
                 TicketType = "First Class",
                 TicketName = ""
             };
-            db.Ticket.Add(ticket1);
+            db.Tickets.Add(ticket8);
 
-            Ticket ticket1;
-            ticket1 = new Ticket()
+            Ticket ticket9;
+            ticket9 = new Ticket()
             {
                 TicketType = "First Class",
                 TicketName = ""
             };
-            db.Ticket.Add(ticket1);
+            db.Tickets.Add(ticket9);
 
-            Ticket ticket1;
-            ticket1 = new Ticket()
+            Ticket ticket10;
+            ticket10 = new Ticket()
             {
                 TicketType = "First Class",
                 TicketName = ""
             };
-            db.Ticket.Add(ticket1);
+            db.Tickets.Add(ticket10);
 
-            Ticket ticket1;
-            ticket1 = new Ticket()
+            Ticket ticket11;
+            ticket11 = new Ticket()
             {
                 TicketType = "First Class",
                 TicketName = ""
             };
-            db.Ticket.Add(ticket1);
+            db.Tickets.Add(ticket11);
 
             db.SaveChanges();
         }
