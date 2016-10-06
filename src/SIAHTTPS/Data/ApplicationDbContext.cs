@@ -151,9 +151,9 @@ namespace SIAHTTPS.Data
             // -------------- Defining AirportFlights Entity --------------- //
 
             builder.Entity<AirportFlights>()
-                .HasKey(input => new { input.AirportId, input.FlightId })
+                .HasKey(input => new { input.AirportId, input.TerminalId, input.FlightId })
                 .HasName("AirportFlights_CompositeKey");
-
+            
             // -------------- AirportFlights Entity END --------------- //
 
             // -------------- Defining Flight Entity --------------- //

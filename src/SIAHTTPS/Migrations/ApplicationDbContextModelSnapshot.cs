@@ -5,13 +5,12 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using SIAHTTPS.Data;
 
-namespace SIAHTTPS.Data.Migrations
+namespace SIAHTTPS.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20161005073602_setupdb")]
-    partial class setupdb
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.1")
@@ -154,7 +153,7 @@ namespace SIAHTTPS.Data.Migrations
                         .IsUnique()
                         .HasName("Aircraft_FlightNumber_UniqueConstraint");
 
-                    b.ToTable("Aircrafts");
+                    b.ToTable("Aircraft");
                 });
 
             modelBuilder.Entity("SIAHTTPS.Models.AircraftFlights", b =>
@@ -209,21 +208,29 @@ namespace SIAHTTPS.Data.Migrations
                     b.HasKey("AirportId")
                         .HasName("PrimaryKey_Airport_AirportId");
 
-                    b.ToTable("Airports");
+                    b.ToTable("Airport");
                 });
 
             modelBuilder.Entity("SIAHTTPS.Models.AirportFlights", b =>
                 {
                     b.Property<long>("AirportId");
 
+                    b.Property<long>("TerminalId");
+
                     b.Property<long>("FlightId");
 
-                    b.HasKey("AirportId", "FlightId")
+                    b.Property<long?>("TerminalAirportId");
+
+                    b.Property<long?>("TerminalId1");
+
+                    b.HasKey("AirportId", "TerminalId", "FlightId")
                         .HasName("AirportFlights_CompositeKey");
 
                     b.HasIndex("AirportId");
 
                     b.HasIndex("FlightId");
+
+                    b.HasIndex("TerminalAirportId", "TerminalId1");
 
                     b.ToTable("AirportFlights");
                 });
@@ -241,6 +248,8 @@ namespace SIAHTTPS.Data.Migrations
                         .HasAnnotation("MaxLength", 256);
 
                     b.Property<bool>("EmailConfirmed");
+
+                    b.Property<string>("FullName");
 
                     b.Property<bool>("LockoutEnabled");
 
@@ -297,7 +306,7 @@ namespace SIAHTTPS.Data.Migrations
                     b.HasKey("FlightId")
                         .HasName("PrimaryKey_Flight_FlightId");
 
-                    b.ToTable("Flights");
+                    b.ToTable("Flight");
                 });
 
             modelBuilder.Entity("SIAHTTPS.Models.FlightTickets", b =>
@@ -346,7 +355,7 @@ namespace SIAHTTPS.Data.Migrations
 
                     b.HasIndex("AirportId");
 
-                    b.ToTable("Terminals");
+                    b.ToTable("Terminal");
                 });
 
             modelBuilder.Entity("SIAHTTPS.Models.Ticket", b =>
@@ -372,7 +381,7 @@ namespace SIAHTTPS.Data.Migrations
                         .IsUnique()
                         .HasName("Ticket_TicketType_UniqueConstraint");
 
-                    b.ToTable("Tickets");
+                    b.ToTable("Ticket");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<string>", b =>
@@ -436,6 +445,10 @@ namespace SIAHTTPS.Data.Migrations
                         .WithMany("AirportFlights")
                         .HasForeignKey("FlightId")
                         .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("SIAHTTPS.Models.Terminal", "Terminal")
+                        .WithMany("AirportFlights")
+                        .HasForeignKey("TerminalAirportId", "TerminalId1");
                 });
 
             modelBuilder.Entity("SIAHTTPS.Models.FlightTickets", b =>

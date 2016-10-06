@@ -7,11 +7,11 @@ namespace SIAHTTPS.Models
 {
     public class FlightTickets
     {
-        public long FlightId { get; set; }
-        public Flight Flight { get; set; }
-        public long TicketId { get; set; }
-        public Ticket Ticket { get; set; }
-        public decimal Price { get; set; }
-        public int Quantity { get; set; }
+        public long FlightId { get; set; } // Flight Identifier
+        public Flight Flight { get; set; } // Which flight this ticket is sold for
+        public long TicketId { get; set; } // Ticket Identifier
+        public Ticket Ticket { get; set; } // What type of ticket this is
+        public decimal Price { get; set; } // Price
+        public int Quantity { get; set; } // How many left
     }
 }
