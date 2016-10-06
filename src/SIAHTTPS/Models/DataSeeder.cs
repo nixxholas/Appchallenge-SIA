@@ -225,7 +225,7 @@ namespace SIAHTTPS.Models
             {
                 Model = "777-200ER",
                 Brand = "Boeing",
-                FlightNumber = "SQ324""
+                FlightNumber = "SQ324"
             };
             db.Aircrafts.Add(SQ324);
 
