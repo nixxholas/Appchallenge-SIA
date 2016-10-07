@@ -88,11 +88,7 @@ namespace SIAHTTPS
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-<<<<<<< HEAD
             app.SeedData();
-=======
-           // app.SeedData();
->>>>>>> 86209f0... APIs: Workable Rate
         }
     }
 }

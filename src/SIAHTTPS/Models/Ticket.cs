@@ -10,6 +10,6 @@ namespace SIAHTTPS.Models
         public long TicketId { get; set; }
         public string TicketType { get; set; } // First Class
         public string TicketName { get; set; } // For fuck?
-        public List<FlightTickets> FlightTickets { get; set; }
+        public List<FlightTicket> FlightTickets { get; set; }
     }
 }

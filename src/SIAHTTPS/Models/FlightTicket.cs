@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SIAHTTPS.Models
 {
-    public class FlightTickets
+    public class FlightTicket
     {
         public long FlightId { get; set; } // Flight Identifier
         public Flight Flight { get; set; } // Which flight this ticket is sold for

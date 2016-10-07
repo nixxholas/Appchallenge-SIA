@@ -11,10 +11,10 @@ namespace SIAHTTPS.Models
         public long ETA { get; set; }
         public DateTime TakeoffDT { get; set; }
         public DateTime TouchDownDT { get; set; }
-        public StartTermFlights StartTermFlight { get; set; }
-        public EndTermFlights EndTermFlight { get; set; }
+        public StartTermFlight StartTermFlight { get; set; }
+        public EndTermFlight EndTermFlight { get; set; }
         public int AircraftId { get; set; }
         public Aircraft Aircraft { get; set; }
-        public List<FlightTickets> FlightTickets { get; set; }
+        public List<FlightTicket> FlightTickets { get; set; }
     }
 }
