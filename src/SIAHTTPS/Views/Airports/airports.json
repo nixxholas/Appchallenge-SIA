@@ -1,9 +1,4 @@
 {
-  "airportResponse": {
-    "authorisedAPI": "true",
-    "processingDurationMillis": "1",
-    "success": "true",
-    "airports": {
       "airports": [
         {
           "city": "Balmaceda",
@@ -28699,5 +28694,3 @@
         }
       ]
     }
-  }
-}

@@ -18,7 +18,7 @@ namespace SIAHTTPS.APIs
     {
         // GET: api/Airports
         [HttpGet]
-        public JsonResult Get()
+        public IActionResult Get()
         {
             List<object> airportList = new List<object>();
             var airports = _database.Airports

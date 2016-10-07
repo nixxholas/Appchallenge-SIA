@@ -1,8 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using SIAHTTPS.Data;
+using SIAHTTPS.Models;
 
 namespace SIAHTTPS.Controllers
 {
@@ -13,12 +17,12 @@ namespace SIAHTTPS.Controllers
             return View();
         }
 
-        public IActionResult One()
+        public IActionResult List()
         {
             return View();
         }
 
-        public IActionResult List()
+        public IActionResult One()
         {
             return View();
         }
