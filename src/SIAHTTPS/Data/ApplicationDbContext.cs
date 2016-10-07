@@ -228,6 +228,11 @@ namespace SIAHTTPS.Data
                 .HasColumnType("int")
                 .IsRequired();
 
+            builder.Entity<FlightTickets>()
+                .Property(input => input.PurchaseDate)
+                .HasColumnName("PurchaseDate")
+                .IsRequired();
+
             // -------------- FlightTickets Entity END --------------- //
 
             // -------------- Defining Terminal Entity --------------- //

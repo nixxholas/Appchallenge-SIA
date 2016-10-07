@@ -8,7 +8,7 @@ namespace SIAHTTPS.Models
     public class Flight
     {
         public long FlightId { get; set; }
-        public DateTime ETA { get; set; }
+        public long ETA { get; set; }
         public DateTime TakeoffDT { get; set; }
         public DateTime TouchDownDT { get; set; }
         public StartTermFlights StartTermFlight { get; set; }
