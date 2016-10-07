@@ -108,7 +108,11 @@ namespace SIAHTTPS.APIs
                     flights.Add(new
                     {
                         FlightId = flight.FlightId,
+                        DepartureAirport = flight.StartTermFlight.Terminal.Airport.IATACode,
+                        DepartureCity = flight.StartTermFlight.Terminal.Airport.City,
                         TakeOffDT = flight.TakeoffDT,
+                        ArrivalAirport = flight.EndTermFlight.Terminal.Airport.IATACode,
+                        ArrivalCity = flight.EndTermFlight.Terminal.Airport.City,
                         TouchDownDT = flight.TouchDownDT,
                         ETA = flight.ETA,
                         FlightTickets = flight.FlightTickets

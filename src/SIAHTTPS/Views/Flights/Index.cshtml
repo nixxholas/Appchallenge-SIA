@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="panel panel-default">
+    <div class="panel-heading">Search for flights</div>
+    <div class="panel-body">
+        <form>
+            <div class="form-group">
+                <label for="From">Depart From:</label>
+                <input type="text" class="form-control" id="From">
+                <label for="Arrive">Arrive At:</label>
+                <input type="text" class="form-control" id="Arrive">
+                <label for="daterange">Departing and arrival date:</label>
+                <div id="daterange">
+
+                </div>
+                <button type="button" class="btn btn-default" id="submit">Search</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    $dateRangeElement = $("#daterange").jqxDateTimeInput({ width: 220, height: 34, selectionMode: 'range' });
+
+    $('#submit').on('click', function () {
+        var collectedDepartFrom = $('#From').val();
+        var collectedArriveAt = $('#Arrive').val();
+        var collectedStartDate = moment(Selection.from).format('DDMMYYYY');
+        var collectedEndDate = moment(Selection.to).format('DDMMYYYY');
+
+        location.replace('/Flights/List/' + collectedDepartFrom + '&' + collectedArriveAt + '&' + collectedStartDate + '&' + collectedEndDate);
+
+    })
+
+</script>

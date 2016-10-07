@@ -1,0 +1,93 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Flight No</th>
+            <th>Depart From</th>
+            <th>Depart City</th>
+            <th>Depart Time</th>
+            <th>Arrive At</th>
+            <th>Arrive City</th>
+            <th>Arrive Time</th>
+            <th>Total Time</th>
+            @*<th>Layovers</th>*@
+            <th>&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody id="flightTableBody"></tbody>
+</table>
+
+<script>
+    var g_combination = getCategoryIdFromAddressBar();
+    function getCategoryIdFromAddressBar() {
+        var urlArray = window.location.href.split('/');
+        var categoryId = urlArray[urlArray.length - 1];
+        return combination;
+    };
+
+    var processedCombo = g_combination.match('([A-Z0-9])\w+');
+
+    var departFrom = processedCombo[0];
+    var arriveAt = processedCombo[1];
+    var departDate = processedCombo[2];
+    var arriveDate = processedCombo[3];
+
+    jQuery.ajax({
+        url: '/API/Flights/GetFlightsRoute/' + departFrom + arriveAt,
+        method: 'GET',
+        dataType: 'json',
+        cache: false
+    }).done(function (data, textStatus, jqxhr) {
+        var data;
+        var flightsList = data;
+
+        $flightTableBody = $('#flightTableBody');
+
+        for (i = 0; i < data.length; i++) {
+            var oneFlight = flightsList[i];
+            var DepartureDate = oneFlight.TakeOffDT;
+
+            $rowElement = $('<tr>', '</tr>');
+
+            //FlightNo
+            $cellElement = $('<td>', '</td>').text(oneFlight.flightId);
+            $rowElement.append($cellElement);
+            //Depart From
+            $cellElement = $('<td>', '</td>').text(oneFlight.departureAirport);
+            $rowElement.append($cellElement);
+            //Depart City
+            $cellElement = $('<td>', '</td>').text(oneFlight.departureCity);
+            $rowElement.append($cellElement);
+            //Depart Time
+            $cellElement = $('<td>', '</td>').text(oneFlight.takeOffDT);
+            $rowElement.append($cellElement);
+            //Arrive At
+            $cellElement = $('<td>', '</td>').text(oneFlight.arrivalAirport);
+            $rowElement.append($cellElement);
+            //Arrive City
+            $cellElement = $('<td>', '</td>').text(oneFlight.arrivalCity);
+            $rowElement.append($cellElement);
+            //Arrive Time
+            $cellElement = $('<td>', '</td>').text(oneFlight.touchDownDT);
+            $rowElement.append($cellElement);
+            //Total Time
+            $cellElement = $('<td>', '</td>').text(oneFlight.eTA);
+            $rowElement.append($cellElement);
+            ////No. of layovers
+            //$cellElement = $('<td>', '</td>').text(oneFlight.Layovers);
+            //$rowElement.append($cellElement);
+            //Details button
+            $hyperLinkElement = $('<a>More Details</a>').attr('href', '/Flights/Detail/' + oneFlight.flightId);
+            $hyperLinkElement.addClass('btn btn-primary');
+            $cellElement = $('<td>', '</td>');
+            $cellElement.append($hyperLinkElement)
+            $rowelement.append($cellElement);
+
+            $flightTableBody.append($rowElement);
+        }
+    });
+</script>
