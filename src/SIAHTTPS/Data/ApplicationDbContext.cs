@@ -20,10 +20,14 @@ namespace SIAHTTPS.Data
         public DbSet<FlightTicket> FlightTickets { get; set; }
         public DbSet<Terminal> Terminals { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
+
         //public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         //    : base(options)
         //{
         //}
+
+        // Username: jingyen Password: FuckW3IweN!
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Server=DESKTOP-2CPI6TQ\SQLEXPRESS;database=SIA;Trusted_Connection=True;MultipleActiveResultSets=True");

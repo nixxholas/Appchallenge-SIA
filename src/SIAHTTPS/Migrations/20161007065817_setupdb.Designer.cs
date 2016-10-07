@@ -8,7 +8,7 @@ using SIAHTTPS.Data;
 namespace SIAHTTPS.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20161007063554_setupdb")]
+    [Migration("20161007065817_setupdb")]
     partial class setupdb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
