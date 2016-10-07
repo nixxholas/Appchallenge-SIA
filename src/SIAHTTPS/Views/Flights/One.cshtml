@@ -2,24 +2,28 @@
 
 <h1>SQ324</h1>
 <hr />
-<p>
-    <b>Depart From:</b>SIN SINGAPORE<br />
-    <b>Depart Time:</b>13 OCTOBER 2016 23:55<br />
-    <b>Arrive At:</b>AMS AMSTERDAM<br />
-    <b>Arrive Time:</b>13 OCTOBER 2015 07:15
-    <b>Total Time:</b>13h 20mins<br />
-</p>
+<div class="col-xs-3" style="margin-top: 80px">
+    <b>Depart From:</b> SIN SINGAPORE<br />
+    <b>Depart Time:</b> 13 OCTOBER 2016 23:55<br />
+    <b>Arrive At:</b> AMS AMSTERDAM<br />
+    <b>Arrive Time:</b> 13 OCTOBER 2015 07:15<br />
+    <b>Total Time:</b> 13h 20mins<br />
+    <span style="display: block; margin: 1em 0; ">We can remind you again when tickets are running
+    low!<br/></span>
+    <input type="text" placeholder="+65-91234567" style="width:
+    8em"></input><button>Notify me</button>
+</div>
 
-<div id="seatChart"></div>
+<div id="seatChart" class="col-xs-9"></div>
 <hr />
 
 <script>
 let today = new Date();
 today.setHours(0, 0, 0, 0);
 
-let days = 90;
+let days = 30;
 
-let flightDate = new Date("15 Oct 2016");
+let flightDate = new Date("13 Oct 2016");
 
 let startDate = new Date(flightDate);
 startDate.setDate(flightDate.getDate() - days);
@@ -41,7 +45,7 @@ var seatsHistory = [ 8085, 13076, 2029, 18503, 29377, 1145, 31973, 31199, 5794,
 
 var currentSeats = seatsHistory.map(function(v) {
     return Math.floor(v + 100 - Math.random()*50);
-}).sort((a,b)=>a-b).reverse().splice(todaysIndex);
+}).sort((a,b)=>a-b).reverse().splice(todaysIndex+1);
 
 // end placeholder
 google.charts.load('current', {'packages':['corechart']});
@@ -65,9 +69,9 @@ function drawChart() {
 
     seatsHistory.forEach((seats, i) => {
         let dateStamp = new Date();
-        dateStamp.setDate(flightDate.getDate() - (30 + i)*days/30);
+        dateStamp.setDate(flightDate.getDate() - 29 + i);
         dateStamp.setHours(0, 0, 0, 0);
-        if (i == 29 - todaysIndex)
+        if (i == 28 - todaysIndex)
             data.addRow(["Today", seats, currentSeats[i],
                     'point { fill-color: white; stroke-color: red; stroke-width: 2; visible: true; size: 4; }']);
         else
@@ -77,10 +81,10 @@ function drawChart() {
     });
 
     var options = {
-        title: 'SQ123',
+        title: '',
         curveType: 'function',
         width: '100%',
-        height: '100%',
+        height: 400,
         legend: {position: 'none'},
         hAxis: {
             viewWindow: {
