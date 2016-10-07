@@ -178,6 +178,7 @@ namespace SIAHTTPS.Data
             builder.Entity<Flight>()
                 .Property(input => input.ETA)
                 .HasColumnName("ETA")
+				.HasColumnType("bigint")
                 .IsRequired();
 
             builder.Entity<Flight>()
@@ -228,9 +229,9 @@ namespace SIAHTTPS.Data
                 .HasColumnType("int")
                 .IsRequired();
 
-            builder.Entity<FlightTickets>()
-                .Property(input => input.PurchaseDate)
-                .HasColumnName("PurchaseDate")
+            builder.Entity<FlightTicket>()
+                .Property(input => input.CreatedAt)
+                .HasDefaultValueSql("GETDATE()")
                 .IsRequired();
 
             // -------------- FlightTickets Entity END --------------- //

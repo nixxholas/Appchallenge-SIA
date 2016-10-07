@@ -13,6 +13,6 @@ namespace SIAHTTPS.Models
         public Ticket Ticket { get; set; } // What type of ticket this is
         public decimal Price { get; set; } // Price
         public int Quantity { get; set; } // How many left
-        public DateTime PurchaseDate { get; set; } // Date of purchase of the ticket
+        public DateTime CreatedAt { get; set; }
     }
 }
