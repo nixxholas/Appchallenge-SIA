@@ -369,7 +369,9 @@ namespace SIAHTTPS.Models
             StartTermFlight stf1;
             stf1 = new StartTermFlight()
             {
+                FlightId = flight1.FlightId,
                 Flight = flight1,
+                TerminalId = terminal1.TerminalId,
                 Terminal = terminal1
             };
             db.StartTermFlights.Add(stf1);
