@@ -236,6 +236,7 @@
 "C:\Users\nixho\Source\Repos\student-https\src\SIAHTTPS\Controllers\AccountController.cs"
 "C:\Users\nixho\Source\Repos\student-https\src\SIAHTTPS\Controllers\AircraftsController.cs"
 "C:\Users\nixho\Source\Repos\student-https\src\SIAHTTPS\Controllers\AirportsController.cs"
+"C:\Users\nixho\Source\Repos\student-https\src\SIAHTTPS\Controllers\FlightsController.cs"
 "C:\Users\nixho\Source\Repos\student-https\src\SIAHTTPS\Controllers\HomeController.cs"
 "C:\Users\nixho\Source\Repos\student-https\src\SIAHTTPS\Controllers\ManageController.cs"
 "C:\Users\nixho\Source\Repos\student-https\src\SIAHTTPS\Data\ApplicationDbContext.cs"

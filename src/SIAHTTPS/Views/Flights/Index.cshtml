@@ -1,38 +1,47 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
+@model IEnumerable<SIAHTTPS.Models.Flight>
+
 @{
+    ViewData["Title"] = "Index";
 }
-<div class="panel panel-default">
-    <div class="panel-heading">Search for flights</div>
-    <div class="panel-body">
-        <form>
-            <div class="form-group">
-                <label for="From">Depart From:</label>
-                <input type="text" class="form-control" id="From">
-                <label for="Arrive">Arrive At:</label>
-                <input type="text" class="form-control" id="Arrive">
-                <label for="daterange">Departing and arrival date:</label>
-                <div id="daterange">
 
-                </div>
-                <button type="button" class="btn btn-default" id="submit">Search</button>
-            </div>
-        </form>
-    </div>
-</div>
+<h2>Index</h2>
 
-<script>
-    $dateRangeElement = $("#daterange").jqxDateTimeInput({ width: 220, height: 34, selectionMode: 'range' });
-
-    $('#submit').on('click', function () {
-        var collectedDepartFrom = $('#From').val();
-        var collectedArriveAt = $('#Arrive').val();
-        var collectedStartDate = moment(Selection.from).format('DDMMYYYY');
-        var collectedEndDate = moment(Selection.to).format('DDMMYYYY');
-
-        location.replace('/Flights/List/' + collectedDepartFrom + '&' + collectedArriveAt + '&' + collectedStartDate + '&' + collectedEndDate);
-
-    })
-
-</script>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ETA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TakeoffDT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TouchDownDT)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ETA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TakeoffDT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TouchDownDT)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.FlightId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.FlightId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.FlightId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
