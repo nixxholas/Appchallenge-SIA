@@ -379,6 +379,8 @@ namespace SIAHTTPS.Models
             EndTermFlight etf1;
             etf1 = new EndTermFlight()
             {
+                FlightId = flight1.FlightId,
+                TerminalId = terminal3.TerminalId,
                 Flight = flight1,
                 Terminal = terminal3
             };
@@ -406,6 +408,8 @@ namespace SIAHTTPS.Models
             stf2 = new StartTermFlight()
             {
                 Flight = flight2,
+                FlightId = flight2.FlightId,
+                TerminalId = terminal3.TerminalId,
                 Terminal = terminal3
             };
             db.StartTermFlights.Add(stf2);
@@ -414,6 +418,8 @@ namespace SIAHTTPS.Models
             etf2 = new EndTermFlight()
             {
                 Flight = flight2,
+                FlightId = flight2.FlightId,
+                TerminalId = terminal1.TerminalId,
                 Terminal = terminal1
             };
             db.EndTermFlights.Add(etf2);
@@ -439,7 +445,9 @@ namespace SIAHTTPS.Models
             stf3 = new StartTermFlight()
             {
                 Flight = flight3,
-                Terminal = terminal4
+                Terminal = terminal4,
+                FlightId = flight3.FlightId,
+                TerminalId = terminal4.TerminalId
             };
             db.StartTermFlights.Add(stf1);
 
@@ -447,7 +455,9 @@ namespace SIAHTTPS.Models
             etf3 = new EndTermFlight()
             {
                 Flight = flight3,
-                Terminal = terminal1
+                Terminal = terminal1,
+                FlightId = flight3.FlightId,
+                TerminalId = terminal1.TerminalId
             };
             db.EndTermFlights.Add(etf3);
 
@@ -473,7 +483,9 @@ namespace SIAHTTPS.Models
             stf4 = new StartTermFlight()
             {
                 Flight = flight4,
-                Terminal = terminal4
+                Terminal = terminal4,
+                FlightId = flight4.FlightId,
+                TerminalId = terminal4.TerminalId
             };
             db.StartTermFlights.Add(stf4);
 
@@ -481,7 +493,9 @@ namespace SIAHTTPS.Models
             etf4 = new EndTermFlight()
             {
                 Flight = flight4,
-                Terminal = terminal1
+                Terminal = terminal1,
+                FlightId = flight4.FlightId,
+                TerminalId = terminal1.TerminalId
             };
             db.EndTermFlights.Add(etf4);
 
@@ -508,7 +522,9 @@ namespace SIAHTTPS.Models
             ostf1 = new StartTermFlight()
             {
                 Flight = oldshit1,
-                Terminal = terminal1
+                Terminal = terminal1,
+                FlightId = oldshit1.FlightId,
+                TerminalId = terminal1.TerminalId
             };
             db.StartTermFlights.Add(ostf1);
 
@@ -516,7 +532,9 @@ namespace SIAHTTPS.Models
             oetf1 = new EndTermFlight()
             {
                 Flight = oldshit1,
-                Terminal = terminal4
+                Terminal = terminal4,
+                FlightId = oldshit1.FlightId,
+                TerminalId = terminal4.TerminalId
             };
             db.EndTermFlights.Add(oetf1);
 
@@ -542,7 +560,9 @@ namespace SIAHTTPS.Models
             ostf2 = new StartTermFlight()
             {
                 Flight = oldshit2,
-                Terminal = terminal1
+                Terminal = terminal1,
+                FlightId = oldshit2.FlightId,
+                TerminalId = terminal1.TerminalId
             };
             db.StartTermFlights.Add(ostf2);
 
@@ -550,7 +570,9 @@ namespace SIAHTTPS.Models
             oetf2 = new EndTermFlight()
             {
                 Flight = oldshit2,
-                Terminal = terminal4
+                Terminal = terminal4,
+                FlightId = oldshit2.FlightId,
+                TerminalId = terminal4.TerminalId
             };
             db.EndTermFlights.Add(oetf2);
 
@@ -577,7 +599,9 @@ namespace SIAHTTPS.Models
             ostf3 = new StartTermFlight()
             {
                 Flight = oldshit3,
-                Terminal = terminal1
+                Terminal = terminal1,
+                FlightId = oldshit3.FlightId,
+                TerminalId = terminal1.TerminalId
             };
             db.StartTermFlights.Add(ostf3);
 
@@ -585,7 +609,9 @@ namespace SIAHTTPS.Models
             oetf3 = new EndTermFlight()
             {
                 Flight = oldshit3,
-                Terminal = terminal4
+                Terminal = terminal4,
+                FlightId = oldshit3.FlightId,
+                TerminalId = terminal4.TerminalId
             };
             db.EndTermFlights.Add(oetf3);
 
@@ -612,7 +638,9 @@ namespace SIAHTTPS.Models
             ostf4 = new StartTermFlight()
             {
                 Flight = oldshit4,
-                Terminal = terminal1
+                Terminal = terminal1,
+                FlightId = oldshit4.FlightId,
+                TerminalId = terminal1.TerminalId
             };
             db.StartTermFlights.Add(ostf4);
 
@@ -620,7 +648,9 @@ namespace SIAHTTPS.Models
             oetf4 = new EndTermFlight()
             {
                 Flight = oldshit4,
-                Terminal = terminal4
+                Terminal = terminal4,
+                FlightId = oldshit4.FlightId,
+                TerminalId = terminal4.TerminalId
             };
             db.EndTermFlights.Add(oetf4);
 
@@ -647,7 +677,9 @@ namespace SIAHTTPS.Models
             ostf5 = new StartTermFlight()
             {
                 Flight = oldshit5,
-                Terminal = terminal1
+                Terminal = terminal1,
+                FlightId = oldshit5.FlightId,
+                TerminalId = terminal1.TerminalId
             };
             db.StartTermFlights.Add(ostf5);
 
@@ -655,7 +687,9 @@ namespace SIAHTTPS.Models
             oetf5 = new EndTermFlight()
             {
                 Flight = oldshit5,
-                Terminal = terminal4
+                Terminal = terminal4,
+                FlightId = oldshit5.FlightId,
+                TerminalId = terminal4.TerminalId
             };
             db.EndTermFlights.Add(oetf5);
 
@@ -682,7 +716,9 @@ namespace SIAHTTPS.Models
             ostf6 = new StartTermFlight()
             {
                 Flight = oldshit6,
-                Terminal = terminal1
+                Terminal = terminal1,
+                FlightId = oldshit6.FlightId,
+                TerminalId = terminal1.TerminalId
             };
             db.StartTermFlights.Add(ostf6);
 
@@ -690,7 +726,9 @@ namespace SIAHTTPS.Models
             oetf6 = new EndTermFlight()
             {
                 Flight = oldshit6,
-                Terminal = terminal4
+                Terminal = terminal4,
+                FlightId = oldshit6.FlightId,
+                TerminalId = terminal4.TerminalId
             };
             db.EndTermFlights.Add(oetf6);
 
@@ -717,7 +755,9 @@ namespace SIAHTTPS.Models
             ostf7 = new StartTermFlight()
             {
                 Flight = oldshit7,
-                Terminal = terminal1
+                Terminal = terminal1,
+                FlightId = oldshit7.FlightId,
+                TerminalId = terminal1.TerminalId
             };
             db.StartTermFlights.Add(ostf7);
 
@@ -725,7 +765,9 @@ namespace SIAHTTPS.Models
             oetf7 = new EndTermFlight()
             {
                 Flight = oldshit7,
-                Terminal = terminal4
+                Terminal = terminal4,
+                FlightId = oldshit7.FlightId,
+                TerminalId = terminal4.TerminalId
             };
             db.EndTermFlights.Add(oetf7);
 
@@ -752,7 +794,9 @@ namespace SIAHTTPS.Models
             ostf8 = new StartTermFlight()
             {
                 Flight = oldshit8,
-                Terminal = terminal1
+                Terminal = terminal1,
+                FlightId = oldshit8.FlightId,
+                TerminalId = terminal1.TerminalId
             };
             db.StartTermFlights.Add(ostf8);
 
@@ -760,7 +804,9 @@ namespace SIAHTTPS.Models
             oetf8 = new EndTermFlight()
             {
                 Flight = oldshit8,
-                Terminal = terminal4
+                Terminal = terminal4,
+                FlightId = oldshit8.FlightId,
+                TerminalId = terminal4.TerminalId
             };
             db.EndTermFlights.Add(oetf8);
 
@@ -787,7 +833,9 @@ namespace SIAHTTPS.Models
             ostf9 = new StartTermFlight()
             {
                 Flight = oldshit9,
-                Terminal = terminal1
+                Terminal = terminal1,
+                FlightId = oldshit9.FlightId,
+                TerminalId = terminal1.TerminalId
             };
             db.StartTermFlights.Add(ostf9);
 
@@ -795,7 +843,9 @@ namespace SIAHTTPS.Models
             oetf9 = new EndTermFlight()
             {
                 Flight = oldshit9,
-                Terminal = terminal4
+                Terminal = terminal4,
+                FlightId = oldshit9.FlightId,
+                TerminalId = terminal4.TerminalId
             };
             db.EndTermFlights.Add(oetf9);
 
@@ -822,7 +872,9 @@ namespace SIAHTTPS.Models
             ostf10 = new StartTermFlight()
             {
                 Flight = oldshit10,
-                Terminal = terminal1
+                Terminal = terminal1,
+                FlightId = oldshit10.FlightId,
+                TerminalId = terminal1.TerminalId
             };
             db.StartTermFlights.Add(ostf10);
 
@@ -830,7 +882,9 @@ namespace SIAHTTPS.Models
             oetf10 = new EndTermFlight()
             {
                 Flight = oldshit10,
-                Terminal = terminal4
+                Terminal = terminal4,
+                FlightId = oldshit10.FlightId,
+                TerminalId = terminal4.TerminalId
             };
             db.EndTermFlights.Add(oetf10);
 
@@ -857,7 +911,9 @@ namespace SIAHTTPS.Models
             ostf11 = new StartTermFlight()
             {
                 Flight = oldshit11,
-                Terminal = terminal1
+                Terminal = terminal1,
+                FlightId = oldshit11.FlightId,
+                TerminalId = terminal1.TerminalId
             };
             db.StartTermFlights.Add(ostf11);
 
@@ -865,7 +921,9 @@ namespace SIAHTTPS.Models
             oetf11 = new EndTermFlight()
             {
                 Flight = oldshit11,
-                Terminal = terminal4
+                Terminal = terminal4,
+                FlightId = oldshit11.FlightId,
+                TerminalId = terminal4.TerminalId
             };
             db.EndTermFlights.Add(oetf11);
 
@@ -892,7 +950,9 @@ namespace SIAHTTPS.Models
             ostf12 = new StartTermFlight()
             {
                 Flight = oldshit12,
-                Terminal = terminal1
+                Terminal = terminal1,
+                FlightId = oldshit12.FlightId,
+                TerminalId = terminal1.TerminalId
             };
             db.StartTermFlights.Add(ostf12);
 
@@ -900,7 +960,9 @@ namespace SIAHTTPS.Models
             oetf12 = new EndTermFlight()
             {
                 Flight = oldshit12,
-                Terminal = terminal4
+                Terminal = terminal4,
+                FlightId = oldshit12.FlightId,
+                TerminalId = terminal4.TerminalId
             };
             db.EndTermFlights.Add(oetf12);
 
@@ -927,7 +989,9 @@ namespace SIAHTTPS.Models
             ostf13 = new StartTermFlight()
             {
                 Flight = oldshit13,
-                Terminal = terminal1
+                Terminal = terminal1,
+                FlightId = oldshit13.FlightId,
+                TerminalId = terminal1.TerminalId
             };
             db.StartTermFlights.Add(ostf13);
 
@@ -935,7 +999,9 @@ namespace SIAHTTPS.Models
             oetf13 = new EndTermFlight()
             {
                 Flight = oldshit13,
-                Terminal = terminal4
+                Terminal = terminal4,
+                FlightId = oldshit13.FlightId,
+                TerminalId = terminal4.TerminalId
             };
             db.EndTermFlights.Add(oetf13);
 
@@ -962,7 +1028,9 @@ namespace SIAHTTPS.Models
             ostf14 = new StartTermFlight()
             {
                 Flight = oldshit14,
-                Terminal = terminal1
+                Terminal = terminal1,
+                FlightId = oldshit14.FlightId,
+                TerminalId = terminal1.TerminalId
             };
             db.StartTermFlights.Add(ostf14);
 
@@ -970,7 +1038,9 @@ namespace SIAHTTPS.Models
             oetf14 = new EndTermFlight()
             {
                 Flight = oldshit14,
-                Terminal = terminal4
+                Terminal = terminal4,
+                FlightId = oldshit14.FlightId,
+                TerminalId = terminal4.TerminalId
             };
             db.EndTermFlights.Add(oetf14);
 
@@ -997,7 +1067,9 @@ namespace SIAHTTPS.Models
             ostf15 = new StartTermFlight()
             {
                 Flight = oldshit15,
-                Terminal = terminal1
+                Terminal = terminal1,
+                FlightId = oldshit15.FlightId,
+                TerminalId = terminal1.TerminalId
             };
             db.StartTermFlights.Add(ostf15);
 
@@ -1005,7 +1077,9 @@ namespace SIAHTTPS.Models
             oetf15 = new EndTermFlight()
             {
                 Flight = oldshit15,
-                Terminal = terminal4
+                Terminal = terminal4,
+                FlightId = oldshit15.FlightId,
+                TerminalId = terminal4.TerminalId
             };
             db.EndTermFlights.Add(oetf15);
 
@@ -1032,7 +1106,9 @@ namespace SIAHTTPS.Models
             ostf16 = new StartTermFlight()
             {
                 Flight = oldshit16,
-                Terminal = terminal1
+                Terminal = terminal1,
+                FlightId = oldshit16.FlightId,
+                TerminalId = terminal1.TerminalId
             };
             db.StartTermFlights.Add(ostf16);
 
@@ -1040,7 +1116,9 @@ namespace SIAHTTPS.Models
             oetf16 = new EndTermFlight()
             {
                 Flight = oldshit16,
-                Terminal = terminal4
+                Terminal = terminal4,
+                FlightId = oldshit16.FlightId,
+                TerminalId = terminal4.TerminalId
             };
             db.EndTermFlights.Add(oetf16);
 
@@ -1067,7 +1145,9 @@ namespace SIAHTTPS.Models
             ostf17 = new StartTermFlight()
             {
                 Flight = oldshit17,
-                Terminal = terminal1
+                Terminal = terminal1,
+                FlightId = oldshit17.FlightId,
+                TerminalId = terminal1.TerminalId
             };
             db.StartTermFlights.Add(ostf17);
 
@@ -1075,7 +1155,9 @@ namespace SIAHTTPS.Models
             oetf17 = new EndTermFlight()
             {
                 Flight = oldshit17,
-                Terminal = terminal4
+                Terminal = terminal4,
+                FlightId = oldshit17.FlightId,
+                TerminalId = terminal4.TerminalId
             };
             db.EndTermFlights.Add(oetf17);
 
@@ -1102,7 +1184,9 @@ namespace SIAHTTPS.Models
             ostf18 = new StartTermFlight()
             {
                 Flight = oldshit18,
-                Terminal = terminal1
+                Terminal = terminal1,
+                FlightId = oldshit18.FlightId,
+                TerminalId = terminal1.TerminalId
             };
             db.StartTermFlights.Add(ostf18);
 
@@ -1110,7 +1194,9 @@ namespace SIAHTTPS.Models
             oetf18 = new EndTermFlight()
             {
                 Flight = oldshit18,
-                Terminal = terminal4
+                Terminal = terminal4,
+                FlightId = oldshit18.FlightId,
+                TerminalId = terminal4.TerminalId
             };
             db.EndTermFlights.Add(oetf18);
 
@@ -1137,7 +1223,9 @@ namespace SIAHTTPS.Models
             ostf19 = new StartTermFlight()
             {
                 Flight = oldshit19,
-                Terminal = terminal1
+                Terminal = terminal1,
+                FlightId = oldshit19.FlightId,
+                TerminalId = terminal1.TerminalId
             };
             db.StartTermFlights.Add(ostf19);
 
@@ -1145,7 +1233,9 @@ namespace SIAHTTPS.Models
             oetf19 = new EndTermFlight()
             {
                 Flight = oldshit19,
-                Terminal = terminal4
+                Terminal = terminal4,
+                FlightId = oldshit19.FlightId,
+                TerminalId = terminal4.TerminalId
             };
             db.EndTermFlights.Add(oetf19);
 
@@ -1172,7 +1262,9 @@ namespace SIAHTTPS.Models
             ostf20 = new StartTermFlight()
             {
                 Flight = oldshit20,
-                Terminal = terminal1
+                Terminal = terminal1,
+                FlightId = oldshit20.FlightId,
+                TerminalId = terminal1.TerminalId
             };
             db.StartTermFlights.Add(ostf20);
 
@@ -1180,7 +1272,9 @@ namespace SIAHTTPS.Models
             oetf20 = new EndTermFlight()
             {
                 Flight = oldshit20,
-                Terminal = terminal4
+                Terminal = terminal4,
+                FlightId = oldshit20.FlightId,
+                TerminalId = terminal4.TerminalId
             };
             db.EndTermFlights.Add(oetf20);
 
@@ -4434,7 +4528,7 @@ namespace SIAHTTPS.Models
                 Quantity = 6,
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-24)
             };
-            
+
             FlightTicket ft304;
             ft304 = new FlightTicket()
             {
@@ -4464,7 +4558,7 @@ namespace SIAHTTPS.Models
                 Quantity = 3,
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-14)
             };
-            
+
             FlightTicket ft307;
             ft307 = new FlightTicket()
             {
@@ -4475,6 +4569,6 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-14)
             };
         }
-            
+
     }
 }
