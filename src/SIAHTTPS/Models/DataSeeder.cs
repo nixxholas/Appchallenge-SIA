@@ -1188,15 +1188,6 @@ namespace SIAHTTPS.Models
                 Flight = oldshit7,
                 Ticket = economy,
                 Price = 1500,
-                Quantity = 404
-            };
-
-            FlightTickets ft1;
-            ft1 = new FlightTickets()
-            {
-                Flight = oldshit7,
-                Ticket = economy,
-                Price = 1500,
                 Quantity = 225
             };
 
