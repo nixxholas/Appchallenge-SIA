@@ -351,6 +351,7 @@ namespace SIAHTTPS.Models
             Flight flight1;
             flight1 = new Flight()
             {
+                Aircraft = SQ324,
                 TakeoffDT = new DateTime(2016, 10, 10, 4, 30, 00),
                 TouchDownDT = new DateTime(2016, 10, 10, 11, 30, 00),
                 ETA = new DateTime(2016, 10, 10, 11, 30, 00).Subtract(new DateTime(2016, 10, 10, 4, 30, 00)).Ticks,
@@ -389,6 +390,7 @@ namespace SIAHTTPS.Models
             Flight flight2;
             flight2 = new Flight()
             {
+                Aircraft = SQ324,
                 TakeoffDT = new DateTime(2016, 10, 6, 00, 05, 00),
                 TouchDownDT = new DateTime(2016, 10, 6, 06, 35, 00),
                 ETA = new DateTime(2016, 10, 6, 06, 35, 00).Subtract(new DateTime(2016, 10, 6, 00, 05, 00)).Ticks,
@@ -427,6 +429,7 @@ namespace SIAHTTPS.Models
             Flight flight3;
             flight3 = new Flight()
             {
+                Aircraft = SQ324,
                 TakeoffDT = new DateTime(2016, 10, 4, 11, 04, 00),
                 TouchDownDT = new DateTime(2016, 10, 5, 05, 55, 00),
                 ETA = new DateTime(2016, 10, 5, 05, 55, 00).Subtract(new DateTime(2016, 10, 4, 11, 04, 00)).Ticks,
@@ -464,6 +467,7 @@ namespace SIAHTTPS.Models
             Flight flight4;
             flight4 = new Flight()
             {
+                Aircraft = SQ324,
                 TakeoffDT = new DateTime(2016, 10, 13, 08, 55, 00),
                 TouchDownDT = new DateTime(2016, 10, 13, 15, 20, 00),
                 ETA = new DateTime(2016, 10, 13, 15, 20, 00).Subtract(new DateTime(2016, 10, 13, 08, 55, 00)).Ticks,
@@ -502,6 +506,7 @@ namespace SIAHTTPS.Models
             Flight oldshit1;
             oldshit1 = new Flight()
             {
+                Aircraft = SQ324,
                 TakeoffDT = new DateTime(2016, 09, 06, 00, 19, 00),
                 TouchDownDT = new DateTime(2016, 09, 06, 07, 15, 00),
                 ETA = new DateTime(2016, 09, 06, 07, 15, 00).Subtract(new DateTime(2016, 09, 06, 00, 19, 00)).Ticks,
@@ -541,6 +546,7 @@ namespace SIAHTTPS.Models
             Flight oldshit2;
             oldshit2 = new Flight()
             {
+                Aircraft = SQ324,
                 TakeoffDT = new DateTime(2016, 09, 07, 00, 14, 00),
                 TouchDownDT = new DateTime(2016, 09, 07, 06, 43, 00),
                 ETA = new DateTime(2016, 09, 07, 06, 43, 00).Subtract(new DateTime(2016, 09, 07, 00, 14, 00)).Ticks,
@@ -579,6 +585,7 @@ namespace SIAHTTPS.Models
             Flight oldshit3;
             oldshit3 = new Flight()
             {
+                Aircraft = SQ324,
                 TakeoffDT = new DateTime(2016, 09, 08, 00, 20, 00),
                 TouchDownDT = new DateTime(2016, 09, 08, 06, 32, 00),
                 ETA = new DateTime(2016, 09, 08, 06, 32, 00).Subtract(new DateTime(2016, 09, 08, 00, 20, 00)).Ticks,
@@ -618,6 +625,7 @@ namespace SIAHTTPS.Models
             Flight oldshit4;
             oldshit4 = new Flight()
             {
+                Aircraft = SQ324,
                 TakeoffDT = new DateTime(2016, 09, 09, 00, 24, 00),
                 TouchDownDT = new DateTime(2016, 09, 09, 06, 42, 00),
                 ETA = new DateTime(2016, 09, 09, 06, 42, 00).Subtract(new DateTime(2016, 09, 09, 00, 24, 00)).Ticks,
@@ -657,6 +665,7 @@ namespace SIAHTTPS.Models
             Flight oldshit5;
             oldshit5 = new Flight()
             {
+                Aircraft = SQ324,
                 TakeoffDT = new DateTime(2016, 09, 10, 00, 15, 00),
                 TouchDownDT = new DateTime(2016, 09, 10, 06, 41, 00),
                 ETA = new DateTime(2016, 09, 10, 06, 41, 00).Subtract(new DateTime(2016, 09, 10, 00, 15, 00)).Ticks,
@@ -696,6 +705,7 @@ namespace SIAHTTPS.Models
             Flight oldshit6;
             oldshit6 = new Flight()
             {
+                Aircraft = SQ324,
                 TakeoffDT = new DateTime(2016, 09, 11, 00, 19, 00),
                 TouchDownDT = new DateTime(2016, 09, 11, 07, 15, 00),
                 ETA = new DateTime(2016, 09, 11, 07, 15, 00).Subtract(new DateTime(2016, 09, 11, 00, 19, 00)).Ticks,
@@ -735,6 +745,7 @@ namespace SIAHTTPS.Models
             Flight oldshit7;
             oldshit7 = new Flight()
             {
+                Aircraft = SQ324,
                 TakeoffDT = new DateTime(2016, 09, 12, 00, 13, 00),
                 TouchDownDT = new DateTime(2016, 09, 12, 06, 42, 00),
                 ETA = new DateTime(2016, 09, 12, 06, 42, 00).Subtract(new DateTime(2016, 09, 12, 00, 13, 00)).Ticks,
@@ -774,6 +785,7 @@ namespace SIAHTTPS.Models
             Flight oldshit8;
             oldshit8 = new Flight()
             {
+                Aircraft = SQ324,
                 TakeoffDT = new DateTime(2016, 09, 13, 02, 14, 00),
                 TouchDownDT = new DateTime(2016, 09, 13, 07, 15, 00),
                 ETA = new DateTime(2016, 09, 13, 07, 15, 00).Subtract(new DateTime(2016, 09, 13, 02, 14, 00)).Ticks,
@@ -813,6 +825,7 @@ namespace SIAHTTPS.Models
             Flight oldshit9;
             oldshit9 = new Flight()
             {
+                Aircraft = SQ324,
                 TakeoffDT = new DateTime(2016, 09, 14, 00, 14, 00),
                 TouchDownDT = new DateTime(2016, 09, 14, 06, 38, 00),
                 ETA = new DateTime(2016, 09, 14, 06, 38, 00).Subtract(new DateTime(2016, 09, 14, 00, 14, 00)).Ticks,
@@ -852,6 +865,7 @@ namespace SIAHTTPS.Models
             Flight oldshit10;
             oldshit10 = new Flight()
             {
+                Aircraft = SQ324,
                 TakeoffDT = new DateTime(2016, 09, 15, 00, 16, 00),
                 TouchDownDT = new DateTime(2016, 09, 15, 06, 32, 00),
                 ETA = new DateTime(2016, 09, 15, 06, 32, 00).Subtract(new DateTime(2016, 09, 15, 00, 16, 00)).Ticks,
@@ -891,6 +905,7 @@ namespace SIAHTTPS.Models
             Flight oldshit11;
             oldshit11 = new Flight()
             {
+                Aircraft = SQ324,
                 TakeoffDT = new DateTime(2016, 09, 17, 00, 32, 00),
                 TouchDownDT = new DateTime(2016, 09, 17, 07, 15, 00),
                 ETA = new DateTime(2016, 09, 17, 07, 15, 00).Subtract(new DateTime(2016, 09, 17, 00, 32, 00)).Ticks,
@@ -930,6 +945,7 @@ namespace SIAHTTPS.Models
             Flight oldshit12;
             oldshit12 = new Flight()
             {
+                Aircraft = SQ324,
                 TakeoffDT = new DateTime(2016, 09, 19, 00, 14, 00),
                 TouchDownDT = new DateTime(2016, 09, 19, 06, 27, 00),
                 ETA = new DateTime(2016, 09, 19, 06, 27, 00).Subtract(new DateTime(2016, 09, 19, 00, 14, 00)).Ticks,
@@ -969,6 +985,7 @@ namespace SIAHTTPS.Models
             Flight oldshit13;
             oldshit13 = new Flight()
             {
+                Aircraft = SQ324,
                 TakeoffDT = new DateTime(2016, 09, 19, 00, 14, 00),
                 TouchDownDT = new DateTime(2016, 09, 19, 06, 27, 00),
                 ETA = new DateTime(2016, 09, 19, 06, 27, 00).Subtract(new DateTime(2016, 09, 19, 00, 14, 00)).Ticks,
@@ -1008,6 +1025,7 @@ namespace SIAHTTPS.Models
             Flight oldshit14;
             oldshit14 = new Flight()
             {
+                Aircraft = SQ324,
                 TakeoffDT = new DateTime(2016, 09, 21, 00, 14, 00),
                 TouchDownDT = new DateTime(2016, 09, 21, 06, 38, 00),
                 ETA = new DateTime(2016, 09, 21, 06, 38, 00).Subtract(new DateTime(2016, 09, 21, 00, 14, 00)).Ticks,
@@ -1047,6 +1065,7 @@ namespace SIAHTTPS.Models
             Flight oldshit15;
             oldshit15 = new Flight()
             {
+                Aircraft = SQ324,
                 TakeoffDT = new DateTime(2016, 09, 23, 00, 21, 00),
                 TouchDownDT = new DateTime(2016, 09, 23, 06, 41, 00),
                 ETA = new DateTime(2016, 09, 23, 06, 41, 00).Subtract(new DateTime(2016, 09, 23, 00, 21, 00)).Ticks,
@@ -1086,6 +1105,7 @@ namespace SIAHTTPS.Models
             Flight oldshit16;
             oldshit16 = new Flight()
             {
+                Aircraft = SQ324,
                 TakeoffDT = new DateTime(2016, 09, 25, 00, 17, 00),
                 TouchDownDT = new DateTime(2016, 09, 25, 06, 34, 00),
                 ETA = new DateTime(2016, 09, 25, 06, 34, 00).Subtract(new DateTime(2016, 09, 25, 00, 17, 00)).Ticks,
@@ -1125,6 +1145,7 @@ namespace SIAHTTPS.Models
             Flight oldshit17;
             oldshit17 = new Flight()
             {
+                Aircraft = SQ324,
                 TakeoffDT = new DateTime(2016, 09, 27, 00, 15, 00),
                 TouchDownDT = new DateTime(2016, 09, 27, 06, 37, 00),
                 ETA = new DateTime(2016, 09, 27, 06, 37, 00).Subtract(new DateTime(2016, 09, 27, 00, 15, 00)).Ticks,
@@ -1164,6 +1185,7 @@ namespace SIAHTTPS.Models
             Flight oldshit18;
             oldshit18 = new Flight()
             {
+                Aircraft = SQ324,
                 TakeoffDT = new DateTime(2016, 09, 29, 00, 14, 00),
                 TouchDownDT = new DateTime(2016, 09, 29, 07, 15, 00),
                 ETA = new DateTime(2016, 09, 29, 07, 15, 00).Subtract(new DateTime(2016, 09, 29, 00, 14, 00)).Ticks,
@@ -1203,6 +1225,7 @@ namespace SIAHTTPS.Models
             Flight oldshit19;
             oldshit19 = new Flight()
             {
+                Aircraft = SQ324,
                 TakeoffDT = new DateTime(2016, 10, 01, 00, 50, 00),
                 TouchDownDT = new DateTime(2016, 10, 01, 07, 15, 00),
                 ETA = new DateTime(2016, 10, 01, 07, 15, 00).Subtract(new DateTime(2016, 10, 01, 00, 50, 00)).Ticks,
@@ -1242,6 +1265,7 @@ namespace SIAHTTPS.Models
             Flight oldshit20;
             oldshit20 = new Flight()
             {
+                Aircraft = SQ324,
                 TakeoffDT = new DateTime(2016, 10, 03, 00, 25, 00),
                 TouchDownDT = new DateTime(2016, 10, 03, 06, 49, 00),
                 ETA = new DateTime(2016, 10, 03, 06, 49, 00).Subtract(new DateTime(2016, 10, 03, 00, 25, 00)).Ticks,
@@ -4568,6 +4592,8 @@ namespace SIAHTTPS.Models
                 Quantity = 2,
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-14)
             };
+
+            db.SaveChanges();
         }
 
     }

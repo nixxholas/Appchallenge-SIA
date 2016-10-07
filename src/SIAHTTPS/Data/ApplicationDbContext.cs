@@ -29,8 +29,11 @@ namespace SIAHTTPS.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            optionsBuilder.UseSqlServer(@"Server=DESKTOP-2CPI6TQ\SQLEXPRESS;database=SIA;Trusted_Connection=True;MultipleActiveResultSets=True");
+
             //optionsBuilder.UseSqlServer(@"Server=DIT-NB1530078\SQLEXPRESS;database=SIA;Trusted_Connection=True;MultipleActiveResultSets=True");
-            optionsBuilder.UseSqlServer(@"Server=tcp:siahttps.database.windows.net,1433;Initial Catalog=siahttps;Persist Security Info=False;User ID=jingyen;Password=FuckW3IweN!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+            
+            //optionsBuilder.UseSqlServer(@"Server=tcp:siahttps.database.windows.net,1433;Initial Catalog=siahttps;Persist Security Info=False;User ID=jingyen;Password=FuckW3IweN!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -260,16 +263,14 @@ namespace SIAHTTPS.Data
                 .IsRequired();
 
             // Foreign Key Relationships
-            //builder.Entity<Terminal>()
-            //    .HasMany(input => input.StartTermFlights)
-            //    .WithOne(input => input.Terminal)
-            //    .HasForeignKey(input => input.TerminalId);
+            builder.Entity<Terminal>()
+                .HasMany(input => input.StartTermFlights)
+                .WithOne(input => input.Terminal);
 
-            //builder.Entity<Terminal>()
-            //    .HasMany(input => input.EndTermFlights)
-            //    .WithOne(input => input.Terminal)
-            //    .HasForeignKey(input => input.TerminalId);
-            
+            builder.Entity<Terminal>()
+                .HasMany(input => input.EndTermFlights)
+                .WithOne(input => input.Terminal);
+
             // -------------- Terminal Entity END --------------- //
 
             // -------------- Defining Ticket Entity --------------- //
