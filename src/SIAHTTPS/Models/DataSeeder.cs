@@ -347,7 +347,7 @@ namespace SIAHTTPS.Models
                 Airport = airport4
             };
             db.Terminals.Add(terminal4);
-         
+
             Flight flight1;
             flight1 = new Flight()
             {
@@ -355,12 +355,12 @@ namespace SIAHTTPS.Models
                 TouchDownDT = new DateTime(2016, 10, 10, 11, 30, 00),
                 ETA = new DateTime(2016, 10, 10, 11, 30, 00).Subtract(new DateTime(2016, 10, 10, 4, 30, 00)).Ticks,
                 StartTermFlight = new StartTermFlight()
-                {                    
+                {
                     Terminal = terminal1
                 },
                 EndTermFlight = new EndTermFlight()
                 {
-                    
+
                     Terminal = terminal3
                 }
             };
@@ -387,10 +387,10 @@ namespace SIAHTTPS.Models
             {
                 TakeoffDT = new DateTime(2016, 10, 6, 00, 05, 00),
                 TouchDownDT = new DateTime(2016, 10, 6, 06, 35, 00),
-                ETA = new DateTime().Subtract.(new DateTime()).Ticks,
+                ETA = new DateTime(2016, 10, 6, 06, 35, 00).Subtract(new DateTime(2016, 10, 6, 00, 05, 00)).Ticks,
                 StartTermFlight = new StartTermFlight()
                 {
-                    
+
                     Terminal = terminal3
                 },
                 EndTermFlight = new EndTermFlight()
@@ -421,9 +421,9 @@ namespace SIAHTTPS.Models
             {
                 TakeoffDT = new DateTime(2016, 10, 4, 11, 04, 00),
                 TouchDownDT = new DateTime(2016, 10, 5, 05, 55, 00),
-                ETA = new DateTime().Subtract.(new DateTime()).Ticks,
+                ETA = new DateTime(2016, 10, 5, 05, 55, 00).Subtract(new DateTime(2016, 10, 4, 11, 04, 00)).Ticks,
                 StartTermFlight = new StartTermFlight()
-                {                    
+                {
                     Terminal = terminal4
                 },
                 EndTermFlight = new EndTermFlight()
@@ -454,14 +454,14 @@ namespace SIAHTTPS.Models
             {
                 TakeoffDT = new DateTime(2016, 10, 13, 08, 55, 00),
                 TouchDownDT = new DateTime(2016, 10, 13, 15, 20, 00),
-                ETA = new DateTime().Subtract.(new DateTime()).Ticks,
+                ETA = new DateTime(2016, 10, 13, 15, 20, 00).Subtract(new DateTime(2016, 10, 13, 08, 55, 00)).Ticks,
                 StartTermFlight = new StartTermFlight()
                 {
                     Terminal = terminal4
                 },
                 EndTermFlight = new EndTermFlight()
                 {
-                    
+
                     Terminal = terminal1
                 }
             };
@@ -488,15 +488,15 @@ namespace SIAHTTPS.Models
             {
                 TakeoffDT = new DateTime(2016, 09, 06, 00, 19, 00),
                 TouchDownDT = new DateTime(2016, 09, 06, 07, 15, 00),
-                ETA = new DateTime().Subtract.(new DateTime()).Ticks,
+                ETA = new DateTime(2016, 09, 06, 07, 15, 00).Subtract(new DateTime(2016, 09, 06, 00, 19, 00)).Ticks,
                 StartTermFlight = new StartTermFlight()
                 {
-                    
+
                     Terminal = terminal1
                 },
                 EndTermFlight = new EndTermFlight()
                 {
-                    
+
                     Terminal = terminal4
                 }
             };
@@ -523,10 +523,10 @@ namespace SIAHTTPS.Models
             {
                 TakeoffDT = new DateTime(2016, 09, 07, 00, 14, 00),
                 TouchDownDT = new DateTime(2016, 09, 07, 06, 43, 00),
-                ETA = new DateTime().Subtract.(new DateTime()).Ticks,
+                ETA = new DateTime(2016, 09, 07, 06, 43, 00).Subtract(new DateTime(2016, 09, 07, 00, 14, 00)).Ticks,
                 StartTermFlight = new StartTermFlight()
                 {
-                    
+
                     Terminal = terminal1
                 },
                 EndTermFlight = new EndTermFlight()
@@ -557,15 +557,15 @@ namespace SIAHTTPS.Models
             {
                 TakeoffDT = new DateTime(2016, 09, 08, 00, 20, 00),
                 TouchDownDT = new DateTime(2016, 09, 08, 06, 32, 00),
-                ETA = new DateTime().Subtract.(new DateTime()).Ticks,
+                ETA = new DateTime(2016, 09, 08, 06, 32, 00).Subtract(new DateTime(2016, 09, 08, 00, 20, 00)).Ticks,
                 StartTermFlight = new StartTermFlight()
                 {
-                    
+
                     Terminal = terminal1
                 },
                 EndTermFlight = new EndTermFlight()
                 {
-                    
+
                     Terminal = terminal4
                 }
             };
@@ -592,15 +592,15 @@ namespace SIAHTTPS.Models
             {
                 TakeoffDT = new DateTime(2016, 09, 09, 00, 24, 00),
                 TouchDownDT = new DateTime(2016, 09, 09, 06, 42, 00),
-                ETA = new DateTime().Subtract.(new DateTime()).Ticks,
+                ETA = new DateTime(2016, 09, 09, 06, 42, 00).Subtract(new DateTime(2016, 09, 09, 00, 24, 00)).Ticks,
                 StartTermFlight = new StartTermFlight()
                 {
-                    
+
                     Terminal = terminal1
                 },
                 EndTermFlight = new EndTermFlight()
                 {
-                    
+
                     Terminal = terminal4
                 }
             };
@@ -627,15 +627,15 @@ namespace SIAHTTPS.Models
             {
                 TakeoffDT = new DateTime(2016, 09, 10, 00, 15, 00),
                 TouchDownDT = new DateTime(2016, 09, 10, 06, 41, 00),
-                ETA = new DateTime().Subtract.(new DateTime()).Ticks,
+                ETA = new DateTime(2016, 09, 10, 06, 41, 00).Subtract(new DateTime(2016, 09, 10, 00, 15, 00)).Ticks,
                 StartTermFlight = new StartTermFlight()
                 {
-                    
+
                     Terminal = terminal1
                 },
                 EndTermFlight = new EndTermFlight()
                 {
-                    
+
                     Terminal = terminal4
                 }
             };
@@ -662,15 +662,15 @@ namespace SIAHTTPS.Models
             {
                 TakeoffDT = new DateTime(2016, 09, 11, 00, 19, 00),
                 TouchDownDT = new DateTime(2016, 09, 11, 07, 15, 00),
-                ETA = new DateTime().Subtract.(new DateTime()).Ticks,
+                ETA = new DateTime(2016, 09, 11, 07, 15, 00).Subtract(new DateTime(2016, 09, 11, 00, 19, 00)).Ticks,
                 StartTermFlight = new StartTermFlight()
                 {
-                    
+
                     Terminal = terminal1
                 },
                 EndTermFlight = new EndTermFlight()
                 {
-                    
+
                     Terminal = terminal4
                 }
             };
@@ -697,15 +697,15 @@ namespace SIAHTTPS.Models
             {
                 TakeoffDT = new DateTime(2016, 09, 12, 00, 13, 00),
                 TouchDownDT = new DateTime(2016, 09, 12, 06, 42, 00),
-                ETA = new DateTime().Subtract.(new DateTime()).Ticks,
+                ETA = new DateTime(2016, 09, 12, 06, 42, 00).Subtract(new DateTime(2016, 09, 12, 00, 13, 00)).Ticks,
                 StartTermFlight = new StartTermFlight()
                 {
-                    
+
                     Terminal = terminal1
                 },
                 EndTermFlight = new EndTermFlight()
                 {
-                    
+
                     Terminal = terminal4
                 }
             };
@@ -732,15 +732,15 @@ namespace SIAHTTPS.Models
             {
                 TakeoffDT = new DateTime(2016, 09, 13, 02, 14, 00),
                 TouchDownDT = new DateTime(2016, 09, 13, 07, 15, 00),
-                ETA = new DateTime().Subtract.(new DateTime()).Ticks,
+                ETA = new DateTime(2016, 09, 13, 07, 15, 00).Subtract(new DateTime(2016, 09, 13, 02, 14, 00)).Ticks,
                 StartTermFlight = new StartTermFlight()
                 {
-                    
+
                     Terminal = terminal1
                 },
                 EndTermFlight = new EndTermFlight()
                 {
-                    
+
                     Terminal = terminal4
                 }
             };
@@ -767,15 +767,15 @@ namespace SIAHTTPS.Models
             {
                 TakeoffDT = new DateTime(2016, 09, 14, 00, 14, 00),
                 TouchDownDT = new DateTime(2016, 09, 14, 06, 38, 00),
-                ETA = new DateTime().Subtract.(new DateTime()).Ticks,
+                ETA = new DateTime(2016, 09, 14, 06, 38, 00).Subtract(new DateTime(2016, 09, 14, 00, 14, 00)).Ticks,
                 StartTermFlight = new StartTermFlight()
                 {
-                    
+
                     Terminal = terminal1
                 },
                 EndTermFlight = new EndTermFlight()
                 {
-                    
+
                     Terminal = terminal4
                 }
             };
@@ -802,15 +802,15 @@ namespace SIAHTTPS.Models
             {
                 TakeoffDT = new DateTime(2016, 09, 15, 00, 16, 00),
                 TouchDownDT = new DateTime(2016, 09, 15, 06, 32, 00),
-                ETA = new DateTime().Subtract.(new DateTime()).Ticks,
+                ETA = new DateTime(2016, 09, 15, 06, 32, 00).Subtract(new DateTime(2016, 09, 15, 00, 16, 00)).Ticks,
                 StartTermFlight = new StartTermFlight()
                 {
-                    
+
                     Terminal = terminal1
                 },
                 EndTermFlight = new EndTermFlight()
                 {
-                    
+
                     Terminal = terminal4
                 }
             };
@@ -837,15 +837,15 @@ namespace SIAHTTPS.Models
             {
                 TakeoffDT = new DateTime(2016, 09, 17, 00, 32, 00),
                 TouchDownDT = new DateTime(2016, 09, 17, 07, 15, 00),
-                ETA = new DateTime().Subtract.(new DateTime()).Ticks,
+                ETA = new DateTime(2016, 09, 17, 07, 15, 00).Subtract(new DateTime(2016, 09, 17, 00, 32, 00)).Ticks,
                 StartTermFlight = new StartTermFlight()
                 {
-                    
+
                     Terminal = terminal1
                 },
                 EndTermFlight = new EndTermFlight()
                 {
-                    
+
                     Terminal = terminal4
                 }
             };
@@ -872,15 +872,15 @@ namespace SIAHTTPS.Models
             {
                 TakeoffDT = new DateTime(2016, 09, 19, 00, 14, 00),
                 TouchDownDT = new DateTime(2016, 09, 19, 06, 27, 00),
-                ETA = new DateTime().Subtract.(new DateTime()).Ticks,
+                ETA = new DateTime(2016, 09, 19, 06, 27, 00).Subtract(new DateTime(2016, 09, 19, 00, 14, 00)).Ticks,
                 StartTermFlight = new StartTermFlight()
                 {
-                    
+
                     Terminal = terminal1
                 },
                 EndTermFlight = new EndTermFlight()
                 {
-                    
+
                     Terminal = terminal4
                 }
             };
@@ -907,15 +907,15 @@ namespace SIAHTTPS.Models
             {
                 TakeoffDT = new DateTime(2016, 09, 19, 00, 14, 00),
                 TouchDownDT = new DateTime(2016, 09, 19, 06, 27, 00),
-                ETA = new DateTime().Subtract.(new DateTime()).Ticks,
+                ETA = new DateTime(2016, 09, 19, 06, 27, 00).Subtract(new DateTime(2016, 09, 19, 00, 14, 00)).Ticks,
                 StartTermFlight = new StartTermFlight()
                 {
-                    
+
                     Terminal = terminal1
                 },
                 EndTermFlight = new EndTermFlight()
                 {
-                    
+
                     Terminal = terminal4
                 }
             };
@@ -942,15 +942,15 @@ namespace SIAHTTPS.Models
             {
                 TakeoffDT = new DateTime(2016, 09, 21, 00, 14, 00),
                 TouchDownDT = new DateTime(2016, 09, 21, 06, 38, 00),
-                ETA = new DateTime().Subtract.(new DateTime()).Ticks,
+                ETA = new DateTime(2016, 09, 21, 06, 38, 00).Subtract(new DateTime(2016, 09, 21, 00, 14, 00)).Ticks,
                 StartTermFlight = new StartTermFlight()
                 {
-                    
+
                     Terminal = terminal1
                 },
                 EndTermFlight = new EndTermFlight()
                 {
-                    
+
                     Terminal = terminal4
                 }
             };
@@ -977,15 +977,15 @@ namespace SIAHTTPS.Models
             {
                 TakeoffDT = new DateTime(2016, 09, 23, 00, 21, 00),
                 TouchDownDT = new DateTime(2016, 09, 23, 06, 41, 00),
-                ETA = new DateTime().Subtract.(new DateTime()).Ticks,
+                ETA = new DateTime(2016, 09, 23, 06, 41, 00).Subtract(new DateTime(2016, 09, 23, 00, 21, 00)).Ticks,
                 StartTermFlight = new StartTermFlight()
                 {
-                    
+
                     Terminal = terminal1
                 },
                 EndTermFlight = new EndTermFlight()
                 {
-                    
+
                     Terminal = terminal4
                 }
             };
@@ -1012,15 +1012,15 @@ namespace SIAHTTPS.Models
             {
                 TakeoffDT = new DateTime(2016, 09, 25, 00, 17, 00),
                 TouchDownDT = new DateTime(2016, 09, 25, 06, 34, 00),
-                ETA = new DateTime().Subtract.(new DateTime()).Ticks,
+                ETA = new DateTime(2016, 09, 25, 06, 34, 00).Subtract(new DateTime(2016, 09, 25, 00, 17, 00)).Ticks,
                 StartTermFlight = new StartTermFlight()
                 {
-                    
+
                     Terminal = terminal1
                 },
                 EndTermFlight = new EndTermFlight()
                 {
-                    
+
                     Terminal = terminal4
                 }
             };
@@ -1047,15 +1047,15 @@ namespace SIAHTTPS.Models
             {
                 TakeoffDT = new DateTime(2016, 09, 27, 00, 15, 00),
                 TouchDownDT = new DateTime(2016, 09, 27, 06, 37, 00),
-                ETA = new DateTime().Subtract.(new DateTime()).Ticks,
+                ETA = new DateTime(2016, 09, 27, 06, 37, 00).Subtract(new DateTime(2016, 09, 27, 00, 15, 00)).Ticks,
                 StartTermFlight = new StartTermFlight()
                 {
-                    
+
                     Terminal = terminal1
                 },
                 EndTermFlight = new EndTermFlight()
                 {
-                    
+
                     Terminal = terminal4
                 }
             };
@@ -1082,15 +1082,15 @@ namespace SIAHTTPS.Models
             {
                 TakeoffDT = new DateTime(2016, 09, 29, 00, 14, 00),
                 TouchDownDT = new DateTime(2016, 09, 29, 07, 15, 00),
-                ETA = new DateTime().Subtract.(new DateTime()).Ticks,
+                ETA = new DateTime(2016, 09, 29, 07, 15, 00).Subtract(new DateTime(2016, 09, 29, 00, 14, 00)).Ticks,
                 StartTermFlight = new StartTermFlight()
                 {
-                    
+
                     Terminal = terminal1
                 },
                 EndTermFlight = new EndTermFlight()
                 {
-                    
+
                     Terminal = terminal4
                 }
             };
@@ -1117,15 +1117,15 @@ namespace SIAHTTPS.Models
             {
                 TakeoffDT = new DateTime(2016, 10, 01, 00, 50, 00),
                 TouchDownDT = new DateTime(2016, 10, 01, 07, 15, 00),
-                ETA = new DateTime().Subtract.(new DateTime()).Ticks,
+                ETA = new DateTime(2016, 10, 01, 07, 15, 00).Subtract(new DateTime(2016, 10, 01, 00, 50, 00)).Ticks,
                 StartTermFlight = new StartTermFlight()
                 {
-                    
+
                     Terminal = terminal1
                 },
                 EndTermFlight = new EndTermFlight()
                 {
-                    
+
                     Terminal = terminal4
                 }
             };
@@ -1140,7 +1140,7 @@ namespace SIAHTTPS.Models
             db.StartTermFlights.Add(ostf19);
 
             EndTermFlight oetf19;
-            oetf19 = new EndTermFlight() 
+            oetf19 = new EndTermFlight()
             {
                 Flight = oldshit19,
                 Terminal = terminal4
@@ -1152,20 +1152,20 @@ namespace SIAHTTPS.Models
             {
                 TakeoffDT = new DateTime(2016, 10, 03, 00, 25, 00),
                 TouchDownDT = new DateTime(2016, 10, 03, 06, 49, 00),
-                ETA = new DateTime().Subtract.(new DateTime()).Ticks,
+                ETA = new DateTime(2016, 10, 03, 06, 49, 00).Subtract(new DateTime(2016, 10, 03, 00, 25, 00)).Ticks,
                 StartTermFlight = new StartTermFlight()
                 {
-                    
+
                     Terminal = terminal1
                 },
                 EndTermFlight = new EndTermFlight()
                 {
-                    
+
                     Terminal = terminal4
                 }
             };
             db.Flights.Add(oldshit20);
-            
+
             StartTermFlight ostf20;
             ostf20 = new StartTermFlight()
             {
@@ -1193,7 +1193,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-39)
             };
 
-            
+
 
             FlightTicket ft2;
             ft2 = new FlightTicket()
@@ -1205,7 +1205,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-39)
             };
 
-            
+
 
             FlightTicket ft3;
             ft3 = new FlightTicket()
@@ -1217,7 +1217,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-39)
             };
 
-            
+
 
             FlightTicket ft4;
             ft4 = new FlightTicket()
@@ -1229,7 +1229,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-39)
             };
 
-            
+
 
             FlightTicket ft5;
             ft5 = new FlightTicket()
@@ -1241,7 +1241,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-39)
             };
 
-            
+
 
             FlightTicket ft6;
             ft6 = new FlightTicket()
@@ -1253,7 +1253,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-38)
             };
 
-            
+
 
             FlightTicket ft7;
             ft7 = new FlightTicket()
@@ -1265,7 +1265,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-38)
             };
 
-            
+
 
             FlightTicket ft8;
             ft8 = new FlightTicket()
@@ -1277,7 +1277,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-38)
             };
 
-            
+
 
             FlightTicket ft9;
             ft9 = new FlightTicket()
@@ -1289,7 +1289,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-38)
             };
 
-            
+
 
             FlightTicket ft10;
             ft10 = new FlightTicket()
@@ -1301,7 +1301,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-38)
             };
 
-            
+
 
             FlightTicket ft11;
             ft11 = new FlightTicket()
@@ -1313,7 +1313,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-37)
             };
 
-            
+
 
             FlightTicket ft12;
             ft12 = new FlightTicket()
@@ -1325,7 +1325,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-37)
             };
 
-            
+
 
             FlightTicket ft13;
             ft13 = new FlightTicket()
@@ -1337,7 +1337,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-36)
             };
 
-            
+
 
             FlightTicket ft14;
             ft14 = new FlightTicket()
@@ -1349,7 +1349,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-36)
             };
 
-            
+
 
             FlightTicket ft15;
             ft15 = new FlightTicket()
@@ -1361,7 +1361,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-36)
             };
 
-            
+
 
             FlightTicket ft16;
             ft16 = new FlightTicket()
@@ -1373,7 +1373,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-36)
             };
 
-            
+
 
             FlightTicket ft17;
             ft17 = new FlightTicket()
@@ -1385,7 +1385,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-36)
             };
 
-            
+
 
             FlightTicket ft18;
             ft18 = new FlightTicket()
@@ -1397,7 +1397,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-35)
             };
 
-            
+
 
             FlightTicket ft19;
             ft19 = new FlightTicket()
@@ -1409,7 +1409,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-35)
             };
 
-            
+
 
             FlightTicket ft20;
             ft20 = new FlightTicket()
@@ -1421,7 +1421,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-35)
             };
 
-            
+
 
             FlightTicket ft21;
             ft21 = new FlightTicket()
@@ -1433,7 +1433,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-35)
             };
 
-            
+
 
             FlightTicket ft22;
             ft22 = new FlightTicket()
@@ -1445,7 +1445,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-35)
             };
 
-            
+
 
             FlightTicket ft23;
             ft23 = new FlightTicket()
@@ -1457,7 +1457,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-35)
             };
 
-            
+
 
             FlightTicket ft24;
             ft24 = new FlightTicket()
@@ -1469,7 +1469,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-35)
             };
 
-            
+
 
             FlightTicket ft25;
             ft25 = new FlightTicket()
@@ -1481,7 +1481,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-34)
             };
 
-            
+
 
             FlightTicket ft26;
             ft26 = new FlightTicket()
@@ -1493,7 +1493,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-34)
             };
 
-            
+
 
             FlightTicket ft27;
             ft27 = new FlightTicket()
@@ -1505,7 +1505,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-34)
             };
 
-            
+
 
             FlightTicket ft28;
             ft28 = new FlightTicket()
@@ -1517,7 +1517,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-34)
             };
 
-            
+
 
             FlightTicket ft29;
             ft29 = new FlightTicket()
@@ -1529,7 +1529,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-34)
             };
 
-            
+
 
             FlightTicket ft30;
             ft30 = new FlightTicket()
@@ -1541,7 +1541,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-34)
             };
 
-            
+
 
             FlightTicket ft31;
             ft31 = new FlightTicket()
@@ -1553,7 +1553,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-34)
             };
 
-            
+
 
             FlightTicket ft32;
             ft32 = new FlightTicket()
@@ -1565,7 +1565,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-33)
             };
 
-            
+
 
             FlightTicket ft33;
             ft33 = new FlightTicket()
@@ -1577,7 +1577,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-33)
             };
 
-            
+
 
             FlightTicket ft34;
             ft34 = new FlightTicket()
@@ -1589,7 +1589,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-33)
             };
 
-            
+
 
             FlightTicket ft35;
             ft35 = new FlightTicket()
@@ -1601,7 +1601,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-33)
             };
 
-            
+
 
             FlightTicket ft36;
             ft36 = new FlightTicket()
@@ -1613,7 +1613,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-32)
             };
 
-            
+
 
             FlightTicket ft37;
             ft37 = new FlightTicket()
@@ -1625,7 +1625,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-32)
             };
 
-            
+
 
             FlightTicket ft38;
             ft38 = new FlightTicket()
@@ -1637,7 +1637,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-32)
             };
 
-            
+
 
             FlightTicket ft39;
             ft39 = new FlightTicket()
@@ -1649,7 +1649,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-32)
             };
 
-            
+
 
             FlightTicket ft40;
             ft40 = new FlightTicket()
@@ -1661,7 +1661,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-31)
             };
 
-            
+
 
             FlightTicket ft41;
             ft41 = new FlightTicket()
@@ -1673,7 +1673,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-31)
             };
 
-            
+
 
             FlightTicket ft42;
             ft42 = new FlightTicket()
@@ -1685,7 +1685,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-31)
             };
 
-            
+
 
             FlightTicket ft43;
             ft43 = new FlightTicket()
@@ -1697,7 +1697,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-31)
             };
 
-            
+
 
             FlightTicket ft44;
             ft44 = new FlightTicket()
@@ -1709,7 +1709,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-31)
             };
 
-            
+
 
             FlightTicket ft45;
             ft45 = new FlightTicket()
@@ -1721,7 +1721,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-31)
             };
 
-            
+
 
             FlightTicket ft46;
             ft46 = new FlightTicket()
@@ -1733,7 +1733,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-30)
             };
 
-            
+
 
             FlightTicket ft47;
             ft47 = new FlightTicket()
@@ -1745,7 +1745,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-30)
             };
 
-            
+
 
             FlightTicket ft48;
             ft48 = new FlightTicket()
@@ -1757,7 +1757,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-30)
             };
 
-            
+
 
             FlightTicket ft49;
             ft49 = new FlightTicket()
@@ -1769,7 +1769,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-30)
             };
 
-            
+
 
             FlightTicket ft50;
             ft50 = new FlightTicket()
@@ -1781,7 +1781,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-30)
             };
 
-            
+
 
             FlightTicket ft51;
             ft51 = new FlightTicket()
@@ -1793,7 +1793,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-29)
             };
 
-            
+
 
             FlightTicket ft52;
             ft52 = new FlightTicket()
@@ -1805,7 +1805,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-29)
             };
 
-            
+
 
             FlightTicket ft53;
             ft53 = new FlightTicket()
@@ -1817,7 +1817,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-29)
             };
 
-            
+
 
             FlightTicket ft54;
             ft54 = new FlightTicket()
@@ -1829,7 +1829,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-29)
             };
 
-            
+
 
             FlightTicket ft55;
             ft55 = new FlightTicket()
@@ -1841,7 +1841,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-29)
             };
 
-            
+
 
             FlightTicket ft56;
             ft56 = new FlightTicket()
@@ -1853,7 +1853,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-28)
             };
 
-            
+
 
             FlightTicket ft57;
             ft57 = new FlightTicket()
@@ -1865,7 +1865,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-28)
             };
 
-            
+
 
             FlightTicket ft58;
             ft58 = new FlightTicket()
@@ -1877,7 +1877,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-28)
             };
 
-            
+
 
             FlightTicket ft59;
             ft59 = new FlightTicket()
@@ -1889,7 +1889,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-28)
             };
 
-            
+
 
             FlightTicket ft60;
             ft60 = new FlightTicket()
@@ -1901,7 +1901,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-28)
             };
 
-            
+
 
             FlightTicket ft61;
             ft61 = new FlightTicket()
@@ -1913,7 +1913,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-27)
             };
 
-            
+
 
             FlightTicket ft62;
             ft62 = new FlightTicket()
@@ -1925,7 +1925,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-27)
             };
 
-            
+
 
             FlightTicket ft63;
             ft63 = new FlightTicket()
@@ -1937,7 +1937,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-27)
             };
 
-            
+
 
             FlightTicket ft64;
             ft64 = new FlightTicket()
@@ -1949,7 +1949,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-27)
             };
 
-            
+
 
             FlightTicket ft65;
             ft65 = new FlightTicket()
@@ -1961,7 +1961,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-26)
             };
 
-            
+
 
             FlightTicket ft66;
             ft66 = new FlightTicket()
@@ -1973,7 +1973,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-26)
             };
 
-            
+
 
             FlightTicket ft67;
             ft67 = new FlightTicket()
@@ -1985,7 +1985,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-26)
             };
 
-            
+
 
             FlightTicket ft68;
             ft68 = new FlightTicket()
@@ -1997,7 +1997,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-26)
             };
 
-            
+
 
             FlightTicket ft69;
             ft69 = new FlightTicket()
@@ -2009,7 +2009,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-26)
             };
 
-            
+
 
             FlightTicket ft70;
             ft70 = new FlightTicket()
@@ -2021,7 +2021,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-26)
             };
 
-            
+
 
             FlightTicket ft71;
             ft71 = new FlightTicket()
@@ -2033,7 +2033,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-26)
             };
 
-            
+
 
             FlightTicket ft72;
             ft72 = new FlightTicket()
@@ -2045,7 +2045,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-26)
             };
 
-            
+
 
             FlightTicket ft73;
             ft73 = new FlightTicket()
@@ -2057,7 +2057,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-26)
             };
 
-            
+
 
             FlightTicket ft74;
             ft74 = new FlightTicket()
@@ -2069,7 +2069,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-25)
             };
 
-            
+
 
             FlightTicket ft75;
             ft75 = new FlightTicket()
@@ -2081,7 +2081,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-25)
             };
 
-            
+
 
             FlightTicket ft76;
             ft76 = new FlightTicket()
@@ -2093,7 +2093,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-25)
             };
 
-            
+
 
             FlightTicket ft77;
             ft77 = new FlightTicket()
@@ -2105,7 +2105,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-24)
             };
 
-            
+
 
             FlightTicket ft78;
             ft78 = new FlightTicket()
@@ -2117,7 +2117,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-24)
             };
 
-            
+
 
             FlightTicket ft79;
             ft79 = new FlightTicket()
@@ -2129,7 +2129,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-24)
             };
 
-            
+
 
             FlightTicket ft80;
             ft80 = new FlightTicket()
@@ -2141,7 +2141,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-24)
             };
 
-            
+
 
             FlightTicket ft81;
             ft81 = new FlightTicket()
@@ -2153,7 +2153,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-24)
             };
 
-            
+
 
             FlightTicket ft82;
             ft82 = new FlightTicket()
@@ -2165,7 +2165,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-24)
             };
 
-            
+
 
             FlightTicket ft83;
             ft83 = new FlightTicket()
@@ -2177,7 +2177,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-24)
             };
 
-            
+
 
             FlightTicket ft84;
             ft84 = new FlightTicket()
@@ -2189,7 +2189,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-23)
             };
 
-            
+
 
             FlightTicket ft85;
             ft85 = new FlightTicket()
@@ -2201,7 +2201,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-23)
             };
 
-            
+
 
             FlightTicket ft86;
             ft86 = new FlightTicket()
@@ -2213,7 +2213,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-23)
             };
 
-            
+
 
             FlightTicket ft87;
             ft87 = new FlightTicket()
@@ -2225,7 +2225,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-23)
             };
 
-            
+
 
             FlightTicket ft88;
             ft88 = new FlightTicket()
@@ -2237,7 +2237,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-23)
             };
 
-            
+
 
             FlightTicket ft89;
             ft89 = new FlightTicket()
@@ -2249,7 +2249,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-22)
             };
 
-            
+
 
             FlightTicket ft90;
             ft90 = new FlightTicket()
@@ -2261,7 +2261,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-22)
             };
 
-            
+
 
             FlightTicket ft91;
             ft91 = new FlightTicket()
@@ -2273,7 +2273,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-22)
             };
 
-            
+
 
             FlightTicket ft92;
             ft92 = new FlightTicket()
@@ -2285,7 +2285,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-22)
             };
 
-            
+
 
             FlightTicket ft93;
             ft93 = new FlightTicket()
@@ -2297,7 +2297,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-22)
             };
 
-            
+
 
             FlightTicket ft94;
             ft94 = new FlightTicket()
@@ -2309,7 +2309,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-22)
             };
 
-            
+
 
             FlightTicket ft95;
             ft95 = new FlightTicket()
@@ -2321,7 +2321,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-21)
             };
 
-            
+
 
             FlightTicket ft96;
             ft96 = new FlightTicket()
@@ -2333,7 +2333,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-21)
             };
 
-            
+
 
             FlightTicket ft97;
             ft97 = new FlightTicket()
@@ -2345,7 +2345,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-21)
             };
 
-            
+
 
             FlightTicket ft98;
             ft98 = new FlightTicket()
@@ -2357,7 +2357,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-21)
             };
 
-            
+
 
             FlightTicket ft99;
             ft99 = new FlightTicket()
@@ -2369,7 +2369,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-20)
             };
 
-            
+
 
             FlightTicket ft100;
             ft100 = new FlightTicket()
@@ -2381,7 +2381,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-20)
             };
 
-            
+
 
             FlightTicket ft101;
             ft101 = new FlightTicket()
@@ -2393,7 +2393,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-20)
             };
 
-            
+
 
             FlightTicket ft102;
             ft102 = new FlightTicket()
@@ -2405,7 +2405,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-20)
             };
 
-            
+
 
             FlightTicket ft103;
             ft103 = new FlightTicket()
@@ -2417,7 +2417,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-20)
             };
 
-            
+
 
             FlightTicket ft104;
             ft104 = new FlightTicket()
@@ -2429,7 +2429,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-20)
             };
 
-            
+
 
             FlightTicket ft105;
             ft105 = new FlightTicket()
@@ -2441,7 +2441,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-20)
             };
 
-            
+
 
             FlightTicket ft106;
             ft106 = new FlightTicket()
@@ -2453,7 +2453,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-20)
             };
 
-            
+
 
             FlightTicket ft107;
             ft107 = new FlightTicket()
@@ -2465,7 +2465,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-20)
             };
 
-            
+
 
             FlightTicket ft108;
             ft108 = new FlightTicket()
@@ -2477,7 +2477,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-20)
             };
 
-            
+
 
             FlightTicket ft109;
             ft109 = new FlightTicket()
@@ -2489,7 +2489,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-20)
             };
 
-            
+
 
             FlightTicket ft110;
             ft110 = new FlightTicket()
@@ -2501,7 +2501,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-19)
             };
 
-            
+
 
             FlightTicket ft111;
             ft111 = new FlightTicket()
@@ -2513,7 +2513,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-19)
             };
 
-            
+
 
             FlightTicket ft112;
             ft112 = new FlightTicket()
@@ -2525,7 +2525,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-19)
             };
 
-            
+
 
             FlightTicket ft113;
             ft113 = new FlightTicket()
@@ -2537,7 +2537,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-19)
             };
 
-            
+
 
             FlightTicket ft114;
             ft114 = new FlightTicket()
@@ -2549,7 +2549,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-19)
             };
 
-            
+
 
             FlightTicket ft115;
             ft115 = new FlightTicket()
@@ -2561,7 +2561,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-19)
             };
 
-            
+
 
             FlightTicket ft116;
             ft116 = new FlightTicket()
@@ -2573,7 +2573,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-18)
             };
 
-            
+
 
             FlightTicket ft117;
             ft117 = new FlightTicket()
@@ -2585,7 +2585,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-18)
             };
 
-            
+
 
             FlightTicket ft118;
             ft118 = new FlightTicket()
@@ -2597,7 +2597,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-18)
             };
 
-            
+
 
             FlightTicket ft119;
             ft119 = new FlightTicket()
@@ -2609,7 +2609,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-18)
             };
 
-            
+
 
             FlightTicket ft120;
             ft120 = new FlightTicket()
@@ -2621,7 +2621,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-18)
             };
 
-            
+
 
             FlightTicket ft121;
             ft121 = new FlightTicket()
@@ -2633,7 +2633,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-18)
             };
 
-            
+
 
             FlightTicket ft122;
             ft122 = new FlightTicket()
@@ -2645,7 +2645,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-18)
             };
 
-            
+
 
             FlightTicket ft123;
             ft123 = new FlightTicket()
@@ -2657,7 +2657,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-18)
             };
 
-            
+
 
             FlightTicket ft124;
             ft124 = new FlightTicket()
@@ -2669,7 +2669,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-17)
             };
 
-            
+
 
             FlightTicket ft125;
             ft125 = new FlightTicket()
@@ -2681,7 +2681,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-17)
             };
 
-            
+
 
             FlightTicket ft126;
             ft126 = new FlightTicket()
@@ -2693,7 +2693,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-16)
             };
 
-            
+
 
             FlightTicket ft127;
             ft127 = new FlightTicket()
@@ -2705,7 +2705,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-16)
             };
 
-            
+
 
             FlightTicket ft128;
             ft128 = new FlightTicket()
@@ -2717,7 +2717,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-16)
             };
 
-            
+
 
             FlightTicket ft129;
             ft129 = new FlightTicket()
@@ -2729,7 +2729,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-16)
             };
 
-            
+
 
             FlightTicket ft130;
             ft130 = new FlightTicket()
@@ -2741,7 +2741,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-16)
             };
 
-            
+
 
             FlightTicket ft131;
             ft131 = new FlightTicket()
@@ -2753,7 +2753,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-16)
             };
 
-            
+
 
             FlightTicket ft132;
             ft132 = new FlightTicket()
@@ -2765,7 +2765,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-16)
             };
 
-            
+
 
             FlightTicket ft133;
             ft133 = new FlightTicket()
@@ -2777,7 +2777,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-16)
             };
 
-            
+
 
             FlightTicket ft134;
             ft134 = new FlightTicket()
@@ -2789,7 +2789,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-15)
             };
 
-            
+
 
             FlightTicket ft135;
             ft135 = new FlightTicket()
@@ -2801,7 +2801,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-15)
             };
 
-            
+
 
             FlightTicket ft136;
             ft136 = new FlightTicket()
@@ -2813,7 +2813,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-15)
             };
 
-            
+
 
             FlightTicket ft137;
             ft137 = new FlightTicket()
@@ -2825,7 +2825,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-15)
             };
 
-            
+
 
             FlightTicket ft138;
             ft138 = new FlightTicket()
@@ -2837,7 +2837,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-14)
             };
 
-            
+
 
             FlightTicket ft139;
             ft139 = new FlightTicket()
@@ -2849,7 +2849,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-14)
             };
 
-            
+
 
             FlightTicket ft140;
             ft140 = new FlightTicket()
@@ -2861,7 +2861,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-14)
             };
 
-            
+
 
             FlightTicket ft141;
             ft141 = new FlightTicket()
@@ -2873,7 +2873,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-14)
             };
 
-            
+
 
             FlightTicket ft142;
             ft142 = new FlightTicket()
@@ -2885,7 +2885,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-14)
             };
 
-            
+
 
             FlightTicket ft143;
             ft143 = new FlightTicket()
@@ -2897,7 +2897,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-14)
             };
 
-            
+
 
             FlightTicket ft144;
             ft144 = new FlightTicket()
@@ -2909,7 +2909,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-14)
             };
 
-            
+
 
             FlightTicket ft145;
             ft145 = new FlightTicket()
@@ -2921,7 +2921,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-13)
             };
 
-            
+
 
             FlightTicket ft146;
             ft146 = new FlightTicket()
@@ -2933,7 +2933,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-13)
             };
 
-            
+
 
             FlightTicket ft147;
             ft147 = new FlightTicket()
@@ -2945,7 +2945,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-13)
             };
 
-            
+
 
             FlightTicket ft148;
             ft148 = new FlightTicket()
@@ -2957,7 +2957,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-13)
             };
 
-            
+
 
             FlightTicket ft149;
             ft149 = new FlightTicket()
@@ -2969,7 +2969,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-13)
             };
 
-            
+
 
             FlightTicket ft150;
             ft150 = new FlightTicket()
@@ -2981,7 +2981,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-13)
             };
 
-            
+
 
             FlightTicket ft151;
             ft151 = new FlightTicket()
@@ -2993,7 +2993,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-12)
             };
 
-            
+
 
             FlightTicket ft152;
             ft152 = new FlightTicket()
@@ -3005,7 +3005,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-12)
             };
 
-            
+
 
             FlightTicket ft153;
             ft153 = new FlightTicket()
@@ -3017,7 +3017,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-12)
             };
 
-            
+
 
             FlightTicket ft154;
             ft154 = new FlightTicket()
@@ -3029,7 +3029,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-12)
             };
 
-            
+
 
             FlightTicket ft155;
             ft155 = new FlightTicket()
@@ -3041,7 +3041,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-12)
             };
 
-            
+
 
             FlightTicket ft156;
             ft156 = new FlightTicket()
@@ -3053,7 +3053,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-11)
             };
 
-            
+
 
             FlightTicket ft157;
             ft157 = new FlightTicket()
@@ -3065,7 +3065,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-11)
             };
 
-            
+
 
             FlightTicket ft158;
             ft158 = new FlightTicket()
@@ -3077,7 +3077,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-11)
             };
 
-            
+
 
             FlightTicket ft159;
             ft159 = new FlightTicket()
@@ -3089,7 +3089,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-10)
             };
 
-            
+
 
             FlightTicket ft160;
             ft160 = new FlightTicket()
@@ -3101,7 +3101,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-10)
             };
 
-            
+
 
             FlightTicket ft161;
             ft161 = new FlightTicket()
@@ -3113,7 +3113,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-10)
             };
 
-            
+
 
             FlightTicket ft162;
             ft162 = new FlightTicket()
@@ -3125,7 +3125,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-10)
             };
 
-            
+
 
             FlightTicket ft163;
             ft163 = new FlightTicket()
@@ -3137,7 +3137,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-10)
             };
 
-            
+
 
             FlightTicket ft164;
             ft164 = new FlightTicket()
@@ -3149,7 +3149,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-10)
             };
 
-            
+
 
             FlightTicket ft165;
             ft165 = new FlightTicket()
@@ -3161,7 +3161,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-10)
             };
 
-            
+
 
             FlightTicket ft166;
             ft166 = new FlightTicket()
@@ -3173,7 +3173,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-9)
             };
 
-            
+
 
             FlightTicket ft167;
             ft167 = new FlightTicket()
@@ -3185,7 +3185,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-9)
             };
 
-            
+
 
             FlightTicket ft168;
             ft168 = new FlightTicket()
@@ -3197,7 +3197,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-9)
             };
 
-            
+
 
             FlightTicket ft169;
             ft169 = new FlightTicket()
@@ -3209,7 +3209,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-9)
             };
 
-            
+
 
             FlightTicket ft170;
             ft170 = new FlightTicket()
@@ -3221,7 +3221,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-9)
             };
 
-            
+
 
             FlightTicket ft171;
             ft171 = new FlightTicket()
@@ -3233,7 +3233,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-9)
             };
 
-            
+
 
             FlightTicket ft172;
             ft172 = new FlightTicket()
@@ -3245,7 +3245,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-9)
             };
 
-            
+
 
             FlightTicket ft173;
             ft173 = new FlightTicket()
@@ -3257,7 +3257,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-8)
             };
 
-            
+
 
             FlightTicket ft174;
             ft174 = new FlightTicket()
@@ -3269,7 +3269,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-8)
             };
 
-            
+
 
             FlightTicket ft175;
             ft175 = new FlightTicket()
@@ -3281,7 +3281,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-8)
             };
 
-            
+
 
             FlightTicket ft176;
             ft176 = new FlightTicket()
@@ -3293,7 +3293,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-7)
             };
 
-            
+
 
             FlightTicket ft177;
             ft177 = new FlightTicket()
@@ -3305,7 +3305,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-7)
             };
 
-            
+
 
             FlightTicket ft178;
             ft178 = new FlightTicket()
@@ -3317,7 +3317,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-7)
             };
 
-            
+
 
             FlightTicket ft179;
             ft179 = new FlightTicket()
@@ -3329,7 +3329,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-7)
             };
 
-            
+
 
             FlightTicket ft180;
             ft180 = new FlightTicket()
@@ -3341,7 +3341,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-7)
             };
 
-            
+
 
             FlightTicket ft181;
             ft181 = new FlightTicket()
@@ -3353,7 +3353,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-6)
             };
 
-            
+
 
             FlightTicket ft182;
             ft182 = new FlightTicket()
@@ -3365,7 +3365,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-6)
             };
 
-            
+
 
             FlightTicket ft183;
             ft183 = new FlightTicket()
@@ -3377,7 +3377,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-6)
             };
 
-            
+
 
             FlightTicket ft184;
             ft184 = new FlightTicket()
@@ -3389,7 +3389,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-5)
             };
 
-            
+
 
             FlightTicket ft185;
             ft185 = new FlightTicket()
@@ -3401,7 +3401,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-5)
             };
 
-            
+
 
             FlightTicket ft186;
             ft186 = new FlightTicket()
@@ -3413,7 +3413,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-5)
             };
 
-            
+
 
             FlightTicket ft187;
             ft187 = new FlightTicket()
@@ -3425,7 +3425,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-5)
             };
 
-            
+
 
             FlightTicket ft188;
             ft188 = new FlightTicket()
@@ -3437,7 +3437,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-5)
             };
 
-            
+
 
             FlightTicket ft189;
             ft189 = new FlightTicket()
@@ -3449,7 +3449,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-5)
             };
 
-            
+
 
             FlightTicket ft190;
             ft190 = new FlightTicket()
@@ -3461,7 +3461,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-5)
             };
 
-            
+
 
             FlightTicket ft191;
             ft191 = new FlightTicket()
@@ -3473,7 +3473,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-4)
             };
 
-            
+
 
             FlightTicket ft192;
             ft192 = new FlightTicket()
@@ -3485,7 +3485,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-4)
             };
 
-            
+
 
             FlightTicket ft193;
             ft193 = new FlightTicket()
@@ -3497,7 +3497,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-4)
             };
 
-            
+
 
             FlightTicket ft194;
             ft194 = new FlightTicket()
@@ -3509,7 +3509,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-4)
             };
 
-            
+
 
             FlightTicket ft195;
             ft195 = new FlightTicket()
@@ -3521,7 +3521,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-4)
             };
 
-            
+
 
             FlightTicket ft196;
             ft196 = new FlightTicket()
@@ -3533,7 +3533,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-3)
             };
 
-            
+
 
             FlightTicket ft197;
             ft197 = new FlightTicket()
@@ -3545,7 +3545,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-3)
             };
 
-            
+
 
             FlightTicket ft198;
             ft198 = new FlightTicket()
@@ -3557,7 +3557,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-3)
             };
 
-            
+
 
             FlightTicket ft199;
             ft199 = new FlightTicket()
@@ -3569,7 +3569,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-3)
             };
 
-            
+
 
             FlightTicket ft200;
             ft200 = new FlightTicket()
@@ -3581,7 +3581,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-3)
             };
 
-            
+
 
             FlightTicket ft201;
             ft201 = new FlightTicket()
@@ -3593,7 +3593,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-3)
             };
 
-            
+
 
             FlightTicket ft202;
             ft202 = new FlightTicket()
@@ -3605,7 +3605,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-3)
             };
 
-            
+
 
             FlightTicket ft203;
             ft203 = new FlightTicket()
@@ -3617,7 +3617,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-3)
             };
 
-            
+
 
             FlightTicket ft204;
             ft204 = new FlightTicket()
@@ -3629,7 +3629,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-3)
             };
 
-            
+
 
             FlightTicket ft205;
             ft205 = new FlightTicket()
@@ -3641,7 +3641,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-2)
             };
 
-            
+
 
             FlightTicket ft206;
             ft206 = new FlightTicket()
@@ -3653,7 +3653,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-2)
             };
 
-            
+
 
             FlightTicket ft207;
             ft207 = new FlightTicket()
@@ -3665,7 +3665,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-2)
             };
 
-            
+
 
             FlightTicket ft208;
             ft208 = new FlightTicket()
@@ -3677,7 +3677,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-2)
             };
 
-            
+
 
             FlightTicket ft209;
             ft209 = new FlightTicket()
@@ -3689,7 +3689,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-2)
             };
 
-            
+
 
             FlightTicket ft210;
             ft210 = new FlightTicket()
@@ -3701,7 +3701,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-2)
             };
 
-            
+
 
             FlightTicket ft211;
             ft211 = new FlightTicket()
@@ -3713,7 +3713,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-2)
             };
 
-            
+
 
             FlightTicket ft212;
             ft212 = new FlightTicket()
@@ -3725,7 +3725,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-2)
             };
 
-            
+
 
             FlightTicket ft213;
             ft213 = new FlightTicket()
@@ -3737,7 +3737,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-2)
             };
 
-            
+
 
             FlightTicket ft214;
             ft214 = new FlightTicket()
@@ -3749,7 +3749,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-2)
             };
 
-            
+
 
             FlightTicket ft215;
             ft215 = new FlightTicket()
@@ -3761,7 +3761,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-1)
             };
 
-            
+
 
             FlightTicket ft216;
             ft216 = new FlightTicket()
@@ -3773,7 +3773,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-1)
             };
 
-            
+
 
             FlightTicket ft217;
             ft217 = new FlightTicket()
@@ -3785,7 +3785,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-1)
             };
 
-            
+
 
             FlightTicket ft218;
             ft218 = new FlightTicket()
@@ -3797,7 +3797,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-1)
             };
 
-            
+
 
             FlightTicket ft219;
             ft219 = new FlightTicket()
@@ -3809,7 +3809,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-0)
             };
 
-            
+
 
             FlightTicket ft220;
             ft220 = new FlightTicket()
@@ -3821,7 +3821,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-0)
             };
 
-            
+
 
             FlightTicket ft221;
             ft221 = new FlightTicket()
@@ -3833,7 +3833,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-0)
             };
 
-            
+
 
             FlightTicket ft222;
             ft222 = new FlightTicket()
@@ -3845,7 +3845,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-0)
             };
 
-            
+
 
             FlightTicket ft223;
             ft223 = new FlightTicket()
@@ -3857,7 +3857,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-0)
             };
 
-            
+
 
             FlightTicket ft224;
             ft224 = new FlightTicket()
@@ -3869,7 +3869,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-0)
             };
 
-            
+
 
             FlightTicket ft227;
             ft227 = new FlightTicket()
@@ -3881,7 +3881,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-38)
             };
 
-            
+
 
             FlightTicket ft228;
             ft228 = new FlightTicket()
@@ -3893,7 +3893,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-38)
             };
 
-            
+
 
             FlightTicket ft229;
             ft229 = new FlightTicket()
@@ -3905,7 +3905,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-38)
             };
 
-            
+
 
             FlightTicket ft230;
             ft230 = new FlightTicket()
@@ -3917,7 +3917,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-37)
             };
 
-            
+
 
             FlightTicket ft231;
             ft231 = new FlightTicket()
@@ -3929,7 +3929,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-37)
             };
 
-            
+
 
             FlightTicket ft232;
             ft232 = new FlightTicket()
@@ -3941,7 +3941,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-36)
             };
 
-            
+
 
             FlightTicket ft233;
             ft233 = new FlightTicket()
@@ -3953,7 +3953,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-36)
             };
 
-            
+
 
             FlightTicket ft234;
             ft234 = new FlightTicket()
@@ -3965,7 +3965,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-36)
             };
 
-            
+
 
             FlightTicket ft235;
             ft235 = new FlightTicket()
@@ -3977,7 +3977,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-35)
             };
 
-            
+
 
             FlightTicket ft236;
             ft236 = new FlightTicket()
@@ -3989,7 +3989,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-33)
             };
 
-            
+
 
             FlightTicket ft237;
             ft237 = new FlightTicket()
@@ -4001,7 +4001,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-33)
             };
 
-            
+
 
             FlightTicket ft238;
             ft238 = new FlightTicket()
@@ -4013,7 +4013,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-32)
             };
 
-            
+
 
             FlightTicket ft239;
             ft239 = new FlightTicket()
@@ -4025,7 +4025,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-32)
             };
 
-            
+
 
             FlightTicket ft240;
             ft240 = new FlightTicket()
@@ -4037,7 +4037,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-31)
             };
 
-            
+
 
             FlightTicket ft241;
             ft241 = new FlightTicket()
@@ -4049,7 +4049,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-31)
             };
 
-            
+
 
             FlightTicket ft242;
             ft242 = new FlightTicket()
@@ -4061,7 +4061,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-29)
             };
 
-            
+
 
             FlightTicket ft243;
             ft243 = new FlightTicket()
@@ -4073,7 +4073,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-27)
             };
 
-            
+
 
             FlightTicket ft244;
             ft244 = new FlightTicket()
@@ -4085,7 +4085,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-27)
             };
 
-            
+
 
             FlightTicket ft245;
             ft245 = new FlightTicket()
@@ -4097,7 +4097,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-27)
             };
 
-            
+
 
             FlightTicket ft246;
             ft246 = new FlightTicket()
@@ -4109,7 +4109,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-25)
             };
 
-            
+
 
             FlightTicket ft247;
             ft247 = new FlightTicket()
@@ -4121,7 +4121,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-25)
             };
 
-            
+
 
             FlightTicket ft248;
             ft248 = new FlightTicket()
@@ -4133,7 +4133,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-23)
             };
 
-            
+
 
             FlightTicket ft249;
             ft249 = new FlightTicket()
@@ -4145,7 +4145,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-21)
             };
 
-            
+
 
             FlightTicket ft250;
             ft250 = new FlightTicket()
@@ -4157,7 +4157,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-19)
             };
 
-            
+
 
             FlightTicket ft251;
             ft251 = new FlightTicket()
@@ -4169,7 +4169,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-19)
             };
 
-            
+
 
             FlightTicket ft252;
             ft252 = new FlightTicket()
@@ -4181,7 +4181,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-18)
             };
 
-            
+
 
             FlightTicket ft253;
             ft253 = new FlightTicket()
@@ -4193,7 +4193,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-18)
             };
 
-            
+
 
             FlightTicket ft254;
             ft254 = new FlightTicket()
@@ -4205,7 +4205,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-17)
             };
 
-            
+
 
             FlightTicket ft255;
             ft255 = new FlightTicket()
@@ -4217,7 +4217,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-17)
             };
 
-            
+
 
             FlightTicket ft256;
             ft256 = new FlightTicket()
@@ -4229,7 +4229,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-16)
             };
 
-            
+
 
             FlightTicket ft257;
             ft257 = new FlightTicket()
@@ -4241,7 +4241,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-14)
             };
 
-            
+
 
             FlightTicket ft258;
             ft258 = new FlightTicket()
@@ -4253,7 +4253,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-12)
             };
 
-            
+
 
             FlightTicket ft259;
             ft259 = new FlightTicket()
@@ -4265,7 +4265,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-12)
             };
 
-            
+
 
             FlightTicket ft260;
             ft260 = new FlightTicket()
@@ -4277,7 +4277,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-12)
             };
 
-            
+
 
             FlightTicket ft261;
             ft261 = new FlightTicket()
@@ -4289,7 +4289,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-11)
             };
 
-            
+
 
             FlightTicket ft262;
             ft262 = new FlightTicket()
@@ -4301,7 +4301,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-9)
             };
 
-            
+
 
             FlightTicket ft263;
             ft263 = new FlightTicket()
@@ -4313,7 +4313,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-8)
             };
 
-            
+
 
             FlightTicket ft264;
             ft264 = new FlightTicket()
@@ -4325,7 +4325,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-8)
             };
 
-            
+
 
             FlightTicket ft265;
             ft265 = new FlightTicket()
@@ -4337,7 +4337,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-7)
             };
 
-            
+
 
             FlightTicket ft266;
             ft266 = new FlightTicket()
@@ -4349,7 +4349,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-7)
             };
 
-            
+
 
             FlightTicket ft267;
             ft267 = new FlightTicket()
@@ -4361,7 +4361,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-7)
             };
 
-            
+
 
             FlightTicket ft268;
             ft268 = new FlightTicket()
@@ -4373,7 +4373,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-6)
             };
 
-            
+
 
             FlightTicket ft269;
             ft269 = new FlightTicket()
@@ -4385,7 +4385,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-5)
             };
 
-            
+
 
             FlightTicket ft270;
             ft270 = new FlightTicket()
@@ -4397,7 +4397,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-3)
             };
 
-            
+
 
             FlightTicket ft301;
             ft301 = new FlightTicket()
@@ -4409,7 +4409,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-33)
             };
 
-            
+
 
             FlightTicket ft302;
             ft302 = new FlightTicket()
@@ -4421,7 +4421,7 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-28)
             };
 
-            
+
 
             FlightTicket ft303;
             ft303 = new FlightTicket()
@@ -4432,9 +4432,7 @@ namespace SIAHTTPS.Models
                 Quantity = 6,
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-24)
             };
-
             
-
             FlightTicket ft304;
             ft304 = new FlightTicket()
             {
@@ -4444,8 +4442,6 @@ namespace SIAHTTPS.Models
                 Quantity = 5,
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-22)
             };
-
-            
 
             FlightTicket ft305;
             ft305 = new FlightTicket()
@@ -4457,8 +4453,6 @@ namespace SIAHTTPS.Models
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-17)
             };
 
-            
-
             FlightTicket ft306;
             ft306 = new FlightTicket()
             {
@@ -4468,9 +4462,7 @@ namespace SIAHTTPS.Models
                 Quantity = 3,
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-14)
             };
-
             
-
             FlightTicket ft307;
             ft307 = new FlightTicket()
             {
@@ -4480,14 +4472,7 @@ namespace SIAHTTPS.Models
                 Quantity = 2,
                 CreatedAt = new DateTime(2016, 09, 12, 00, 13, 00).AddDays(-14)
             };
-=======
-            //FlightTicket ft1;
-            //ft1 = new FlightTicket()
-            //{
-
-            //};
->>>>>>> 86209f0... APIs: Workable Rate
-
+        }
             
     }
 }
