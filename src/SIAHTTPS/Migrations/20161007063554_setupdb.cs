@@ -245,6 +245,7 @@ namespace SIAHTTPS.Migrations
                 {
                     FlightId = table.Column<long>(nullable: false),
                     TicketId = table.Column<long>(nullable: false),
+                    CreatedAt = table.Column<DateTime>(nullable: false, defaultValueSql: "GETDATE()"),
                     Price = table.Column<decimal>(type: "decimal(19, 2)", nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false)
                 },

@@ -317,6 +317,10 @@ namespace SIAHTTPS.Migrations
 
                     b.Property<long>("TicketId");
 
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("GETDATE()");
+
                     b.Property<decimal>("Price")
                         .HasColumnName("Price")
                         .HasColumnType("decimal(19, 2)");

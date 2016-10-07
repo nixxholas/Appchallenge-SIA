@@ -8,7 +8,7 @@ using SIAHTTPS.Data;
 namespace SIAHTTPS.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20161006154152_setupdb")]
+    [Migration("20161007063554_setupdb")]
     partial class setupdb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -317,6 +317,10 @@ namespace SIAHTTPS.Migrations
                     b.Property<long>("FlightId");
 
                     b.Property<long>("TicketId");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.Property<decimal>("Price")
                         .HasColumnName("Price")
